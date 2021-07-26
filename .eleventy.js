@@ -6,14 +6,14 @@ module.exports = eleventyApi => {
     eleventyApi.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
     eleventyApi.setFrontMatterParsingOptions({
         excerpt: true,
-        excerpt_alias: 'post_excerpt',
+        excerpt_alias: 'excerpt',
         excerpt_separator: '<!-- excerpt -->'
     });
     eleventyApi.addFilter('dateString', date => {
         const formatOptions = {
             timeZone: 'UTC',
             day: 'numeric',
-            month: 'short',
+            month: 'long',
             year: 'numeric'
         };
         return date.toLocaleString('en-US', formatOptions);
