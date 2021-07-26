@@ -1,0 +1,21 @@
+body {
+    padding: 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+header nav li {
+    list-style: none;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    flex-grow: 1;
+    text-align: center;
+}
+
+header nav li.brand {
+    background-color: #d9d8dc;
+}

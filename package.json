@@ -1,0 +1,14 @@
+{
+  "name": "colbywhite.dev",
+  "version": "1.0.0-rc.0",
+  "scripts": {
+    "prestart": "rm -rf _site",
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "0.12.1",
+    "@11ty/eleventy-navigation": "0.3.2",
+    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.2"
+  }
+}
