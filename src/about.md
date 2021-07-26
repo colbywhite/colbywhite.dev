@@ -14,12 +14,18 @@ This site is built using [Eleventy].
 It is deployed via [Netlify] with a HTTPS certificate from [Let's Encrypt] for free.
 The source code is available on [GitHub][source].
 
-## Credits
+## Credits and licensing
+
+Other than where specified, the content on this site is published under a [Creative Commons Attribution 3.0 license][license].
 
 The design of the site was inspired by the following:
-- The vader theme of [sakura]
 - Rong Ying's [starter blog template][11ty-blog-starter] for Eleventy
 - Phil Hawksworth's personal site, [hawksworx]
+
+This site leverages the following libraries:
+- [normalize.css]
+- The vader theme of [sakura]
+- The okaidia theme of [prism]
 
 [Eleventy]: https://www.11ty.dev
 [Netlify]: https://www.netlify.com
@@ -28,3 +34,6 @@ The design of the site was inspired by the following:
 [11ty-blog-starter]: https://github.com/kohrongying/11ty-blog-starter
 [hawksworx]: https://www.hawksworx.com
 [sakura]: https://oxal.org/projects/sakura
+[license]: https://creativecommons.org/licenses/by/3.0
+[normalize.css]: https://necolas.github.io/normalize.css
+[prism]: https://prismjs.com
