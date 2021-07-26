@@ -1,7 +1,3 @@
-header {
-    border-bottom: 2px solid #eb99a1;;
-}
-
 header nav ul {
     display: flex;
     justify-content: space-evenly;
@@ -46,6 +42,6 @@ section.post-footer {
     font-size: 0.8em;
 }
 
-.excerpt, .archive-description > p {
+.excerpt, .archive-description p {
     margin-bottom: 0.5em;
 }

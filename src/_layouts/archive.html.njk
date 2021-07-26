@@ -9,6 +9,8 @@ pagination:
   {{ content | safe }}
 </section>
 
+<hr/>
+
 <section class="archive">
   {% for post in pagination.items %}
     {% if post.data.published %}
