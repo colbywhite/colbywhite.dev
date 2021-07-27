@@ -1,12 +1,12 @@
 ---
 title: Quickly spinning up websites
-date: Created
+date: 2021-07-26
 tags:
   - spa fatigue
   - normalize.css
   - 11ty
   - sakura
-  - basic trinity
+  - netlify
 ---
 
 Since I've been experiencing heavy [SPA fatigue] lately, I've been realizing I'm rusty on the Basic Trinity&trade; of web development - i.e. just HTML, CSS, and JS.
