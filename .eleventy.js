@@ -1,3 +1,5 @@
+const md = require('markdown-it');
+
 module.exports = eleventyApi => {
     eleventyApi.setDataDeepMerge(true);
     eleventyApi.addPassthroughCopy('src/favicon.ico');
@@ -17,6 +19,10 @@ module.exports = eleventyApi => {
             year: 'numeric'
         };
         return date.toLocaleString('en-US', formatOptions);
+    });
+    eleventyApi.addFilter('mdToHTML', content => {
+        const contentWithNoReferenceLinks = content.replace(/\s\[(.+)]\s/g, ' $1 ');
+        return new md({ html: true }).renderInline(contentWithNoReferenceLinks);
     });
     return {
         markdownTemplateEngine: 'njk',

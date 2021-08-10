@@ -21,7 +21,7 @@ pagination:
         {{ post.data.date | dateString }}
         by <a href="/about">Colby M. White</a>
       </p>
-      <p class="excerpt">{{ post.data.excerpt }}...</p>
+      <p class="excerpt">{{ post.data.excerpt | mdToHTML | safe }}</p>
       <section class="post-footer">
         <section class="post-tags">
           {% for tag in post.data.tags %}
