@@ -1,12 +1,14 @@
 ---
-title: "Decision after decision after decision"
+title: Decision after decision after decision
 date: 2021-09-04
 tags:
-- it's not just about code
-- decisions
+  - it's not just about code
+  - decisions
 ---
 
 Just want to jot down this description from Dr. Gail Murphy so I have it somewhere. This is a good way to describe a phenomenon I've personally experienced. Coding a lot of times is the easiest part of this job. Problem solving and decision making are by far the most difficult and important parts of the job. But because it's difficult, it's common for people - both engineers and non-engineers - to want to breeze through it quickly without much though and just throw 0s and 1s at whatever the problems is.
+
+<!-- excerpt -->
 
 And it's not hard to guess the result.
 
