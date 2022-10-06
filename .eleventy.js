@@ -1,35 +1,36 @@
-const md = require('markdown-it');
+const filters = require('./utils/filters.js')
+const transforms = require('./utils/transforms.js')
+const collections = require('./utils/collections.js')
 
-module.exports = eleventyApi => {
-    eleventyApi.setDataDeepMerge(true);
-    eleventyApi.addPassthroughCopy('src/favicon.ico');
-    eleventyApi.addPassthroughCopy('src/static/img');
-    eleventyApi.addPlugin(require('@11ty/eleventy-navigation'));
-    eleventyApi.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"));
-    eleventyApi.setFrontMatterParsingOptions({
-        excerpt: true,
-        excerpt_alias: 'excerpt',
-        excerpt_separator: '<!-- excerpt -->'
-    });
-    eleventyApi.addFilter('dateString', date => {
-        const formatOptions = {
-            timeZone: 'UTC',
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        };
-        return date.toLocaleString('en-US', formatOptions);
-    });
-    eleventyApi.addFilter('mdToHTML', content => {
-        const contentWithNoReferenceLinks = content.replace(/\s\[(.+)]\s/g, ' $1 ');
-        return new md({ html: true }).renderInline(contentWithNoReferenceLinks);
-    });
-    return {
-        markdownTemplateEngine: 'njk',
-        htmlTemplateEngine: 'njk',
-        dir: {
-            input: 'src',
-            layouts: '_layouts'
-        }
-    };
+module.exports = function (eleventyConfig) {
+	// Folders to copy to build dir (See. 1.1)
+	eleventyConfig.addPassthroughCopy("src/static");
+	eleventyConfig.addPassthroughCopy({"src/_assets": "assets"});
+
+	// Filters
+	Object.keys(filters).forEach((filterName) => {
+		eleventyConfig.addFilter(filterName, filters[filterName])
+	})
+
+	// Transforms
+	Object.keys(transforms).forEach((transformName) => {
+		eleventyConfig.addTransform(transformName, transforms[transformName])
+	})
+
+	// This allows Eleventy to watch for file changes during local development.
+	eleventyConfig.setUseGitIgnore(false);
+
+	return {
+		dir: {
+			input: "src/",
+			output: "dist",
+			includes: "_includes",
+			layouts: "_layouts"
+		},
+		templateFormats: ["html", "md", "njk"],
+		htmlTemplateEngine: "njk",
+
+		// 1.1 Enable eleventy to pass dirs specified above
+		passthroughFileCopy: true
+	};
 };

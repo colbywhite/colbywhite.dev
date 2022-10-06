@@ -1,0 +1,23 @@
+@import 'utils/_tailwind.css';
+@import 'utils/_accessibility.css';
+
+a {
+	@apply underline;
+}
+
+@font-face {
+	font-family: 'Butler';
+	font-style: normal;
+	font-display: swap;
+	font-weight: 500;
+	src: url('/assets/fonts/butler-medium.woff2') format('woff2'),
+	url('/assets/fonts/butler-medium.woff') format('woff');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@apply font-serif
+}
+
+body {
+	@apply font-sans
+}

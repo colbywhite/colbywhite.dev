@@ -1,0 +1,244 @@
+{
+	"meta": {
+		"theme": "kendall",
+		"updatedAt": "2022-09-15"
+	},
+	"basics": {
+		"name": "Colby M. White",
+		"image": "http://sustainabledev.io/assets/images/profilepic.jpg",
+		"label": "Principal full-stack engineer and technical leader",
+		"url": "https://edgebound.dev",
+		"summary": "Experienced polyglot engineer and team lead with a focus in JavaScript and Java. Comfortable in multiple layers of an application’s stack including front- end, back-end and DevOps development.",
+		"location": {
+			"countryCode": "US",
+			"region": "Texas",
+			"city": "Austin"
+		},
+		"profiles": [
+			{
+				"network": "LinkedIn",
+				"username": "colbywhite",
+				"url": "https://www.linkedin.com/in/colbywhite"
+			},
+			{
+				"network": "GitHub",
+				"username": "colbywhite",
+				"url": "https://github.com/colbywhite"
+			}
+		]
+	},
+	"work": [
+		{
+			"name": "Fractal Software",
+			"highlights": [
+				"Fractal is a venture studio creating vertical SaaS companies.",
+				"Worked with the portfolio's CTOs in order to coach and advise companies on effectively creating software and teams from scratch.",
+				"Created architecture best practices that served the basis of the portfolio's startup products.",
+				"Led workshops on architecture design, interviewing, domain modeling, and other topics relevant to early-stage startups.",
+				"Worked with several companies to simplify processes in order to maximize velocity."
+			],
+			"position": "Staff Software Engineer",
+			"startDate": "2022-12-06",
+			"location": "Remote",
+			"url": "https://www.linkedin.com/company/fractal-software/"
+		},
+		{
+			"name": "Blackbaud",
+			"highlights": [
+				"Led team tasked with integrating legacy fundraising product with Facebook Fundraisers in increase adoption",
+				"Created tool for customer wealth calculations that heavily leveraged Kafka for asynchronous processing",
+				"Led front-end team for latest donation form product aimed at allowing users to customize look and feel of forms",
+				"Prompted the formation of a company UI Guild in order to spread UI best practices among teams in multiple locations",
+				"Led cross-team presentations to educate Austin’s previously back-end teams on UI development and testing",
+				"Led non-engineering team in efforts to modernize cross-product strategies for help content",
+				"Served as engineering contact with external departments for the presentation and deployment of help content"
+			],
+			"position": "Principal Software Engineer",
+			"startDate": "2017-05-31",
+			"endDate": "2022-11-26",
+			"location": "Austin, TX",
+			"url": "https://www.linkedin.com/company/162724"
+		},
+		{
+			"endDate": "2017-05-31",
+			"highlights": [
+				"Completed work for different companies: Whole Foods (Austin), Nike (Portland) and Xferall (Austin)",
+				"Worked on different types of projects, including front-end, back-end and DevOps tasks",
+				"Used common Java frameworks (Spring, Guice, JAX-RS) in order to quickly build web-based microservices",
+				"Maintained a ReactJS-based web application while prototyping a React Native mobile app"
+			],
+			"name": "Independent Contractor",
+			"position": "Contract Senior Software Engineer",
+			"startDate": "2016-05-31"
+		},
+		{
+			"name": "Spanning Cloud Apps",
+			"location": "Austin, TX",
+			"endDate": "2016-05-31",
+			"highlights": [
+				"Contributed features as a senior member of the development team for company’s Google Apps Backup product",
+				"Created Chef recipes to help enforce consistency between the team’s multiple environments, including local developer-focused Vagrant machines and production stacks",
+				"Diagnosed and corrected front-end performance issues in order to scale SaaS application for large, enterprise customers"
+			],
+			"position": "Senior Software Engineer",
+			"startDate": "2015-09-30",
+			"url": "https://www.linkedin.com/company/1350874"
+		},
+		{
+			"name": "CA Technologies",
+			"endDate": "2015-09-30",
+			"location": "Austin, TX",
+			"highlights": [
+				"Developed infrastructure and libraries for browser-based Selenium testing of a SaaS application",
+				"Coordinated REST-driven interaction between dynamically scaled microservices of different languages (Java and JavaScript)",
+				"Created Vagrant-based environments to encapsulate dependencies and encourage rapid, iterative development",
+				"Built several custom Gradle and Rake plugins to put project’s deployment procedures into code"
+			],
+			"position": "Software Developer",
+			"startDate": "2014-03-31",
+			"url": "https://www.linkedin.com/company/1372"
+		},
+		{
+			"name": "Allure Energy, Inc.",
+			"endDate": "2014-03-31",
+			"location": "Austin, TX",
+			"highlights": [
+				"Built RESTful APIs to facilitate communication between multiple types of devices in order to sync several types of data",
+				"Used OSGI platform for deployment of Java software to allow for dynamic removal and inclusion of different modules",
+				"Created XMPP messaging schemas to facilitate communication between thermostat and mobile devices",
+				"Implemented user interface designs via Qt on an embedded device",
+				"Developed in-house admin application leveraging the Django framework"
+			],
+			"position": "Software Developer",
+			"startDate": "2010-11-30",
+			"url": "https://www.linkedin.com/company/467235"
+		}
+	],
+	"volunteer": [
+		{
+			"organization": "Open Austin",
+			"position": "Freelance Software Engineer",
+			"url": "https://www.open-austin.org/",
+			"startDate": "2016-05-01",
+			"endDate": "2016-08-01"
+		}
+	],
+	"education": [
+		{
+			"institution": "The University of Texas at Austin",
+			"url": "https://utexas.edu",
+			"area": "Computer Science",
+			"studyType": "Bachelor of Science (BS)",
+			"startDate": "2010-12-31",
+			"endDate": "2012-12-31"
+		},
+		{
+			"institution": "The University of Texas at Austin",
+			"url": "https://utexas.edu",
+			"area": "Journalism",
+			"studyType": "Bachelor of Arts (BA)",
+			"startDate": "2006-12-31",
+			"endDate": "2010-12-31"
+		}
+	],
+	"projects": [
+		{
+			"name": "edgebound.dev",
+			"description": "A blog to chroncle thoughts and brainstorm around edge technologies and Jamstack concepts.",
+			"url": "https://edgebound.dev",
+			"keywords": [
+				"Jamstack",
+				"Edge",
+				"CDN"
+			]
+		},
+		{
+			"name": "Harris County Booking Data Gathering",
+			"description": "An Open Austin serverless project that accumulates the book- ing information published in Harris County’s daily JIMS 1058 reports into a search-friendly format. The intent is to aide non-profit organizations looking to do data research across time spans greater than a day.",
+			"url": "https://github.com/open-austin/harris-county-bookings",
+			"keywords": [
+				"Python",
+				"AWS Lambda"
+			]
+		},
+		{
+			"name": "aws-cf-monitor",
+			"description": "A wrapper around the AWS CloudFormation Node.js API that monitors the progress of the CloudFormation commands while providing smart logging. The intent is to remove a lot of boiler-plate code to poll the progress of a stack.",
+			"url": "https://www.npmjs.com/package/aws-cf-monitor",
+			"keywords": [
+				"Node.js",
+				"CloudFormation"
+			]
+		}
+	],
+	"awards": [],
+	"publications": [],
+	"skills": [
+		{
+			"name": "Front-end",
+			"level": "Experienced",
+			"keywords": [
+				"JavaScript",
+				"TypeScript",
+				"HTML",
+				"CSS",
+				"Angular",
+				"11ty",
+				"Jasmine",
+				"Redwood",
+				"Next.js",
+				"11ty",
+				"Gatsby",
+				"Prisma"
+			]
+		},
+		{
+			"name": "Back-end",
+			"level": "Experienced",
+			"keywords": [
+				"Java",
+				"Spring",
+				"Gradle",
+				"Ruby",
+				"Ruby on Rails",
+				"rspec",
+				"Rake",
+				"Python",
+				"Django",
+				"Node.js"
+			]
+		},
+		{
+			"name": "DevOps",
+			"level": "Experienced",
+			"keywords": [
+				"AWS",
+				"Azure DevOps",
+				"Docker",
+				"Netlify",
+				"Vercel",
+				"Render",
+				"JamStack",
+				"CI/CD",
+				"Jenkins",
+				"TravisCI"
+			]
+		},
+		{
+			"name": "Project Management",
+			"level": "Proficient",
+			"keywords": [
+				"SCRUM",
+				"Lean Startup"
+			]
+		}
+	],
+	"languages": [
+		{
+			"language": "en",
+			"fluency": "Native Speaker"
+		}
+	],
+	"interests": [],
+	"references": []
+}

@@ -1,0 +1,38 @@
+<section>
+  <h2 class="border-b border-b-gray-500 text-5xl mb-8">Education</h2>
+  <ol class="flex flex-col gap-8">
+    {% for school in resume.education %}
+      <li class="text-2xl font-light font-sans">
+        <article class="flex flex-col gap-4">
+          <div class="flex flex-col">
+            <p class="text-gray-700 mb-1 text-sm uppercase tracking-widest">
+              <time datetime="{{ school.startDate | dateStringToFormat("yyyy-MM-dd") }}">
+                {{ school.startDate | yearString }}
+              </time>
+              &ndash;
+              {% if school.endDate %}
+                <time datetime="{{ school.endDate | dateStringToFormat("yyyy-MM-dd") }}">
+                  {{ school.endDate | yearString }}
+                </time>
+              {% else %}
+                present
+              {% endif %}
+            </p>
+            <h3 class="text-3xl">
+              {{ school.area }}
+              <span aria-hidden="true">&middot;</span>
+              {{ school.studyType }}
+            </h3>
+            <p class="text-lg">
+              {% if school.url %}
+                <a href="{{ school.url }}" target="_blank" rel="noopener noreferrer">{{ school.institution }}</a>
+              {% else %}
+                <span>{{ school.name }}</span>
+              {% endif %}
+            </p>
+          </div>
+        </article>
+      </li>
+    {% endfor %}
+  </ol>
+</section>

@@ -1,14 +1,31 @@
 {
-  "name": "colbywhite.dev",
-  "version": "1.0.0-rc.0",
-  "scripts": {
-    "prestart": "rm -rf _site",
-    "start": "eleventy --serve",
-    "build": "eleventy"
-  },
-  "devDependencies": {
-    "@11ty/eleventy": "0.12.1",
-    "@11ty/eleventy-navigation": "0.3.2",
-    "@11ty/eleventy-plugin-syntaxhighlight": "3.1.2"
-  }
+	"name": "eleventy-web-starter",
+	"version": "1.8.0",
+	"description": "Eleventy Web Starter is a lightweight Eleventy boilerplate utilising, ESBuild Tailwind and PostCSS",
+	"scripts": {
+		"clean": "del dist",
+		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/styles.min.css --watch --verbose",
+		"dev:scripts": "esbuild src/_assets/scripts/main.js --bundle --watch --outfile=src/static/main.min.js",
+		"dev:11ty": "eleventy --serve --watch",
+		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/styles.css -o src/_includes/styles.min.css",
+		"build:11ty": "ELEVENTY_ENV=production eleventy",
+		"build:scripts": "esbuild src/_assets/scripts/main.js --bundle --minify --outfile=dist/static/main.min.js",
+		"start": "run-p dev:*",
+		"build": "run-s clean build:*"
+	},
+	"author": "Chris Collins",
+	"license": "ISC",
+	"devDependencies": {
+		"@11ty/eleventy": "^1.0.1",
+		"autoprefixer": "^10.4.7",
+		"del-cli": "^4.0.1",
+		"esbuild": "^0.14.42",
+		"html-minifier": "^4.0.0",
+		"luxon": "^2.4.0",
+		"npm-run-all": "^4.1.5",
+		"postcss": "^8.4.14",
+		"postcss-cli": "^9.1.0",
+		"postcss-import": "^14.1.0",
+		"tailwindcss": "^3.0.24"
+	}
 }
