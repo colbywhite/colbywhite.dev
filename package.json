@@ -7,8 +7,8 @@
 		"dev:postcss": "postcss src/_assets/stylesheets/*.css -o src/static/styles.min.css --watch --verbose",
 		"dev:scripts": "esbuild src/_assets/scripts/main.js --bundle --watch --outfile=src/static/main.min.js",
 		"dev:11ty": "eleventy --serve --watch",
-		"build:postcss": "NODE_ENV=production postcss src/_assets/stylesheets/styles.css -o src/_includes/styles.min.css",
-		"build:11ty": "ELEVENTY_ENV=production eleventy",
+		"build:postcss": "cross-env NODE_ENV=production postcss src/_assets/stylesheets/styles.css -o src/_includes/styles.min.css",
+		"build:11ty": "cross-env ELEVENTY_ENV=production eleventy",
 		"build:scripts": "esbuild src/_assets/scripts/main.js --bundle --minify --outfile=dist/static/main.min.js",
 		"start": "run-p dev:*",
 		"build": "run-s clean build:*"
@@ -18,6 +18,7 @@
 	"devDependencies": {
 		"@11ty/eleventy": "^1.0.1",
 		"autoprefixer": "^10.4.7",
+		"cross-env": "^7.0.3",
 		"del-cli": "^4.0.1",
 		"esbuild": "^0.14.42",
 		"html-minifier": "^4.0.0",
