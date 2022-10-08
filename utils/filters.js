@@ -1,7 +1,7 @@
 const { DateTime } = require('luxon')
 
 const dateToFormat = (date, format) => {
-	const dateObj = typeof date === 'string' ? new Date(date) : date;
+	const dateObj = typeof date === 'string' ? new Date(date) : date
 	return DateTime.fromJSDate(dateObj, { zone: 'US/Central' }).toFormat(format)
 }
 module.exports = {
@@ -10,5 +10,6 @@ module.exports = {
 	dateStringToFormat: (dateStr, format) => dateToFormat(dateStr, format),
 	monthString: (dateStr) => dateToFormat(dateStr, 'LLL y'),
 	yearString: (dateStr) => dateToFormat(dateStr, 'y'),
-	join: (array, joiner) => array.join(joiner)
+	join: (array, joiner) => array.join(joiner),
+	stripProtocol: str => str.replace(/(^\w+:|^)\/\//, '')
 }

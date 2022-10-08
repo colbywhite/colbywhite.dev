@@ -1,5 +1,6 @@
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
+const shortcodes = require('./utils/shortcodes.js')
 
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
@@ -14,6 +15,11 @@ module.exports = function (eleventyConfig) {
 	// Transforms
 	Object.keys(transforms).forEach((transformName) => {
 		eleventyConfig.addTransform(transformName, transforms[transformName])
+	})
+
+	// Shortcodes
+	Object.keys(shortcodes).forEach((shortcodeName) => {
+		eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
 	})
 
 	// This allows Eleventy to watch for file changes during local development.

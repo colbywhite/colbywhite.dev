@@ -20,11 +20,13 @@
             <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet" type="text/css"/>
         </noscript>
     </head>
-    <body class="w-full bg-purple-700">
-      <div class="float-right w-3/4 bg-white">
-        <div class="flex flex-col gap-16 m-8">
+    <body class="w-full bg-white md:bg-purple-700">
+      <div class="md:float-right md:w-3/4 md:bg-white">
+        <div class="flex flex-col gap-8 md:gap-16 m-4 md:m-8">
           {% include "header.njk" %}
-          {{ content | safe }}
+          <main class="flex flex-col gap-8 md:gap-16">
+            {{ content | safe }}
+          </main>
         </div>
         {% include "footer.njk" %}
       </div>
