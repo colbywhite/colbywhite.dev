@@ -5,7 +5,7 @@
 	},
 	"basics": {
 		"name": "Colby M. White",
-		"image": "http://sustainabledev.io/assets/images/profilepic.jpg",
+		"image": "images/avatar.png",
 		"label": "Principal full-stack engineer and technical leader",
 		"url": "https://edgebound.dev",
 		"summary": "Experienced polyglot engineer and team lead with a focus in JavaScript and Java. Comfortable in multiple layers of an application’s stack including front- end, back-end and DevOps development.",

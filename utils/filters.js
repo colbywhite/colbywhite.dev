@@ -1,4 +1,7 @@
 const { DateTime } = require('luxon')
+const fs = require('fs')
+const path = require('path')
+const mime = require('mime/lite')
 
 const dateToFormat = (date, format) => {
 	const dateObj = typeof date === 'string' ? new Date(date) : date
@@ -11,5 +14,11 @@ module.exports = {
 	monthString: (dateStr) => dateToFormat(dateStr, 'LLL y'),
 	yearString: (dateStr) => dateToFormat(dateStr, 'y'),
 	join: (array, joiner) => array.join(joiner),
-	stripProtocol: str => str.replace(/(^\w+:|^)\/\//, '')
+	stripProtocol: str => str.replace(/(^\w+:|^)\/\//, ''),
+	base64asset: asset => {
+		const filepath = path.join(__dirname, `../src/_assets/${asset}`)
+		const mimeType = mime.getType(asset)
+		const buffer = Buffer.from(fs.readFileSync(filepath))
+		return `data:${mimeType};base64,${buffer.toString('base64')}`
+	}
 }
