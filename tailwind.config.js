@@ -22,6 +22,10 @@ module.exports = {
 			}
 		}
 	},
-	plugins: [],
+	plugins: [require('tailwindcss-print-styles')],
+	variants: {
+		margin: ['print'],
+		display: ['print']
+	},
 	content: ['src/**/*.njk', 'src/**/*.js']
 }

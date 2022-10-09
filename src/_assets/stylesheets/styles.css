@@ -19,7 +19,7 @@ h1 {
 }
 
 h2 {
-  @apply border-b border-b-gray-500 md:text-5xl text-2xl mb-4 md:mb-8
+	@apply border-b border-b-gray-500 md:text-5xl text-2xl mb-4 md:mb-8
 }
 
 h3 {
@@ -57,11 +57,24 @@ dt {
 dd {
 	@apply mb-2 md:mb-4
 }
+
 body {
 	@apply font-sans
 }
 
 img.avatar {
-	right: calc(75% - 1rem);
 	@apply rounded-full border-4 border-white drop-shadow-[25px_25px_25px_rgb(0_0_0_/_0.15)] md:fixed md:w-[150px] md:h-[186px]
+}
+
+@media (min-width: 640px) {
+	img.avatar {
+		right: calc(75% - 1rem);
+	}
+}
+
+@media print {
+	header {
+		display: grid;
+		grid-template-columns: 150px auto;
+	}
 }

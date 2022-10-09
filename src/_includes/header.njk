@@ -1,17 +1,18 @@
-<header class="flex flex-col md:gap-2 gap-1">
-  <img class="avatar" src="{{ resume.basics.image | base64asset }}" width="150" height="186" alt="{{ resume.basics.name }} avatar" />
-  <h1>{{ resume.basics.name }}</h1>
-  <p>
-    Software Engineer &middot; Technical Consultant
-  </p>
-  <p>
-  <p>
-    {{ resume.basics.location.city }}, {{ resume.basics.location.region }}
-  </p>
-  <p>
-    <a aria-label="Website" target='_blank' href="{{ resume.basics.url }}">
-      {% icon "laptop" %}
-      <span>{{ resume.basics.url | stripProtocol }}</span>
-    </a>
-  </p>
+<header class="print:gap-8">
+  <img class="avatar print:ml-auto" src="{{ resume.basics.image | base64asset }}" width="150" height="186" alt="{{ resume.basics.name }} avatar" />
+  <div class="sm:flex sm:flex-col md:gap-2 gap-1">
+    <h1>{{ resume.basics.name }}</h1>
+    <p>
+      Software Engineer &middot; Technical Consultant
+    </p>
+    <p>
+      {{ resume.basics.location.city }}, {{ resume.basics.location.region }}
+    </p>
+    <p>
+      <a aria-label="Website" target='_blank' href="{{ resume.basics.url }}">
+        {% icon "laptop" %}
+        <span>{{ resume.basics.url | stripProtocol }}</span>
+      </a>
+    </p>
+  </div>
 </header>

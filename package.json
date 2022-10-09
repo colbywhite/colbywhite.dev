@@ -11,7 +11,8 @@
 		"build:11ty": "cross-env ELEVENTY_ENV=production eleventy",
 		"build:scripts": "esbuild src/_assets/scripts/main.js --bundle --minify --outfile=dist/static/main.min.js",
 		"start": "run-p dev:*",
-		"build": "run-s clean build:*"
+		"build": "run-s clean build:*",
+		"pdf": "node toPdf.js"
 	},
 	"author": "Chris Collins",
 	"license": "ISC",
@@ -28,6 +29,8 @@
 		"postcss": "^8.4.14",
 		"postcss-cli": "^9.1.0",
 		"postcss-import": "^14.1.0",
-		"tailwindcss": "^3.0.24"
+		"puppeteer": "^18.2.1",
+		"tailwindcss": "^3.0.24",
+		"tailwindcss-print-styles": "^1.0.1"
 	}
 }
