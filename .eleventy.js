@@ -1,6 +1,7 @@
 const filters = require('./utils/filters.js')
 const transforms = require('./utils/transforms.js')
 const shortcodes = require('./utils/shortcodes.js')
+const iconsprite = require('./utils/iconsprite.js')
 
 module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
@@ -24,6 +25,7 @@ module.exports = function (eleventyConfig) {
 
 	// This allows Eleventy to watch for file changes during local development.
 	eleventyConfig.setUseGitIgnore(false);
+	eleventyConfig.addNunjucksAsyncShortcode('iconsprite', iconsprite)
 
 	return {
 		dir: {

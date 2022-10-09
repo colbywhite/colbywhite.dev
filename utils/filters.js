@@ -20,5 +20,6 @@ module.exports = {
 		const mimeType = mime.getType(asset)
 		const buffer = Buffer.from(fs.readFileSync(filepath))
 		return `data:${mimeType};base64,${buffer.toString('base64')}`
-	}
+	},
+	lowercase: string => string.toLowerCase()
 }

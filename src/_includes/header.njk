@@ -6,12 +6,27 @@
       Software Engineer &middot; Technical Consultant
     </p>
     <p>
+      {% icon "location" %}
       {{ resume.basics.location.city }}, {{ resume.basics.location.region }}
     </p>
     <p>
       <a aria-label="Website" target='_blank' href="{{ resume.basics.url }}">
         {% icon "laptop" %}
         <span>{{ resume.basics.url | stripProtocol }}</span>
+      </a>
+      {% for profile in resume.basics.profiles %}
+        <a aria-label="{{ profile.network }} profile" target='_blank' href="{{ profile.url }}">
+          {% icon profile.network | lowercase %}
+          <span>{{ profile.username }}</span>
+        </a>
+      {% endfor %}
+      <a aria-label="Resume in PDF format" class="print:hidden" target='_blank' href="/resume.pdf">
+        {% icon "pdf" %}
+        <span>PDF resume</span>
+      </a>
+      <a aria-label="Resume in web format" class="hidden print:inline" target='_blank' href="{{ site.url }}">
+        {% icon "web" %}
+        <span>Web resume</span>
       </a>
     </p>
   </div>
