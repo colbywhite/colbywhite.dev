@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
 	// Folders to copy to build dir (See. 1.1)
 	eleventyConfig.addPassthroughCopy("src/static");
 	eleventyConfig.addPassthroughCopy("src/resume.pdf");
+	eleventyConfig.addPassthroughCopy("src/covers/*.pdf");
 	eleventyConfig.addPassthroughCopy({"src/_assets": "assets"});
 
 	// Filters
