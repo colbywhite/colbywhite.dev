@@ -70,3 +70,6 @@ dist
 src/static/main.min.js
 src/static/styles.min.css
 src/_includes/styles.min.css
+
+# Ignore cover letters
+covers

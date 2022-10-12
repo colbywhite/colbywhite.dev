@@ -24,6 +24,11 @@ module.exports = function (eleventyConfig) {
 		eleventyConfig.addShortcode(shortcodeName, shortcodes[shortcodeName])
 	})
 
+	// Layouts
+	eleventyConfig.addLayoutAlias('base', 'base.njk')
+	eleventyConfig.addLayoutAlias('resume', 'resume.njk')
+	eleventyConfig.addLayoutAlias('cover', 'cover.njk')
+
 	// This allows Eleventy to watch for file changes during local development.
 	eleventyConfig.setUseGitIgnore(false);
 	eleventyConfig.addNunjucksAsyncShortcode('iconsprite', iconsprite)

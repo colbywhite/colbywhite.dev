@@ -77,6 +77,10 @@ img.avatar {
 		display: grid;
 		grid-template-columns: 150px auto;
 	}
+
+	p {
+		@apply mt-4
+	}
 }
 
 @media not print {
