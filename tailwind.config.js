@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss/types/generated/default-theme').DefaultTheme} */
-const defaultTheme = require('tailwindcss/defaultTheme')
+const defaultTheme = require("tailwindcss/defaultTheme");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,14 +7,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Segoe UI', 'Inter', ...defaultTheme.fontFamily.sans],
-        serif: ['Butler', ...defaultTheme.fontFamily.serif]
+        sans: ["Segoe UI", "Inter", ...defaultTheme.fontFamily.sans],
+        serif: ["Butler", ...defaultTheme.fontFamily.serif],
       },
     },
   },
-  plugins: [require('tailwindcss-print-styles')],
+  plugins: [
+    require("tailwindcss-print-styles"),
+    require("@tailwindcss/typography"),
+  ],
   variants: {
-    margin: ['print'],
-    display: ['print']
-  }
+    margin: ["print"],
+    display: ["print"],
+  },
 };
