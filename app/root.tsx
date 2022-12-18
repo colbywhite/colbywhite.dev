@@ -1,5 +1,4 @@
-import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -8,8 +7,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "@remix-run/react";
-
 import tailwindStylesheetUrl from "./styles/tailwind.css";
+import Header from "~/components/Header";
+import Footer from "./components/Footer";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
@@ -28,8 +28,10 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body className="mx-auto flex h-full min-h-screen w-full flex-col gap-2 bg-slate-50 prose-headings:font-bold prose-h1:prose-xl prose-h2:prose-lg md:h-5/6 md:w-5/6">
+        <Header />
         <Outlet />
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
