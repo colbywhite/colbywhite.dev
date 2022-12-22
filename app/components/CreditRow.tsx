@@ -16,7 +16,7 @@ export default function CreditRow({
         return (
           <li key={name}>
             <GrayscaleLink href={url} target="_blank">
-              <img className="h-4 w-4" src={iconUrl} alt={name} />
+              <img className="my-1.5 h-4 w-4" src={iconUrl} alt={name} />
             </GrayscaleLink>
           </li>
         );

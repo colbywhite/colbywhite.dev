@@ -9,6 +9,7 @@ import {
 } from "@remix-run/react";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import Header from "~/components/Header";
+import type { NavItemProps } from "~/components/Header";
 import Footer from "./components/Footer";
 
 export const links: LinksFunction = () => {
@@ -21,6 +22,14 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
+const NAV: NavItemProps[] = [
+  // { path: "/", name: "Home" }, // shows last 10 writings, readings
+  // { path: "/about", name: "About" }, // shows resume
+  // { path: "/writings", name: "Writings" },
+  // { path: "/readings", name: "Readings" },
+  // { path: "/tools", name: "Cool Tools" },
+];
+
 export default function App() {
   return (
     <html lang="en" className="h-full">
@@ -28,10 +37,13 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen w-11/12 md:w-5/6 mx-auto flex flex-col gap-2 bg-slate-50 prose-headings:font-bold prose-h1:prose-xl prose-h2:prose-lg">
-        <Header className="mx-auto w-full border-gray-700"/>
+      <body className="mx-auto flex min-h-screen w-11/12 flex-col gap-2 bg-secondary-50 md:w-5/6 lg:w-3/6">
+        <Header
+          className="mx-auto w-full border-primary-700 print:hidden"
+          nav={NAV}
+        />
         <Outlet />
-        <Footer className="mx-auto w-full border-gray-700" />
+        <Footer className="mx-auto w-full border-primary-700 print:hidden" />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

@@ -9,17 +9,17 @@ export default function Footer({
   return (
     <footer
       className={classNames(
-        "mt-2 flex flex-row justify-between gap-2 border-t-2 px-1 pt-2 text-center",
+        "mt-2 flex flex-row justify-between gap-2 border-t-2 px-1 pt-2",
         className
       )}
       {...footerProps}
     >
       <div>
-        <p className="prose prose-sm max-w-none">Built by</p>
-        <p className="prose prose-sm max-w-none font-bold">Colby M. White</p>
+        <p className="text-center">Built by</p>
+        <p className="font-bold">Colby M. White</p>
       </div>
       <div>
-        <p className="prose prose-sm max-w-none">Built with</p>
+        <p className="text-center">Built with</p>
         <CreditRow
           credits={{
             Remix: {

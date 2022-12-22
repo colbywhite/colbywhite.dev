@@ -10,7 +10,7 @@
     "dev:css": "yarn generate:css --watch",
     "dev:remix": "remix dev",
     "format": "prettier --write .",
-    "generate:css": "tailwindcss -o ./app/styles/tailwind.css",
+    "generate:css": "tailwindcss -o ./app/styles/tailwind.css -i ./app/styles/style.css",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve build",
     "test": "vitest",
