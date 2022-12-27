@@ -45,3 +45,22 @@ export function useMatchesData(
 export function validateEmail(email: unknown): email is string {
   return typeof email === "string" && email.length > 3 && email.includes("@");
 }
+
+/**
+ * This is a shortcut for creating application/pdf responses. Sets the Content-Type header and the Content-Disposition header if a filename is given.
+ * @param content the PDF content.
+ * @param filename the resulting filename the user should download. A '.pdf' ending is added if not provided.
+ */
+export function pdf(
+  content: Blob | Buffer | ArrayBuffer | ReadableStream<Uint8Array>,
+  filename?: string
+) {
+  const headers = new Headers({ "Content-Type": "application/pdf" });
+  if (filename) {
+    const pdfFilename = filename.endsWith(".pdf")
+      ? filename
+      : `${filename}.pdf`;
+    headers.set("Content-Disposition", `attachment; filename="${pdfFilename}"`);
+  }
+  return new Response(content, { headers });
+}

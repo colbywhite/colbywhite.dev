@@ -1,28 +1,22 @@
-import puppeteer from "puppeteer";
+const GOTENBERG_DEMO_URL =
+  "https://demo.gotenberg.dev/forms/chromium/convert/url";
 
-export async function buildPdf(origin: string) {
-  const browser = await puppeteer.launch();
-  console.log("launched", origin);
-  const page = await browser.newPage();
-  console.log("newPage");
-  const response = await page.goto(origin, {
-    waitUntil: ["domcontentloaded", "load", "networkidle0", "networkidle2"],
+/**
+ * Uses gotenberg's free demo to convert an url to a PDF.
+ * The demo has known limitations.
+ * @see {@link https://gotenberg.dev/docs/get-started/live-demo} for more info.
+ */
+export async function convertUrlToPdf(url: URL) {
+  const formData = new FormData();
+  formData.set("url", url.toString());
+  const response = await fetch(GOTENBERG_DEMO_URL, {
+    method: "POST",
+    body: formData,
   });
-  console.log("goto");
-  if (response === null) {
-    console.error("null response!");
-  } else if (!response.ok()) {
-    console.error("bad response", response.statusText());
+  if (!response.ok) {
+    throw new Error(`Received error from gotenberg: ${response.statusText}`);
+  } else if (response.body === null) {
+    throw new Error("No response from gotenberg.");
   }
-  console.log("creating pdf");
-  const contents = await page.pdf({
-    margin: {
-      top: 10,
-      bottom: 10,
-    },
-    landscape: false,
-    format: "a4",
-  });
-  console.log("created pdf");
-  return contents;
+  return response.body;
 }
