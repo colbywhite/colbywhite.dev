@@ -1,13 +1,10 @@
-export interface School {
-  institution: string;
-  url: string;
-  area: string;
-  studyType: string;
-  startDate: string;
-  endDate: string;
-}
+import type { Resume } from "./resume.type";
 
-export default function SchoolComponent({ school }: { school: School }) {
+export default function SchoolComponent({
+  school,
+}: {
+  school: Resume["education"][number];
+}) {
   return (
     <>
       <h2 className="m-0 font-normal">

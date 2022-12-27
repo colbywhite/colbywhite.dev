@@ -1,7 +1,7 @@
-import type { IconComponent } from '~/components/icons'
-import { Icon } from '~/components/icons'
-import type { PropsWithChildren } from 'react'
-import classNames from 'classnames'
+import type { IconComponent } from "~/components/icons";
+import { Icon } from "~/components/icons";
+import type { PropsWithChildren } from "react";
+import classNames from "classnames";
 
 function RowDivWrapper({
   children,

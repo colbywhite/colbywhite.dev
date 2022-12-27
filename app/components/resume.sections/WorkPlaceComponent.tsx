@@ -1,17 +1,9 @@
-export interface WorkEntry {
-  name: string;
-  startDate: string;
-  endDate?: string;
-  position: string;
-  location?: string;
-  url?: string;
-  highlights: string[];
-}
+import type { Resume } from "./resume.type";
 
 export default function WorkPlaceComponent({
   workEntry,
 }: {
-  workEntry: WorkEntry;
+  workEntry: Resume["work"][number];
 }) {
   return (
     <>

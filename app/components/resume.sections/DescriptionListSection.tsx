@@ -1,4 +1,4 @@
-import { Fragment, ReactNode } from "react";
+import type { ReactNode } from 'react'
 
 export default function DescriptionListSection<T>({
   title,
@@ -12,14 +12,14 @@ export default function DescriptionListSection<T>({
   details: (item: T) => ReactNode;
 }) {
   return (
-    <section className="print:break-inside-avoid-page">
+    <section>
       <h1>{title}</h1>
       <dl>
         {items.map((item, i) => (
-          <Fragment key={i}>
+          <div className="print:break-inside-avoid-page" key={i}>
             <dt>{term(item)}</dt>
             <dd>{details(item)}</dd>
-          </Fragment>
+          </div>
         ))}
       </dl>
     </section>

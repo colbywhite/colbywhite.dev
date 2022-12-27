@@ -3,24 +3,12 @@ import avatarUrl from "./avatar.png";
 import { Link } from "@remix-run/react";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
 import type { Item } from "~/components/resume.sections/IconDescriptionList";
-
-interface Info {
-  name: string;
-  label: string;
-  summary: string;
-  url: string;
-  location: {
-    countryCode: string;
-    region: string;
-    city: string;
-  };
-  profiles: Array<{ network: string; username: string; url: string }>;
-}
+import type { Resume } from "~/components/resume.sections/resume.type";
 
 export default function AboutSection({
   info: { summary, name, location, profiles, url },
 }: {
-  info: Info;
+  info: Resume["basics"];
 }) {
   const profileItems: Item[] = profiles.map(({ network, username, url }) => ({
     name: `${network} Logo`,
