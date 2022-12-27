@@ -3,9 +3,5 @@ node_modules
 /build
 /public/build
 .env
-yarn-error.log
 
 /app/styles/tailwind.css
-
-src/covers
-.netlify/
