@@ -38,33 +38,32 @@ function formatDate(date: Date) {
     day: "numeric",
   }).format(date);
 }
+
 export default function Index() {
   const { recentlyRead } = useLoaderData<typeof loader>();
   return (
     <main>
-      <section>
-        <header className="prose">
-          <h1>Recently read</h1>
-          <p className="prose-sm italic">
-            A list of articles I've recently read.
-          </p>
+      <section className="prose">
+        <header>
+          <h1 className="mb-0.5">Recently read</h1>
+          <h5 className="italic">A list of articles I've recently read</h5>
         </header>
-          <ul>
-            {recentlyRead.map(({ author, publishDate, title, url }) => (
-              <li key={url}>
-                <a href={url} className="link-primary link hover:no-underline">
-                  {title}
-                </a>
-                <br />
-                <span className="prose-sm italic">
-                  {author} &ndash;{" "}
-                  <time dateTime={publishDate}>
-                    {formatDate(new Date(publishDate))}
-                  </time>
-                </span>
-              </li>
-            ))}
-          </ul>
+        <ul>
+          {recentlyRead.map(({ author, publishDate, title, url }) => (
+            <li key={url}>
+              <a href={url} className="link-primary link hover:no-underline">
+                {title}
+              </a>
+              <br />
+              <span className="prose-sm italic">
+                {author} &ndash;{" "}
+                <time dateTime={publishDate}>
+                  {formatDate(new Date(publishDate))}
+                </time>
+              </span>
+            </li>
+          ))}
+        </ul>
       </section>
     </main>
   );
