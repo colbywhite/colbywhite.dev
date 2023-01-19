@@ -3,7 +3,7 @@ import { json } from "@remix-run/server-runtime";
 import avatarUrl from "~/components/resume.sections/avatar.png";
 import { useLoaderData } from "@remix-run/react";
 import Resume from "~/components/resume.sections/Resume";
-import type { Resume as ResumeType } from "~/components/resume.sections/resume.type";
+import type { ResumeSchema as ResumeType } from "~/components/resume.sections/resume.type";
 import type { LinksFunction } from "@remix-run/node";
 
 export function loader() {

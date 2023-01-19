@@ -45,6 +45,7 @@ export default function Header({
           <ul className="mx-auto flex flex-row justify-center gap-2">
             {nav.map(({ path, name }) => (
               <NavItem
+                key={name}
                 currentPath={currentRoute.pathname}
                 name={name}
                 target={path}

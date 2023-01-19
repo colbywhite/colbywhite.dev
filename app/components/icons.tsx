@@ -11,7 +11,7 @@ export type IconComponent = ReturnType<
 >;
 
 export const GitHubLogoIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = "currentColor", ...props }, forwardedRef) => {
+  function GitHubLogoIcon({ color = "currentColor", ...props }, forwardedRef) {
     return (
       <svg
         width="15"
@@ -34,7 +34,10 @@ export const GitHubLogoIcon = forwardRef<SVGSVGElement, IconProps>(
 );
 
 export const LinkedInLogoIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = "currentColor", ...props }, forwardedRef) => {
+  function LinkedInLogoIcon(
+    { color = "currentColor", ...props },
+    forwardedRef
+  ) {
     return (
       <svg
         width="15"
@@ -56,29 +59,30 @@ export const LinkedInLogoIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 );
 
-export const MapIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = "currentColor", ...props }, forwardedRef) => {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        width="16"
-        height="16"
-        {...props}
-        ref={forwardedRef}
-      >
-        <path fill="none" d="M0 0h24v24H0z" />
-        <path
-          fill={color}
-          d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
-        />
-      </svg>
-    );
-  }
-);
+export const MapIcon = forwardRef<SVGSVGElement, IconProps>(function MapIcon(
+  { color = "currentColor", ...props },
+  forwardedRef
+) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="16"
+      height="16"
+      {...props}
+      ref={forwardedRef}
+    >
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path
+        fill={color}
+        d="M18.364 17.364L12 23.728l-6.364-6.364a9 9 0 1 1 12.728 0zM12 13a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+      />
+    </svg>
+  );
+});
 
 export const WebsiteIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = "currentColor", ...props }, forwardRef) => {
+  function WebsiteIcon({ color = "currentColor", ...props }, forwardRef) {
     return (
       <svg
         width="24"
@@ -118,24 +122,25 @@ export const WebsiteIcon = forwardRef<SVGSVGElement, IconProps>(
   }
 );
 
-export const PDFIcon = forwardRef<SVGSVGElement, IconProps>(
-  ({ color = "currentColor", ...props }, forwardRef) => {
-    return (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        height="24"
-        viewBox="0 0 24 24"
-        width="24"
-        fill={color}
-        {...props}
-        ref={forwardRef}
-      >
-        <path d="M0 0h24v24H0z" fill="none" />
-        <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z" />
-      </svg>
-    );
-  }
-);
+export const PDFIcon = forwardRef<SVGSVGElement, IconProps>(function PDFIcon(
+  { color = "currentColor", ...props },
+  forwardRef
+) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 0 24 24"
+      width="24"
+      fill={color}
+      {...props}
+      ref={forwardRef}
+    >
+      <path d="M0 0h24v24H0z" fill="none" />
+      <path d="M20 2H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-8.5 7.5c0 .83-.67 1.5-1.5 1.5H9v2H7.5V7H10c.83 0 1.5.67 1.5 1.5v1zm5 2c0 .83-.67 1.5-1.5 1.5h-2.5V7H15c.83 0 1.5.67 1.5 1.5v3zm4-3H19v1h1.5V11H19v2h-1.5V7h3v1.5zM9 9.5h1v-1H9v1zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm10 5.5h1v-3h-1v3z" />
+    </svg>
+  );
+});
 
 const SUPPORTED_ICONS = {
   linkedin: LinkedInLogoIcon,
@@ -151,14 +156,15 @@ function isIconSupported(val: string): val is SUPPORTED_ICON_NAME {
   return Object.keys(SUPPORTED_ICONS).includes(val);
 }
 
-export const Icon = forwardRef<SVGSVGElement, IconProps>(
-  ({ name, ...props }, forwardedRef) => {
-    const lowercaseName = name?.toLowerCase();
-    if (lowercaseName === undefined || !isIconSupported(lowercaseName)) {
-      return <svg {...props} ref={forwardedRef}></svg>;
-    } else {
-      const SupportedIcon = SUPPORTED_ICONS[lowercaseName];
-      return <SupportedIcon {...props} ref={forwardedRef} />;
-    }
+export const Icon = forwardRef<SVGSVGElement, IconProps>(function Icon(
+  { name, ...props },
+  forwardedRef
+) {
+  const lowercaseName = name?.toLowerCase();
+  if (lowercaseName === undefined || !isIconSupported(lowercaseName)) {
+    return <svg {...props} ref={forwardedRef}></svg>;
+  } else {
+    const SupportedIcon = SUPPORTED_ICONS[lowercaseName];
+    return <SupportedIcon {...props} ref={forwardedRef} />;
   }
-);
+});

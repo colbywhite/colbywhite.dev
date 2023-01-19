@@ -3,18 +3,18 @@ import avatarUrl from "./avatar.png";
 import { Link } from "@remix-run/react";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
 import type { Item } from "~/components/resume.sections/IconDescriptionList";
-import type { Resume } from "~/components/resume.sections/resume.type";
+import type { ResumeSchema } from "~/components/resume.sections/resume.type";
 
 export default function AboutSection({
   info: { summary, name, location, profiles, url },
 }: {
-  info: Resume["basics"];
+  info: ResumeSchema["basics"];
 }) {
   const profileItems: Item[] = profiles.map(({ network, username, url }) => ({
     name: `${network} Logo`,
     icon: network,
     description: (
-      <a aria-label={network} href={url} target="_blank">
+      <a aria-label={network} href={url}>
         {username}
       </a>
     ),
@@ -55,7 +55,7 @@ export default function AboutSection({
     <section>
       <img
         className="float-right ml-3 mb-3 h-[124px] w-[100px] rounded-full border-4 border-primary-700 md:h-[186px] md:w-[150px]"
-        alt={`${name} picture`}
+        alt={name}
         src={avatarUrl}
       />
       <h1>{name}</h1>

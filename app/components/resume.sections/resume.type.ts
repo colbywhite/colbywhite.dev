@@ -1,5 +1,5 @@
 // TODO use json-schema-to-typescript to pull this from https://github.com/jsonresume/resume-schema/blob/master/schema.json
-export interface Resume {
+export interface ResumeSchema {
   meta: {
     theme: string;
     updatedAt: string;

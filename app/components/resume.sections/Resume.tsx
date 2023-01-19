@@ -3,7 +3,7 @@ import DescriptionListSection from "~/components/resume.sections/DescriptionList
 import TimelineSection from "~/components/resume.sections/TimelineSection";
 import WorkPlaceComponent from "~/components/resume.sections/WorkPlaceComponent";
 import SchoolComponent from "~/components/resume.sections/SchoolComponent";
-import type { Resume } from "./resume.type";
+import type { ResumeSchema } from "./resume.type";
 
 const YEAR_DISPLAY_FORMAT: Intl.DateTimeFormatOptions = {
   year: "numeric",
@@ -13,13 +13,13 @@ const MONTH_DISPLAY_FORMAT: Intl.DateTimeFormatOptions = {
   month: "short",
 };
 
-export default function Resume({ resume }: { resume: Resume }) {
-  const workEntryToDateRange = (workEntry: Resume["work"][number]) => ({
+export default function Resume({ resume }: { resume: ResumeSchema }) {
+  const workEntryToDateRange = (workEntry: ResumeSchema["work"][number]) => ({
     start: workEntry.startDate,
     end: workEntry.endDate,
     displayFormat: MONTH_DISPLAY_FORMAT,
   });
-  const schoolToDateRange = (school: Resume["education"][number]) => ({
+  const schoolToDateRange = (school: ResumeSchema["education"][number]) => ({
     start: school.startDate,
     end: school.endDate,
     displayFormat: YEAR_DISPLAY_FORMAT,

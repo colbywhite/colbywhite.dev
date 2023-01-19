@@ -1,9 +1,9 @@
-import type { Resume } from "./resume.type";
+import type { ResumeSchema } from "./resume.type";
 
 export default function WorkPlaceComponent({
   workEntry,
 }: {
-  workEntry: Resume["work"][number];
+  workEntry: ResumeSchema["work"][number];
 }) {
   return (
     <>

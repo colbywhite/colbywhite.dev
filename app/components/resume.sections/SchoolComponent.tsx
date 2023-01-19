@@ -1,9 +1,9 @@
-import type { Resume } from "./resume.type";
+import type { ResumeSchema } from "./resume.type";
 
 export default function SchoolComponent({
   school,
 }: {
-  school: Resume["education"][number];
+  school: ResumeSchema["education"][number];
 }) {
   return (
     <>
