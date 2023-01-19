@@ -22,10 +22,7 @@ function IconTerm({
 }: { icon: IconComponent | string } & JSX.IntrinsicElements["dt"]) {
   return (
     <dt
-      className={classNames(
-        "flex flex-col justify-center text-primary-700",
-        className
-      )}
+      className={classNames("flex flex-col justify-center", className)}
       {...props}
     >
       {typeof GivenIcon === "string" ? (

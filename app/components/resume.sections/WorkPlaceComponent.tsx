@@ -7,11 +7,11 @@ export default function WorkPlaceComponent({
 }) {
   return (
     <>
-      <h2 className="m-0 font-normal">{workEntry.position}</h2>
+      <h2 className="m-0">{workEntry.position}</h2>
       <h3 className="font-normal">
         {workEntry.url ? (
           <a
-            className="prose-lg font-normal"
+            className="link-primary link hover:no-underline"
             href={workEntry.url}
             target="_blank"
             rel="noopener noreferrer"
@@ -30,7 +30,7 @@ export default function WorkPlaceComponent({
           </>
         )}
       </h3>
-      <ul className="flex list-disc flex-col gap-0.5 pl-4">
+      <ul className="">
         {workEntry.highlights.map((highlight, i) => (
           <li key={i} className="m-0">
             {highlight}

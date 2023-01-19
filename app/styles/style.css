@@ -2,61 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
-h1,
-h2,
-h3,
-h4,
-p,
-li,
-a,
-dt,
-dd {
-  @apply prose max-w-none;
-}
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*h4,*/
+/*p,*/
+/*li,*/
+/*a,*/
+/*dt,*/
+/*dd {*/
+/*  @apply prose max-w-none;*/
+/*}*/
 
-p,
-dd {
-  @apply mb-1 text-justify md:mb-3;
-}
+/*p,*/
+/*dd {*/
+/*  @apply mb-1 text-justify md:mb-3;*/
+/*}*/
 
-/* headings */
-h1,
-h2,
-h3,
-h4,
-dt {
-  @apply font-bold;
-}
+/*!* headings *!*/
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*h4,*/
+/*dt {*/
+/*  @apply font-bold;*/
+/*}*/
 
-h1 {
-  @apply prose-2xl mb-4 text-primary-700 md:mb-6;
-}
+/*h1 {*/
+/*  @apply prose-2xl mb-4 text-primary md:mb-6;*/
+/*}*/
 
-h2 {
-  @apply prose-xl mb-3.5 md:mb-5;
-}
+/*h2 {*/
+/*  @apply prose-xl mb-3.5 md:mb-5;*/
+/*}*/
 
-h3 {
-  @apply prose-lg mb-3 md:mb-4;
-}
+/*h3 {*/
+/*  @apply prose-lg mb-3 md:mb-4;*/
+/*}*/
 
-h4,
-dt {
-  @apply mb-2.5 md:mb-3.5;
-}
+/*h4,*/
+/*dt {*/
+/*  @apply mb-2.5 md:mb-3.5;*/
+/*}*/
 
-footer p,
-footer li {
-  @apply prose-sm mb-1 max-w-none;
-}
+/*footer p,*/
+/*footer li {*/
+/*  @apply prose-sm mb-1 max-w-none;*/
+/*}*/
 
-/* links */
-a,
-dl a {
-  @apply underline;
-}
+/*!* links *!*/
+/*a,*/
+/*dl a {*/
+/*  @apply underline;*/
+/*}*/
 
-a:hover,
-dl a:hover {
-  @apply text-primary-700 no-underline;
-}
+/*a:hover,*/
+/*dl a:hover {*/
+/*  @apply text-primary no-underline;*/
+/*}*/

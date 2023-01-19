@@ -14,7 +14,11 @@ export default function AboutSection({
     name: `${network} Logo`,
     icon: network,
     description: (
-      <a aria-label={network} href={url}>
+      <a
+        aria-label={network}
+        href={url}
+        className="link-primary link hover:no-underline"
+      >
         {username}
       </a>
     ),
@@ -34,7 +38,11 @@ export default function AboutSection({
       icon: WebsiteIcon,
       className: "hidden print:flex",
       description: (
-        <a aria-label="Colby White's website" href={url}>
+        <a
+          aria-label="Colby White's website"
+          className="link-primary link hover:no-underline"
+          href={url}
+        >
           {new URL(url).host}
         </a>
       ),
@@ -44,7 +52,12 @@ export default function AboutSection({
       icon: PDFIcon,
       className: "print:hidden",
       description: (
-        <Link to="resume" aria-label="Colby White's PDF resume" reloadDocument>
+        <Link
+          to="/resume"
+          className="link-primary link hover:no-underline"
+          aria-label="Colby White's PDF resume"
+          reloadDocument
+        >
           r&eacute;sum&eacute;
         </Link>
       ),
@@ -52,9 +65,9 @@ export default function AboutSection({
     ...profileItems,
   ];
   return (
-    <section>
+    <section className="prose">
       <img
-        className="float-right ml-3 mb-3 h-[124px] w-[100px] rounded-full border-4 border-primary-700 md:h-[186px] md:w-[150px]"
+        className="float-right ml-3 mb-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
         alt={name}
         src={avatarUrl}
       />

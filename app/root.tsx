@@ -34,8 +34,8 @@ export const meta: MetaFunction = () => ({
 });
 
 const NAV: NavItemProps[] = [
-  // { path: "/", name: "Home" }, // shows last 10 writings, readings
-  // { path: "/about", name: "About" }, // shows resume
+  { path: "/", name: "Home" }, // shows last 10 writings, readings
+  { path: "/about", name: "About" }, // shows resume
   // { path: "/writings", name: "Writings" },
   // { path: "/readings", name: "Readings" },
   // { path: "/tools", name: "Cool Tools" },
@@ -68,13 +68,13 @@ export default function App() {
           }}
         />
       </head>
-      <body className="mx-auto flex min-h-screen w-11/12 flex-col gap-2 bg-secondary-50 md:w-5/6 lg:w-3/6">
+      <body className="mx-auto flex min-h-screen w-11/12 flex-col gap-4 md:w-5/6 lg:w-3/6">
         <Header
-          className="mx-auto w-full border-primary-700 print:hidden"
+          className="mx-auto w-full border-primary print:hidden"
           nav={NAV}
         />
         <Outlet />
-        <Footer className="mx-auto w-full border-primary-700 print:hidden" />
+        <Footer className="mx-auto w-full border-primary print:hidden" />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

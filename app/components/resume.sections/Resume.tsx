@@ -44,16 +44,18 @@ export default function Resume({ resume }: { resume: ResumeSchema }) {
       <DescriptionListSection
         items={resume.skills}
         title="Skills"
-        term={({ name }) => name}
+        term={({ name }) => <h4>{name}</h4>}
         details={({ keywords }) => keywords.join(", ")}
       />
       <DescriptionListSection
         items={resume.projects}
         title="Projects"
         term={({ name, url }) => (
-          <a className="font-bold" href={url}>
-            {name}
-          </a>
+          <h4>
+            <a className="link-primary link hover:no-underline" href={url}>
+              {name}
+            </a>
+          </h4>
         )}
         details={({ description }) => description}
       />

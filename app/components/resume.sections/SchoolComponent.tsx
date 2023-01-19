@@ -7,15 +7,15 @@ export default function SchoolComponent({
 }) {
   return (
     <>
-      <h2 className="m-0 font-normal">
+      <h2 className="m-0">
         {school.area}
         &nbsp; <span aria-hidden="true">&middot;</span> &nbsp;
         {school.studyType}
       </h2>
-      <h3 className="font-normal">
+      <h3>
         {school.url ? (
           <a
-            className="prose-lg font-normal"
+            className="link-primary link hover:no-underline"
             href={school.url}
             target="_blank"
             rel="noopener noreferrer"

@@ -12,7 +12,7 @@ export default function DescriptionListSection<T>({
   details: (item: T) => ReactNode;
 }) {
   return (
-    <section>
+    <section className="prose">
       <h1>{title}</h1>
       <dl>
         {items.map((item, i) => (

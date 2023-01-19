@@ -15,11 +15,18 @@ export default function Footer({
       {...footerProps}
     >
       <div>
-        <p className="text-center">Built by</p>
-        <p className="font-bold">Colby M. White</p>
+        <p className="prose-sm text-center">Built by</p>
+        <p>
+          <a
+            href="https://github.com/colbywhite"
+            className="prose-sm link-primary link hover:no-underline"
+          >
+            Colby M. White
+          </a>
+        </p>
       </div>
       <div>
-        <p className="text-center">Built with</p>
+        <p className="prose-sm text-center">Built with</p>
         <CreditRow
           credits={{
             Remix: {
