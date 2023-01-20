@@ -9,6 +9,7 @@ const GOTENBERG_DEMO_URL =
 export async function convertUrlToPdf(url: URL) {
   const formData = new FormData();
   formData.set("url", url.toString());
+  formData.set("extraHttpHeaders", JSON.stringify({ "X-theme": "light" }));
   const response = await fetch(GOTENBERG_DEMO_URL, {
     method: "POST",
     body: formData,

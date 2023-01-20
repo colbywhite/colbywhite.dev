@@ -1,4 +1,5 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -6,6 +7,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import Header from "~/components/Header";
@@ -55,9 +57,15 @@ const STRUCTURED_DATA = {
   "@context": "https://schema.org",
 };
 
+export function loader({ request }: LoaderArgs) {
+  const theme = request.headers.get("X-theme");
+  return json({ theme });
+}
+
 export default function App() {
+  const { theme } = useLoaderData<typeof loader>();
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full" data-theme={theme}>
       <head>
         <Meta />
         <Links />
@@ -68,7 +76,7 @@ export default function App() {
           }}
         />
       </head>
-      <body className="mx-auto flex min-h-screen w-11/12 flex-col gap-4 md:w-5/6 lg:w-3/6">
+      <body className="mx-auto flex min-h-screen w-11/12 flex-col gap-4 print:bg-base-100 md:w-5/6 lg:w-3/6">
         <Header
           className="mx-auto w-full border-primary print:hidden"
           nav={NAV}
