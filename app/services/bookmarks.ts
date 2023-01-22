@@ -14,8 +14,8 @@ interface RainDropResponse {
 // This is the collection on raindrop.io that contains the public bookmarks.
 const PUBLIC_COLLECTION_ID = 30789544;
 const RAINDROP_DOMAIN = "https://api.raindrop.io";
-const BOOKMARK_URL = new URL(
-  `/rest/v1/raindrops/${PUBLIC_COLLECTION_ID}`,
+const LAST_TEN_BOOKMARKS_URL = new URL(
+  `/rest/v1/raindrops/${PUBLIC_COLLECTION_ID}?perpage=10&sort=-created`,
   RAINDROP_DOMAIN
 );
 
@@ -26,7 +26,7 @@ export async function getRecentBookmarks() {
     "Missing RAINDROP_TOKEN env variable."
   );
   const headers = new Headers({ Authorization: `Bearer ${RAINDROP_TOKEN}` });
-  return fetch(BOOKMARK_URL, { headers })
+  return fetch(LAST_TEN_BOOKMARKS_URL, { headers })
     .then((response) => {
       if (!response.ok) {
         throw new Error(
