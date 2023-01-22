@@ -1,69 +1,42 @@
 import { json } from "@remix-run/server-runtime";
 import { useLoaderData } from "@remix-run/react";
+import { getRecentBookmarks } from "~/services/bookmarks";
 
-export function loader() {
-  const recentlyRead = [
-    {
-      url: "https://uptointerpretation.com/posts/the-next-browser-language/",
-      author: "Nicholas Yang",
-      publishDate: new Date("2022-12-27T01:04:56-05:00"),
-      title: "The Next Browser Language",
-    },
-    {
-      url: "https://lloydatkinson.net/posts/2022/one-teams-eight-points-is-another-teams-two-points/",
-      author: "Lloyd Atkinson",
-      publishDate: new Date("2022-03-29T14:23:56.000Z"),
-      title: "Eight Points for One Team Is Two Points for Another Team",
-    },
-    {
-      url: "https://calpaterson.com/blockchain.html",
-      author: "Cal Paterson",
-      publishDate: new Date("2022-08-11"),
-      title: "There aren't that many uses for blockchains",
-    },
-    {
-      url: "https://blog.jim-nielsen.com/2022/browsers-json-formdata/",
-      author: "Jim Nielsen",
-      publishDate: new Date("2022-11-09T19:00:00Z"),
-      title: "Browsers, JSON, and FormData",
-    },
-  ];
-  return json({ recentlyRead });
-}
-
-function formatDate(date: Date) {
-  return new Intl.DateTimeFormat("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  }).format(date);
+export async function loader() {
+  const recentBookmarks = await getRecentBookmarks().catch((err) => {
+    console.warn("Could not retrieve bookmarks.", err);
+    return [];
+  });
+  return json({ recentBookmarks });
 }
 
 export default function Index() {
-  const { recentlyRead } = useLoaderData<typeof loader>();
+  const { recentBookmarks } = useLoaderData<typeof loader>();
   return (
     <main>
       <section className="prose">
         <header>
           <h1 className="mb-0.5">Recently read</h1>
-          <h5 className="italic">A list of articles I've recently read</h5>
+          <h5 className="italic">
+            A list of articles I've recently read <br className="md:hidden" />
+            (powered by <a href="https://raindrop.io">raindrop</a>)
+          </h5>
         </header>
-        <ul>
-          {recentlyRead.map(({ author, publishDate, title, url }) => (
-            <li key={url}>
-              <a href={url} className="link-primary link hover:no-underline">
-                {title}
-              </a>
-              <br />
-              <span className="prose-sm italic">
-                {author} &ndash;{" "}
-                <time dateTime={publishDate}>
-                  {formatDate(new Date(publishDate))}
-                </time>
-              </span>
-            </li>
-          ))}
-        </ul>
+        {recentBookmarks.length <= 0 ? (
+          <p>No bookmarks found.</p>
+        ) : (
+          <ul>
+            {recentBookmarks.map(({ domain, _id, title, link }) => (
+              <li key={_id}>
+                <a href={link} className="link-primary link hover:no-underline">
+                  {title}
+                </a>{" "}
+                <br className="md:hidden" />
+                <span className="prose-sm italic">via {domain}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </section>
     </main>
   );
