@@ -29,9 +29,7 @@ export async function getRecentBookmarks() {
   return fetch(LAST_TEN_BOOKMARKS_URL, { headers })
     .then((response) => {
       if (!response.ok) {
-        throw new Error(
-          `Received error from raindrop: ${response.statusText}`
-        );
+        throw new Error(`Received error from raindrop: ${response.statusText}`);
       } else if (response.body === null) {
         throw new Error("No response from raindrop.");
       }

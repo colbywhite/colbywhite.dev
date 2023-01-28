@@ -16,11 +16,15 @@ export default function Index() {
     <main>
       <section className="prose">
         <header>
-          <h1 className="mb-0.5">Recently read</h1>
-          <h5 className="italic">
+          <h1 className="">Recently read</h1>
+          <p className="subtitle">
             A list of articles I've recently read <br className="md:hidden" />
-            (powered by <a href="https://raindrop.io">raindrop</a>)
-          </h5>
+            (powered by{" "}
+            <a href="https://raindrop.io" className="link-accent link">
+              raindrop
+            </a>
+            )
+          </p>
         </header>
         {recentBookmarks.length <= 0 ? (
           <p>No bookmarks found.</p>
@@ -28,7 +32,7 @@ export default function Index() {
           <ul>
             {recentBookmarks.map(({ domain, _id, title, link }) => (
               <li key={_id}>
-                <a href={link} className="link-primary link hover:no-underline">
+                <a href={link} className="link-secondary link">
                   {title}
                 </a>{" "}
                 <br className="md:hidden" />

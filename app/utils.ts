@@ -64,3 +64,9 @@ export function pdf(
   }
   return new Response(content, { headers });
 }
+
+export const PUBLISH_DATE_FORMATTER = new Intl.DateTimeFormat("en-US", {
+  month: "short",
+  day: "numeric",
+  year: "numeric",
+});

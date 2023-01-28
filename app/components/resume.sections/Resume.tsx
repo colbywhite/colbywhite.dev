@@ -52,7 +52,7 @@ export default function Resume({ resume }: { resume: ResumeSchema }) {
         title="Projects"
         term={({ name, url }) => (
           <h4>
-            <a className="link-primary link hover:no-underline" href={url}>
+            <a className="link-primary link" href={url}>
               {name}
             </a>
           </h4>

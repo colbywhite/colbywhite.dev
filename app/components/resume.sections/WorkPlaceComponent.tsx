@@ -11,7 +11,7 @@ export default function WorkPlaceComponent({
       <h3 className="font-normal">
         {workEntry.url ? (
           <a
-            className="link-primary link hover:no-underline"
+            className="link-primary link"
             href={workEntry.url}
             target="_blank"
             rel="noopener noreferrer"

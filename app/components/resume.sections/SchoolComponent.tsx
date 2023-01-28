@@ -15,7 +15,7 @@ export default function SchoolComponent({
       <h3>
         {school.url ? (
           <a
-            className="link-primary link hover:no-underline"
+            className="link-primary link"
             href={school.url}
             target="_blank"
             rel="noopener noreferrer"

@@ -2,61 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/*h1,*/
-/*h2,*/
-/*h3,*/
-/*h4,*/
-/*p,*/
-/*li,*/
-/*a,*/
-/*dt,*/
-/*dd {*/
-/*  @apply prose max-w-none;*/
-/*}*/
+@layer components {
+  .link {
+    @apply hover:no-underline;
+  }
 
-/*p,*/
-/*dd {*/
-/*  @apply mb-1 text-justify md:mb-3;*/
-/*}*/
-
-/*!* headings *!*/
-/*h1,*/
-/*h2,*/
-/*h3,*/
-/*h4,*/
-/*dt {*/
-/*  @apply font-bold;*/
-/*}*/
-
-/*h1 {*/
-/*  @apply prose-2xl mb-4 text-primary md:mb-6;*/
-/*}*/
-
-/*h2 {*/
-/*  @apply prose-xl mb-3.5 md:mb-5;*/
-/*}*/
-
-/*h3 {*/
-/*  @apply prose-lg mb-3 md:mb-4;*/
-/*}*/
-
-/*h4,*/
-/*dt {*/
-/*  @apply mb-2.5 md:mb-3.5;*/
-/*}*/
-
-/*footer p,*/
-/*footer li {*/
-/*  @apply prose-sm mb-1 max-w-none;*/
-/*}*/
-
-/*!* links *!*/
-/*a,*/
-/*dl a {*/
-/*  @apply underline;*/
-/*}*/
-
-/*a:hover,*/
-/*dl a:hover {*/
-/*  @apply text-primary no-underline;*/
-/*}*/
+  .subtitle {
+    @apply prose-sm -mt-4 font-bold italic text-accent;
+  }
+}

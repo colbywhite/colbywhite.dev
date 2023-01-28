@@ -14,11 +14,7 @@ export default function AboutSection({
     name: `${network} Logo`,
     icon: network,
     description: (
-      <a
-        aria-label={network}
-        href={url}
-        className="link-primary link hover:no-underline"
-      >
+      <a aria-label={network} href={url} className="link-primary link">
         {username}
       </a>
     ),
@@ -40,7 +36,7 @@ export default function AboutSection({
       description: (
         <a
           aria-label="Colby White's website"
-          className="link-primary link hover:no-underline"
+          className="link-primary link"
           href={url}
         >
           {new URL(url).host}
@@ -54,7 +50,7 @@ export default function AboutSection({
       description: (
         <Link
           to="/resume"
-          className="link-primary link hover:no-underline"
+          className="link-primary link"
           aria-label="Colby White's PDF resume"
           reloadDocument
         >

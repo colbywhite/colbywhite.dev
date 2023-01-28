@@ -37,11 +37,21 @@ export const meta: MetaFunction = () => ({
 
 const NAV: NavItemProps[] = [
   { path: "/", name: "Home" }, // shows last 10 writings, readings
+  { path: "/writings", name: "Writings" },
   { path: "/about", name: "About" }, // shows resume
-  // { path: "/writings", name: "Writings" },
   // { path: "/readings", name: "Readings" },
   // { path: "/tools", name: "Cool Tools" },
 ];
+
+/**
+ * AM src/posts/2021.08.08-weeknotes.md
+ * AM src/posts/2021.08.15-weeknotes.md
+ * AM src/posts/jamstack-identity-crisis.md
+ * AD src/posts/posts.json
+ * AM src/posts/quickly-spinning-up-websites.md
+ * A  src/posts/serverless-mocking.md
+ * AM src/posts/union-types-in-libs.md
+ */
 
 const STRUCTURED_DATA = {
   name: AUTHOR,
