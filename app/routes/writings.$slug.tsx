@@ -19,7 +19,7 @@ export default function BlogPost() {
   const {
     post: { code, frontmatter },
   } = useLoaderData<typeof loader>();
-  const Component = useMemo(() => getMDXComponent(code), []);
+  const Component = useMemo(() => getMDXComponent(code), [code]);
   return (
     <article className="prose">
       <h1>{frontmatter.title}</h1>

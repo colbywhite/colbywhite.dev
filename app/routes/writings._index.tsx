@@ -1,32 +1,13 @@
 import { Link, useLoaderData } from "@remix-run/react";
-import { json, LoaderArgs } from "@remix-run/node";
-import type { Mdx } from "~/services/writings";
+import { json } from "@remix-run/node";
+import type { LoaderArgs } from "@remix-run/node";
 import { getPosts } from "~/services/writings.db";
 import { PUBLISH_DATE_FORMATTER } from "~/utils";
 
-function isDefined(val: string | undefined): val is string {
-  return typeof val === "string";
-}
-
-function reverseSort(a: Mdx, b: Mdx) {
-  if (!isDefined(a.frontmatter.date) || !isDefined(b.frontmatter.date)) {
-    throw new Error("Missing dates");
-  }
-  const aDate = new Date(a.frontmatter.date);
-  const bDate = new Date(b.frontmatter.date);
-  return bDate.getTime() - aDate.getTime();
-}
-
 export async function loader({ request }: LoaderArgs) {
-  const cache = await getPosts(new URL(request.url).origin);
-  const sortedCache = cache
-    .filter(
-      ({ frontmatter }) =>
-        isDefined(frontmatter.date) && isDefined(frontmatter.title)
-    )
-    .sort(reverseSort);
+  const posts = await getPosts(new URL(request.url).origin);
   return json({
-    posts: sortedCache.map(({ slug, frontmatter }) => ({ slug, frontmatter })),
+    posts: posts.map(({ slug, frontmatter }) => ({ slug, frontmatter })),
   });
 }
 
