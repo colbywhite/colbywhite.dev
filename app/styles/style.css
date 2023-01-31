@@ -2,12 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a {
+    @apply link hover:no-underline;
+  }
+}
+
 @layer components {
-  .link {
-    @apply hover:no-underline;
+  .subtitle {
+    @apply prose-sm italic text-secondary;
   }
 
-  .subtitle {
-    @apply prose-sm -mt-4 font-bold italic text-accent;
+  h1 + .subtitle {
+    @apply -mt-4;
   }
 }

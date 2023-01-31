@@ -23,9 +23,7 @@ export default function BlogPostListing() {
           {posts.map(({ slug, frontmatter: { title, date } }) => (
             <li key={slug}>
               <article className="my-0">
-                <Link className="link-secondary link" to={slug}>
-                  {title || "Unknown"}
-                </Link>
+                <Link to={slug}>{title || "Unknown"}</Link>
                 {typeof date === "string" && (
                   <>
                     <span className="hidden md:inline"> - </span>

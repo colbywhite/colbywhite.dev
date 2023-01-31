@@ -20,7 +20,10 @@ function readMdxFile(filename: string) {
 }
 
 function isMarkdownFilename(filename: string | undefined) {
-  return filename !== undefined && (filename.endsWith("md") || filename.endsWith("mdx"));
+  return (
+    filename !== undefined &&
+    (filename.endsWith("md") || filename.endsWith("mdx"))
+  );
 }
 
 async function writePostCache() {
@@ -35,7 +38,7 @@ async function writePostCache() {
 
 (async () => {
   await writePostCache();
-  if (process.env.NODE_ENV !== "production") {
+  if (process.env.NODE_ENV === "development") {
     fs.watch(POST_DIR, (event, filename) => {
       if (isMarkdownFilename(filename)) {
         writePostCache();

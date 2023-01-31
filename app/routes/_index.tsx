@@ -1,5 +1,5 @@
 import { json } from "@remix-run/server-runtime";
-import { useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
 import { getRecentBookmarks } from "~/services/bookmarks";
 import { getRecentPost } from "~/services/writings.db";
 import type { LoaderArgs } from "@remix-run/node";
@@ -29,14 +29,9 @@ export default function Index() {
     <main>
       <section className="prose mb-8">
         <header>
-          <h1 className="">Recently read</h1>
+          <h1>Recent readings</h1>
           <p className="subtitle">
-            A list of articles I've recently read <br className="md:hidden" />
-            (powered by{" "}
-            <a href="https://raindrop.io" className="link-accent link">
-              raindrop
-            </a>
-            )
+            Articles I've recently read and bookmarked for later
           </p>
         </header>
         {recentBookmarks.length <= 0 ? (
@@ -45,10 +40,7 @@ export default function Index() {
           <ul>
             {recentBookmarks.map(({ domain, _id, title, link }) => (
               <li key={_id}>
-                <a href={link} className="link-secondary link">
-                  {title}
-                </a>{" "}
-                <br className="md:hidden" />
+                <a href={link}>{title}</a> <br className="md:hidden" />
                 <span className="prose-sm italic">via {domain}</span>
               </li>
             ))}
@@ -57,7 +49,8 @@ export default function Index() {
       </section>
       <section className="prose">
         <header>
-          <h1 className="">Recently written</h1>
+          <h1>Recent writings</h1>
+          <p className="subtitle">Notes and articles I've recently written</p>
         </header>
         {recentWritings.length <= 0 ? (
           <p>No writings found.</p>
@@ -65,9 +58,7 @@ export default function Index() {
           <ul>
             {recentWritings.map(({ frontmatter, slug }) => (
               <li key={slug}>
-                <a href={slug} className="link-secondary link">
-                  {frontmatter.title}
-                </a>{" "}
+                <Link to={`writings/${slug}`}>{frontmatter.title}</Link>{" "}
                 {typeof frontmatter.date === "string" && (
                   <>
                     <span className="hidden md:inline"> - </span>
@@ -84,6 +75,14 @@ export default function Index() {
             ))}
           </ul>
         )}
+        <footer>
+          <p className="subtitle">
+            View the{" "}
+            <Link to="writings" className="link-secondary">
+              full archive
+            </Link>
+          </p>
+        </footer>
       </section>
     </main>
   );

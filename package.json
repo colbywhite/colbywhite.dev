@@ -10,7 +10,7 @@
     "dev": "run-p dev:*",
     "dev:css": "yarn generate:css --watch",
     "dev:remix": "remix dev",
-    "dev:postCache": "cross-env NODE_ENV=dev ts-node scripts/buildPosts.ts",
+    "dev:postCache": "cross-env NODE_ENV=development ts-node scripts/buildPosts.ts",
     "format": "prettier --write .",
     "generate:css": "tailwindcss -o ./app/styles/tailwind.css -i ./app/styles/style.css",
     "lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
