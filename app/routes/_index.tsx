@@ -46,6 +46,14 @@ export default function Index() {
             ))}
           </ul>
         )}
+        <footer>
+          <p className="subtitle">
+            View the{" "}
+            <Link to="readings" prefetch="intent" className="link-secondary">
+              full archive
+            </Link>
+          </p>
+        </footer>
       </section>
       <section className="prose">
         <header>
@@ -58,7 +66,9 @@ export default function Index() {
           <ul>
             {recentWritings.map(({ frontmatter, slug }) => (
               <li key={slug}>
-                <Link to={`writings/${slug}`}>{frontmatter.title}</Link>{" "}
+                <Link prefetch="intent" to={`writings/${slug}`}>
+                  {frontmatter.title}
+                </Link>{" "}
                 {typeof frontmatter.date === "string" && (
                   <>
                     <span className="hidden md:inline"> - </span>
@@ -78,7 +88,7 @@ export default function Index() {
         <footer>
           <p className="subtitle">
             View the{" "}
-            <Link to="writings" className="link-secondary">
+            <Link to="writings" prefetch="intent" className="link-secondary">
               full archive
             </Link>
           </p>
