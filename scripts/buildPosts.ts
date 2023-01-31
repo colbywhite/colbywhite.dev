@@ -19,12 +19,27 @@ function readMdxFile(filename: string) {
   }).then((content) => parseMdx(content, slug));
 }
 
-(async () => {
+function isMarkdownFilename(filename: string | undefined) {
+  return filename !== undefined && (filename.endsWith("md") || filename.endsWith("mdx"));
+}
+
+async function writePostCache() {
   const postFileNames = fs
     .readdirSync(POST_DIR)
-    .filter((name) => name.endsWith("mdx") || name.endsWith("md"))
+    .filter(isMarkdownFilename)
     .map((name) => path.join(POST_DIR, name));
   const content = await Promise.all(postFileNames.map(readMdxFile));
   fs.writeFileSync(POST_CACHE_FILEPATH, JSON.stringify(content, null, 2));
   console.log("Wrote", path.relative(__dirname, POST_CACHE_FILEPATH));
+}
+
+(async () => {
+  await writePostCache();
+  if (process.env.NODE_ENV !== "production") {
+    fs.watch(POST_DIR, (event, filename) => {
+      if (isMarkdownFilename(filename)) {
+        writePostCache();
+      }
+    });
+  }
 })();
