@@ -30,7 +30,7 @@ export const meta: MetaFunction = () => ({
   "og:locale": "en-US",
   "og:site_name": TITLE,
   "og:type": "website",
-  "theme-color": "rgb(126 34 206)", // purple-700 from tailwind
+  "theme-color": "rgb(45, 27, 105)", // TODO: dynamically pull from daisy-ui
   author: AUTHOR,
   generator: "Remix",
 });
@@ -42,16 +42,6 @@ const NAV: NavItemProps[] = [
   // { path: "/readings", name: "Readings" },
   // { path: "/tools", name: "Cool Tools" },
 ];
-
-/**
- * AM src/posts/2021.08.08-weeknotes.md
- * AM src/posts/2021.08.15-weeknotes.md
- * AM src/posts/jamstack-identity-crisis.md
- * AD src/posts/posts.json
- * AM src/posts/quickly-spinning-up-websites.md
- * A  src/posts/serverless-mocking.md
- * AM src/posts/union-types-in-libs.md
- */
 
 const STRUCTURED_DATA = {
   name: AUTHOR,

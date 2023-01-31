@@ -8,9 +8,14 @@ interface PostFrontMatter extends Record<string, any> {
 
 export type Mdx = Awaited<ReturnType<typeof parseMdx>>;
 
-export async function parseMdx(content: Buffer, slug: string) {
+export async function parseMdx(
+  content: Buffer,
+  slug: string,
+  files?: Parameters<typeof bundleMDX>[0]["files"]
+) {
   const { code, frontmatter } = await bundleMDX<Partial<PostFrontMatter>>({
     source: content.toString("utf-8"),
+    files,
   });
   return {
     code,
