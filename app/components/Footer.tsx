@@ -19,7 +19,7 @@ export default function Footer({
         <p>
           <a
             href="https://github.com/colbywhite"
-            className="prose-sm link-accent link"
+            className="prose-sm link-primary"
           >
             Colby M. White
           </a>
