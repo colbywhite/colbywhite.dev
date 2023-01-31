@@ -37,9 +37,9 @@ export const meta: MetaFunction = () => ({
 
 const NAV: NavItemProps[] = [
   { path: "/", name: "Home" }, // shows last 10 writings, readings
+  { path: "/readings", name: "Readings" },
   { path: "/writings", name: "Writings" },
   { path: "/about", name: "About" }, // shows resume
-  // { path: "/readings", name: "Readings" },
   // { path: "/tools", name: "Cool Tools" },
 ];
 

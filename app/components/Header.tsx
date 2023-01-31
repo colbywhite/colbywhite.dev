@@ -27,6 +27,7 @@ export default function Header({
               <li key={path}>
                 <NavLink
                   to={path}
+                  prefetch="intent"
                   className={({ isActive }) =>
                     isActive ? "text-primary-focus" : undefined
                   }

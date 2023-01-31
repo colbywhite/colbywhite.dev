@@ -6,6 +6,9 @@
   a {
     @apply link hover:no-underline;
   }
+  .menu link {
+    @apply hidden;
+  }
 }
 
 @layer components {

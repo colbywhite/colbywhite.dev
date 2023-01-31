@@ -70,3 +70,9 @@ export const PUBLISH_DATE_FORMATTER = new Intl.DateTimeFormat("en-US", {
   day: "numeric",
   year: "numeric",
 });
+
+export class OutOfBoundsError extends Error {
+  constructor(public readonly newValue: number, message?: string) {
+    super(message);
+  }
+}

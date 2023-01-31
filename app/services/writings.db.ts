@@ -15,6 +15,7 @@ function reverseSort(a: Mdx, b: Mdx) {
   return bDate.getTime() - aDate.getTime();
 }
 
+// TODO add paging
 export async function getPosts(origin: string) {
   return fetch(new URL(POST_CACHE_FILENAME, origin))
     .then((response) => {

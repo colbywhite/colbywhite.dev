@@ -10,7 +10,7 @@ const POST_CACHE_FILEPATH = path.join(POST_CACHE_DIR, POST_CACHE_FILENAME);
 
 function readComponents() {
   if (!fs.existsSync(COMPONENT_DIR)) {
-    return undefined
+    return undefined;
   }
   return fs
     .readdirSync(COMPONENT_DIR)
