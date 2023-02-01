@@ -76,7 +76,7 @@ export default function App() {
           }}
         />
       </head>
-      <body className="mx-auto flex min-h-screen w-11/12 flex-col gap-4 print:bg-base-100 md:w-5/6 lg:w-3/6">
+      <body className="mx-auto flex min-h-screen max-w-[65ch] flex-col gap-4 p-2 print:bg-base-100">
         <Header
           className="mx-auto w-full border-primary print:hidden"
           nav={NAV}
