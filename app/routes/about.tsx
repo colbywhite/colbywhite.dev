@@ -1,6 +1,5 @@
 import resume from "../resume.json";
 import { json } from "@remix-run/server-runtime";
-import avatarUrl from "~/components/resume.sections/avatar.png";
 import { useLoaderData } from "@remix-run/react";
 import Resume from "~/components/resume.sections/Resume";
 import type { ResumeSchema as ResumeType } from "~/components/resume.sections/resume.type";
@@ -13,7 +12,7 @@ export function loader() {
 }
 
 export const links: LinksFunction = () => {
-  return [{ rel: "prefetch", href: avatarUrl }];
+  return [{ rel: "prefetch", href: 'avatar.png' }];
 };
 
 export default function Index() {

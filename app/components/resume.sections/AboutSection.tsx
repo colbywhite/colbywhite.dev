@@ -1,5 +1,4 @@
 import { MapIcon, PDFIcon, WebsiteIcon } from "~/components/icons";
-import avatarUrl from "./avatar.png";
 import { Link } from "@remix-run/react";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
 import type { Item } from "~/components/resume.sections/IconDescriptionList";
@@ -65,7 +64,7 @@ export default function AboutSection({
       <img
         className="float-right ml-3 mb-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
         alt={name}
-        src={avatarUrl}
+        src='/avatar.png'
       />
       <h1>{name}</h1>
       <p>{summary}</p>
