@@ -8,23 +8,31 @@ export const links: LinksFunction = () => {
 
 const socialLinks = [
   {
-    name: `LinkedIn Logo`,
+    name: "LinkedIn Logo",
     icon: "linkedin",
     description: (
-      <a aria-label="linkedin" href="https://www.linkedin.com/in/colbywhite" className="link-secondary">
+      <a
+        aria-label="linkedin"
+        href="https://www.linkedin.com/in/colbywhite"
+        className="link-secondary"
+      >
         colbywhite
       </a>
-    )
+    ),
   },
   {
-    name: `GitHub Logo`,
+    name: "GitHub Logo",
     icon: "github",
     description: (
-      <a aria-label="github" href="https://github.com/colbywhite" className="link-secondary">
+      <a
+        aria-label="github"
+        href="https://github.com/colbywhite"
+        className="link-secondary"
+      >
         colbywhite
       </a>
-    )
-  }
+    ),
+  },
 ];
 
 export default function Index() {
@@ -38,26 +46,28 @@ export default function Index() {
         />
         <h1>About me</h1>
         <p>
-          I've been a professional software engineer since 2010, working across the stack and focusing on technical
-          leadership.
+          I've been a professional software engineer since 2010, working across
+          the stack and focusing on technical leadership.
         </p>
         <p>
           I currently work at Fractal, a venture studio starting startups from
           scratch, helping coach and advise our CTOs as they create something
-          out of nothing.
-          I've previously worked at Blackbaud, Spanning, CA Technologies, and
-          other companies through contract work.
+          out of nothing. I've previously worked at Blackbaud, Spanning, CA
+          Technologies, and other companies through contract work.
         </p>
         <p>
-          I consider myself a true full-stack engineer, focusing on whatever programming language or tool will get the
-          job done.
-          I believe the best software engineers are the ones who resist becoming "code monkeys" and prioritize building
-          the <i>right</i> thing.
+          I consider myself a true full-stack engineer, focusing on whatever
+          programming language or tool will get the job done. I believe the best
+          software engineers are the ones who resist becoming "code monkeys" and
+          prioritize building the <i>right</i> thing.
         </p>
-        <p>I'm a regular at various Austin tech meetups and occasionally <Link to="/writings">blog</Link>.</p>
         <p>
-          For what it's worth, I own two degrees from the University of Texas at Austin in Computer
-          Science and Journalism.
+          I'm a regular at various Austin tech meetups and occasionally{" "}
+          <Link to="/writings">blog</Link>.
+        </p>
+        <p>
+          For what it's worth, I own two degrees from the University of Texas at
+          Austin in Computer Science and Journalism.
         </p>
       </section>
       <section className="prose-lg mx-auto">
@@ -86,8 +96,8 @@ export default function Index() {
             a dark theme
           </li>
           <li>
-            this site, which includes a <Link to="/writings">blog</Link> and an archive of my <Link to="/readings">interesting
-            reads</Link>.
+            this site, which includes a <Link to="/writings">blog</Link> and an
+            archive of my <Link to="/readings">interesting reads</Link>.
           </li>
         </ul>
         <h2>Past Projects</h2>
@@ -112,8 +122,10 @@ export default function Index() {
       </section>
       <section>
         <h2>R&eacute;sum&eacute;</h2>
-        You can find more detailed info on <a href="https://www.linkedin.com/colbywhite">LinkedIn</a>, via my <Link
-        to="/resume">web r&eacute;sum&eacute;</Link> or via my <Link to="/resume.pdf">PDF r&eacute;sum&eacute;</Link>.
+        You can find more detailed info on{" "}
+        <a href="https://www.linkedin.com/colbywhite">LinkedIn</a>, via my{" "}
+        <Link to="/resume">web r&eacute;sum&eacute;</Link> or via my{" "}
+        <Link to="/resume.pdf">PDF r&eacute;sum&eacute;</Link>.
       </section>
     </main>
   );
