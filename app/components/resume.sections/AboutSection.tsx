@@ -48,7 +48,7 @@ export default function AboutSection({
       className: "print:hidden",
       description: (
         <Link
-          to="/resume"
+          to="/resume.pdf"
           className="link-primary link"
           aria-label="Colby White's PDF resume"
           reloadDocument

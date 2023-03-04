@@ -1,13 +1,21 @@
-import type { LoaderArgs } from "@remix-run/node";
-import { convertUrlToPdf } from "~/services/pdf";
-import { pdf } from "~/utils";
+import resume from "../resume.json";
+import { json } from "@remix-run/server-runtime";
+import { useLoaderData } from "@remix-run/react";
+import Resume from "~/components/resume.sections/Resume";
+import type { ResumeSchema as ResumeType } from "~/components/resume.sections/resume.type";
+import type { LinksFunction } from "@remix-run/node";
 
-export async function loader({ request: { url } }: LoaderArgs) {
-  // in dev, use a hard-coded url since we don't want to send localhost to gotenberg
-  const parsedUrl = new URL(url);
-  const origin = parsedUrl.origin.includes("localhost")
-    ? "https://colbywhite.dev"
-    : parsedUrl.origin;
-  const contents = await convertUrlToPdf(new URL("about", origin));
-  return pdf(contents, "colby.white.resume.pdf");
+export function loader() {
+  // TODO pull resume from gist
+  const typedResume = resume as ResumeType;
+  return json({ resume: typedResume });
+}
+
+export const links: LinksFunction = () => {
+  return [{ rel: "prefetch", href: "avatar.png" }];
+};
+
+export default function Index() {
+  const { resume } = useLoaderData<typeof loader>();
+  return <Resume resume={resume} />;
 }
