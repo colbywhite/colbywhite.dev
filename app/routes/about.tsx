@@ -118,6 +118,16 @@ export default function Index() {
             simple tool to issue vagrant commands based on a configured root dir
             of vms
           </li>
+          <li>
+            <a href="https://github.com/open-austin/harris-county-bookings">
+              Harris County Booking Data Gathering
+            </a>
+            , an Open Austin serverless project that accumulates the booking
+            information published in Harris County’s daily JIMS 1058 reports
+            into a search-friendly format. The intent is to aide non-profit
+            organizations looking to do data research across time spans greater
+            than a day
+          </li>
         </ul>
       </section>
       <section>
