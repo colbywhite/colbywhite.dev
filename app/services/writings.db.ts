@@ -2,12 +2,15 @@ import type { Mdx } from "~/services/writings";
 
 export const POST_CACHE_FILENAME = "post-cache.json";
 
-function isDefined(val: string | undefined): val is string {
+function isDefinedString(val: unknown): val is string {
   return typeof val === "string";
 }
 
 function reverseSort(a: Mdx, b: Mdx) {
-  if (!isDefined(a.frontmatter.date) || !isDefined(b.frontmatter.date)) {
+  if (
+    !isDefinedString(a.frontmatter.date) ||
+    !isDefinedString(b.frontmatter.date)
+  ) {
     throw new Error("Missing dates");
   }
   const aDate = new Date(a.frontmatter.date);
@@ -28,7 +31,8 @@ export async function getPosts(origin: string) {
       return posts
         .filter(
           ({ frontmatter }) =>
-            isDefined(frontmatter.date) && isDefined(frontmatter.title)
+            isDefinedString(frontmatter.date) &&
+            isDefinedString(frontmatter.title)
         )
         .sort(reverseSort);
     });

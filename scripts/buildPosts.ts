@@ -42,9 +42,9 @@ function isTypescriptFilename(filename: string | undefined) {
   );
 }
 
-function isMarkdownFilename(filename: string | undefined) {
+function isMarkdownFilename(filename: unknown): filename is "*md" | "*mdx" {
   return (
-    filename !== undefined &&
+    typeof filename === "string" &&
     (filename.endsWith("md") || filename.endsWith("mdx"))
   );
 }
