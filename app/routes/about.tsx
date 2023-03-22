@@ -1,5 +1,5 @@
 import { Link } from "@remix-run/react";
-import type { LinksFunction } from "@remix-run/node";
+import type { LinksFunction } from "@remix-run/cloudflare";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
 
 export const links: LinksFunction = () => {

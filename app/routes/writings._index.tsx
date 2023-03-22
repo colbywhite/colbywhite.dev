@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "@remix-run/react";
-import { json } from "@remix-run/node";
-import type { LoaderArgs } from "@remix-run/node";
+import { json } from "@remix-run/cloudflare";
+import type { LoaderArgs } from "@remix-run/cloudflare";
 import { getPosts } from "~/services/writings.db";
 import { PUBLISH_DATE_FORMATTER } from "~/utils";
 

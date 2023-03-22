@@ -1,5 +1,9 @@
-import { json } from "@remix-run/node";
-import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/cloudflare";
+import type {
+  LinksFunction,
+  LoaderArgs,
+  MetaFunction,
+} from "@remix-run/cloudflare";
 import {
   Links,
   LiveReload,

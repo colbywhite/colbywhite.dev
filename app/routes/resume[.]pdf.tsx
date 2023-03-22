@@ -1,4 +1,4 @@
-import type { LoaderArgs } from "@remix-run/node";
+import type { LoaderArgs } from "@remix-run/cloudflare";
 import { convertUrlToPdf } from "~/services/pdf";
 import { pdf } from "~/utils";
 

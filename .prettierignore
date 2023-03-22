@@ -2,6 +2,10 @@ node_modules
 
 /build
 /public/build
-.env
+.dev.vars
+.dev.vars.example
+functions/
+.cache/
+.yarn/
 
 /app/styles/tailwind.css

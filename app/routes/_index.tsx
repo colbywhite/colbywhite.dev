@@ -1,18 +1,21 @@
 import { json } from "@remix-run/server-runtime";
 import { Link, useLoaderData } from "@remix-run/react";
-import { getRecentBookmarks } from "~/services/bookmarks";
+import type { BookmarkService } from "~/services/bookmarks";
 import { getRecentPost } from "~/services/writings.db";
-import type { LoaderArgs } from "@remix-run/node";
+import type { LoaderArgs } from "@remix-run/cloudflare";
 import { PUBLISH_DATE_FORMATTER } from "~/utils";
 
-export async function loader({ request }: LoaderArgs) {
-  const recentBookmarks$ = getRecentBookmarks().catch((err) => {
+export async function loader({ request, context }: LoaderArgs) {
+  const { bookmark } = context.services as {
+    bookmark: BookmarkService;
+  };
+  const recentBookmarks$ = bookmark.getRecentBookmarks().catch((err) => {
     console.warn("Could not retrieve bookmarks.", err);
     return [];
   });
   const recentWritings$ = getRecentPost(new URL(request.url).origin).catch(
     (err) => {
-      console.warn("Could not retrieve bookmarks.", err);
+      console.warn("Could not retrieve posts.", err);
       return [];
     }
   );

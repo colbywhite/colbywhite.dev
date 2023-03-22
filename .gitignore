@@ -2,11 +2,13 @@ node_modules
 
 /build
 /public/build
-.env
+.dev.vars
 yarn-error.log
+.yarn/
 
 /app/styles/tailwind.css
 /public/post-cache.json
 
-src/covers
-.netlify/
+/.cache
+/functions/\[\[path\]\].js
+/functions/\[\[path\]\].js.map
