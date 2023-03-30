@@ -21,7 +21,6 @@ function reverseSort(a: Mdx, b: Mdx) {
 // TODO add paging
 export async function getPosts(origin: string) {
   const url = new URL(POST_CACHE_FILENAME, origin);
-  console.log("getPosts", url);
   return fetch(url)
     .then((response) => {
       if (!response.ok) {

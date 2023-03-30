@@ -6,11 +6,11 @@ import type { LoaderArgs } from "@remix-run/cloudflare";
 import { PUBLISH_DATE_FORMATTER } from "~/utils";
 
 export async function loader({ request, context }: LoaderArgs) {
-  const { bookmark } = context.services as {
+  const { bookmark: bookmarkSvc } = context.services as {
     bookmark: BookmarkService;
   };
-  const recentBookmarks$ = bookmark.getRecentBookmarks().catch((err) => {
-    console.warn("Could not retrieve bookmarks.", err);
+  const recentBookmarks$ = bookmarkSvc.getRecentBookmarks().catch((err) => {
+    console.warn("Could not retrieve readings.", err);
     return [];
   });
   const recentWritings$ = getRecentPost(new URL(request.url).origin).catch(
@@ -19,32 +19,35 @@ export async function loader({ request, context }: LoaderArgs) {
       return [];
     }
   );
-  const [recentBookmarks, recentWritings] = await Promise.all([
+  const [bookmarks, recentWritings] = await Promise.all([
     recentBookmarks$,
     recentWritings$,
   ]);
-  return json({ recentBookmarks, recentWritings });
+  return json({ bookmarks, recentWritings });
 }
 
 export default function Index() {
-  const { recentBookmarks, recentWritings } = useLoaderData<typeof loader>();
+  const { bookmarks, recentWritings } = useLoaderData<typeof loader>();
   return (
     <main>
       <section className="prose mb-8">
         <header>
-          <h1>Recent readings</h1>
+          <h1>Recent bookmarks</h1>
           <p className="subtitle">
             Articles I've recently read and bookmarked for later
           </p>
         </header>
-        {recentBookmarks.length <= 0 ? (
+        {bookmarks.length <= 0 ? (
           <p>No bookmarks found.</p>
         ) : (
           <ul>
-            {recentBookmarks.map(({ domain, _id, title, link }) => (
+            {bookmarks.map(({ _id, title, link, created }) => (
               <li key={_id}>
                 <a href={link}>{title}</a> <br className="md:hidden" />
-                <span className="prose-sm italic">via {domain}</span>
+                <span className="prose-sm italic">
+                  saved on {PUBLISH_DATE_FORMATTER.format(new Date(created))}{" "}
+                  via {new URL(link).host}
+                </span>
               </li>
             ))}
           </ul>
@@ -52,7 +55,7 @@ export default function Index() {
         <footer>
           <p className="subtitle">
             View the{" "}
-            <Link to="readings" prefetch="intent" className="link-secondary">
+            <Link to="bookmarks" prefetch="intent" className="link-secondary">
               full archive
             </Link>
           </p>
