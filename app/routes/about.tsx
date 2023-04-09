@@ -40,8 +40,8 @@ export default function Index() {
     <main className="prose">
       <section>
         <img
-          className="float-right ml-3 mb-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
-          alt="Colby M. White's headshot image"
+          className="float-right mb-3 ml-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
+          alt="Colby M. White's headshot"
           src="/avatar.png"
         />
         <h1>About me</h1>

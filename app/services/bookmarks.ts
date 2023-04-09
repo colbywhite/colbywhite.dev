@@ -1,6 +1,6 @@
 import invariant from "tiny-invariant";
 import { OutOfBoundsError } from "~/utils";
-import { KvCache } from "~/services/kv.cache";
+import type { KvCache } from "~/services/kv.cache";
 
 // TODO validate response schema
 interface RainDropResponse {
@@ -54,7 +54,9 @@ export class BookmarkService {
       perpage: String(options.perPage),
       page: String(Math.max(0, options.page)),
     }).toString();
-    return fetch(url, { headers })
+    // ideally, we'd just use the URL object here, but that blows up msw during testing.
+    // but using the href is identical behavior
+    return fetch(url.href, { headers })
       .then((response) => {
         invariant(response.ok, "Received error from raindrop.");
         invariant(response.body !== null, "No response from raindrop.");

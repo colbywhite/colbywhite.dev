@@ -9,7 +9,7 @@ export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   test: {
     globals: true,
-    environment: "happy-dom",
+    environment: "miniflare",
     setupFiles: ["./test/setup-test-env.ts"],
   },
 });

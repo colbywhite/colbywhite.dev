@@ -1,5 +1,5 @@
 import { useLoaderData } from "@remix-run/react";
-import type { ActionArgs, LoaderArgs } from "@remix-run/cloudflare";
+import type { LoaderArgs } from "@remix-run/cloudflare";
 import { json } from "@remix-run/cloudflare";
 import type { BookmarkService } from "~/services/bookmarks";
 import { redirect } from "@remix-run/router";

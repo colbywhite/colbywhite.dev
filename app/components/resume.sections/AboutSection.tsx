@@ -62,7 +62,7 @@ export default function AboutSection({
   return (
     <section className="prose">
       <img
-        className="float-right ml-3 mb-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
+        className="float-right mb-3 ml-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
         alt={name}
         src="/avatar.png"
       />

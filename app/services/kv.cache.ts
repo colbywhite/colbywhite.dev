@@ -1,4 +1,5 @@
 import invariant from "tiny-invariant";
+import type { KVNamespace } from "@cloudflare/workers-types";
 
 const FIFTEEN_MINUTES_IN_SECONDS = 900;
 
