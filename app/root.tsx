@@ -13,13 +13,13 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
-import tailwindStylesheetUrl from "./styles/tailwind.css";
+import styles from "./tailwind.css";
 import Header from "~/components/Header";
 import type { NavItemProps } from "~/components/Header";
 import Footer from "./components/Footer";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
+  return [{ rel: "stylesheet", href: styles }];
 };
 
 const AUTHOR = "Colby M. White";
