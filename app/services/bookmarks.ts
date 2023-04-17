@@ -58,7 +58,10 @@ export class BookmarkService {
     // but using the href is identical behavior
     return fetch(url.href, { headers })
       .then((response) => {
-        invariant(response.ok, "Received error from raindrop.");
+        invariant(
+          response.ok,
+          `Received error from raindrop. ${response.statusText}`
+        );
         invariant(response.body !== null, "No response from raindrop.");
         return response.json() as Promise<RainDropResponse>;
       })

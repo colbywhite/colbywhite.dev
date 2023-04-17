@@ -32,7 +32,6 @@ export async function loader({ request, context }: LoaderArgs) {
       }
       throw err;
     });
-
   return json({ bookmarks, paging });
 }
 
