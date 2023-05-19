@@ -135,7 +135,7 @@ export default function Index() {
         You can find more detailed info on{" "}
         <a href="https://www.linkedin.com/colbywhite">LinkedIn</a>, via my{" "}
         <Link to="/resume">web r&eacute;sum&eacute;</Link> or via my{" "}
-        <Link to="/resume.pdf">PDF r&eacute;sum&eacute;</Link>.
+        <a href="/resume.pdf">PDF r&eacute;sum&eacute;</a>.
       </section>
     </main>
   );
