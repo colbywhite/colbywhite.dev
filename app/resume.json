@@ -29,6 +29,16 @@
   },
   "work": [
     {
+      "name": "Reforge",
+      "highlights": [
+      ],
+      "position": "Staff Software Engineer",
+      "startDate": "2023-07-24",
+      "endDate": "2023-10-27",
+      "location": "Remote",
+      "url": "https://www.linkedin.com/company/reforge/"
+    },
+    {
       "name": "Fractal Software",
       "highlights": [
         "Fractal is a venture studio creating vertical SaaS companies.",
@@ -39,6 +49,7 @@
       ],
       "position": "Staff Software Engineer",
       "startDate": "2021-12-06",
+      "endDate": "2023-07-14",
       "location": "Remote",
       "url": "https://www.linkedin.com/company/fractal-software/"
     },
@@ -142,6 +153,18 @@
     }
   ],
   "projects": [
+    {
+      "name": "AutoForm",
+      "description": "A work-in-progress component designed to automatically generate a form element based on a given schema. The project is designed to work inside the RedwoodJS ecosystem and is being built in conjunction with the core team",
+      "url": "https://github.com/colbywhite/rw-form-generator",
+      "keywords": ["RedwoodJS", "TypeScript"]
+    },
+    {
+      "name": "Humble Tee Box",
+      "description": "A work-in-progress project to help golfers find a nearby tee box that suites their skill-set.",
+      "url": "https://github.com/colbywhite/ghin/",
+      "keywords": ["Astro", "TypeScript", "Prisma"]
+    },
     {
       "name": "Power Schedules",
       "description": "A work-in-progress project to highlight which sporting events are worth viewing.",

@@ -19,5 +19,5 @@ export async function convertUrlToPdf(url: URL) {
   } else if (response.body === null) {
     throw new Error("No response from gotenberg.");
   }
-  return response.body;
+  return response.arrayBuffer();
 }

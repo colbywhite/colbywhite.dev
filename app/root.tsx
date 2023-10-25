@@ -43,8 +43,8 @@ const NAV: NavItemProps[] = [
   { path: "/", name: "Home" }, // shows last 10 writings, readings
   { path: "/bookmarks", name: "Bookmarks" },
   { path: "/writings", name: "Writings" },
-  { path: "/about", name: "About" }, // shows resume
-  // { path: "/tools", name: "Cool Tools" },
+  { path: "/about", name: "About" },
+  { path: "/hire", name: "Hire" },
 ];
 
 const STRUCTURED_DATA = {
