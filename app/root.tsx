@@ -44,7 +44,7 @@ const NAV: NavItemProps[] = [
   { path: "/bookmarks", name: "Bookmarks" },
   { path: "/writings", name: "Writings" },
   { path: "/about", name: "About" },
-  { path: "/hire", name: "Hire" },
+  { path: "https://forms.gle/enucYH3qFG4dhCqj6", name: "Hire" },
 ];
 
 const STRUCTURED_DATA = {
