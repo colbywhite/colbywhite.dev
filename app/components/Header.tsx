@@ -17,7 +17,7 @@ export default function Header({
       className={classNames("border-b-2 pb-1", className)}
       {...headerProps}
     >
-      <p className="mb-2 text-center font-bold tracking-wider text-primary">
+      <p className="mb-1 text-center font-bold tracking-wider text-primary md:mb-2">
         colbywhite.dev
       </p>
       {nav && nav.length > 0 && (
@@ -29,7 +29,9 @@ export default function Header({
                   to={path}
                   prefetch="intent"
                   className={({ isActive }) =>
-                    isActive ? "text-primary-focus" : undefined
+                    isActive
+                      ? "p-2 text-primary-focus md:p-3 md:py-4"
+                      : "p-2 md:px-3 md:py-4"
                   }
                 >
                   {name}
