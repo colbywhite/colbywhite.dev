@@ -6,7 +6,7 @@ export default function Details({
 }: PropsWithChildren<{ title: string }>) {
   return (
     <details className="mb-4 mt-8">
-      <summary>
+      <summary className="cursor-pointer">
         <h2 className="my-0 inline">{title}</h2>
       </summary>
       {children}
