@@ -16,26 +16,26 @@ const socialLinks = [
     name: "LinkedIn Logo",
     icon: "linkedin",
     description: (
-      <a
+      <Link
         aria-label="linkedin"
-        href="https://www.linkedin.com/in/colbywhite"
-        className="link-secondary"
+        to="https://www.linkedin.com/in/colbywhite"
+        className="link-secondary link"
       >
         colbywhite
-      </a>
+      </Link>
     ),
   },
   {
     name: "GitHub Logo",
     icon: "github",
     description: (
-      <a
+      <Link
         aria-label="github"
-        href="https://github.com/colbywhite"
-        className="link-secondary"
+        to="https://github.com/colbywhite"
+        className="link-secondary link"
       >
         colbywhite
-      </a>
+      </Link>
     ),
   },
 ];
@@ -51,75 +51,115 @@ export default function Index() {
   return (
     <main className="prose">
       <section>
-        <img
-          className="float-right mb-3 ml-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
-          alt="Colby M. White's headshot"
-          src="/avatar.jpg"
-        />
+        <div className="float-right mx-2 mb-2 flex flex-col items-center gap-1 md:mx-3 md:mb-3">
+          <img
+            className="h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
+            alt="Colby M. White's headshot"
+            src="/avatar.jpg"
+          />
+          <IconDescriptionList items={socialLinks} />
+        </div>
         <h1>About me</h1>
-        <p>
-          I've been a professional software engineer since 2010, working across
-          the stack and focusing on technical leadership. I'm currently a
-          project-lead working with the{" "}
-          <a href="https://redwoodjs.com/">RedwoodJS</a> core team on a{" "}
-          <a href="https://github.com/colbywhite/rw-form-generator">
-            AutoForm project
-          </a>
-          .
-        </p>
-        <p>
-          If you're looking for help completed a web-based project for you
-          business, contact via this{" "}
-          <a href="https://forms.gle/enucYH3qFG4dhCqj6">inquiry form</a>.
-        </p>
-        <h3>Loose notes</h3>
         <ul>
           <li>
-            I'm a regular at various Austin tech meetups and occasionally{" "}
-            <Link to="/writings">blog</Link>.
+            Professional software engineer since 2010 as a true full-stack
+            engineer (as opposed to a backend dev who tolerates JS) focusing on
+            technical leadership.
           </li>
           <li>
-            I own two degrees from the University of Texas at Austin in Computer
-            Science (2012) and Journalism (2010) and am pursuing a third in
-            Kinesiology.
+            Worked with 50+ startup CTOs during tenure at Fractal Software as an
+            advisor/consultant, helping form teams from scratch. This involved
+            more than just code and focused on building the appropriate business
+            strategy and engineering culture.
           </li>
           <li>
-            Formerly worked at Fractal, Blackbaud, Spanning, CA Technologies,
-            and other companies through contract work.
+            Creator of the{" "}
+            <i>
+              <Link to="https://www.jseverywhere.dev/">JS Everywhere</Link>
+            </i>{" "}
+            newsletter, chronicling the increasing dominance of full-stack JS
+            frameworks and all of its side effects.
           </li>
+          <li>
+            Working with the RedwoodJS core team as a project lead of the
+            <Link
+              to="https://redwood-autoform.netlify.app"
+              className="text-accent-content"
+            >
+              <code className="mx-1 rounded bg-accent p-2 font-mono">
+                AutoForm
+              </code>
+            </Link>
+            project which aims to simplify HTML form creation in the Redwood
+            ecosystem.
+          </li>
+          <li>
+            Owner of two degrees from the University of Texas at Austin in
+            Computer Science (2012) and Journalism (2010). Currently pursuing a
+            third in Kinesiology.
+          </li>
+          <li>
+            Formerly worked professionally at Fractal, Blackbaud, Spanning, CA
+            Technologies, and other companies through contract work.
+          </li>
+          <li>Regular at various Austin tech meetups.</li>
         </ul>
       </section>
       <section>
-        <Details title="Current Projects">
+        <Details title="Current Projects" open>
           <ul>
             <li>
-              <a href="https://github.com/colbywhite/rw-form-generator">
-                AutoForm
-              </a>
-              , a work-in-progress component designed to automatically generate
-              a form element based on a given schema. The project is designed to
-              work inside the <a href="https://redwoodjs.com/">RedwoodJS</a>{" "}
-              ecosystem and is being built in conjunction with the core team.
+              <Link
+                to="https://redwood-autoform.netlify.app"
+                className="text-accent-content"
+              >
+                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                  AutoForm
+                </code>
+              </Link>
+              , a component designed to automatically generate a form element
+              based on a given schema. The project is designed to work inside
+              the <a href="https://redwoodjs.com">RedwoodJS</a> ecosystem and is
+              being built in conjunction with the core team.
             </li>
             <li>
-              <a href="https://github.com/colbywhite/ghin/">Humble Tee Box</a>,
-              a work-in-progress project to help golfers find a nearby tee box
-              that suites their skill-set.
+              <Link
+                to="https://humbleteebox.com"
+                className="text-accent-content"
+              >
+                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                  humbleteebox.com
+                </code>
+              </Link>
+              , a project to help golfers find a nearby tee box that suites
+              their skill-set.
             </li>
             <li>
-              <a href="https://powerschedules.net">Power Schedules</a>, a
-              work-in-progress project to highlight which sporting events are
+              <Link
+                to="https://powerschedules.net"
+                className="text-accent-content"
+              >
+                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                  powerschedules.net
+                </code>
+              </Link>
+              , a project that aims to filter sporting events that are actually
               worth viewing
             </li>
             <li>
-              this site, which includes a <Link to="/writings">blog</Link> and
+              <Link to="/" className="text-accent-content">
+                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                  colbywhite.dev
+                </code>
+              </Link>
+              , which includes a personal <Link to="/writings">blog</Link> and
               an archive of my <Link to="/readings">interesting reads</Link>.
             </li>
           </ul>
         </Details>
       </section>
       <section>
-        <Details title="Past Projects">
+        <Details title="Past/Defunct Projects">
           <ul>
             <li>
               <a href="https://github.com/colbywhite/acoustic-stack">
@@ -129,7 +169,7 @@ export default function Index() {
             </li>
             <li>
               <a href="https://www.npmjs.com/package/@colbyw/tailwind-color-inverter">
-                tailwind-color-inverter{" "}
+                tailwind-color-inverter
               </a>
               , a utility to invert TailwindCSS colors to auto generate colors
               for a dark theme
@@ -165,17 +205,6 @@ export default function Index() {
       </section>
       <section>
         <ProfessionalExperienceDetails resume={resume} />
-      </section>
-      <section>
-        <h2>R&eacute;sum&eacute;</h2>
-        You can find more detailed info on{" "}
-        <a href="https://www.linkedin.com/colbywhite">LinkedIn</a>, via my{" "}
-        <Link to="/resume">web r&eacute;sum&eacute;</Link> or via my{" "}
-        <a href="/resume.pdf">PDF r&eacute;sum&eacute;</a>.
-      </section>
-      <section>
-        <h2>Links</h2>
-        <IconDescriptionList items={socialLinks} />
       </section>
     </main>
   );

@@ -1,15 +1,29 @@
-import type { PropsWithChildren } from "react";
+import { forwardRef } from "react";
+import type { HTMLAttributes, PropsWithChildren } from "react";
+import { twMerge } from "tailwind-merge";
 
-export default function Details({
-  children,
-  title,
-}: PropsWithChildren<{ title: string }>) {
-  return (
-    <details className="mb-4 mt-8">
-      <summary className="cursor-pointer">
-        <h2 className="my-0 inline">{title}</h2>
-      </summary>
-      {children}
-    </details>
-  );
-}
+type DetailsProps = PropsWithChildren<
+  HTMLAttributes<HTMLDetailsElement> & {
+    title: string;
+    open?: HTMLDetailsElement["open"];
+  }
+>;
+
+export const Details = forwardRef<HTMLDetailsElement, DetailsProps>(
+  ({ title, children, className, ...restProps }, ref) => {
+    return (
+      <details
+        ref={ref}
+        className={twMerge("mb-4 mt-8", className)}
+        {...restProps}
+      >
+        <summary className="cursor-pointer">
+          <h2 className="my-0 inline">{title}</h2>
+        </summary>
+        {children}
+      </details>
+    );
+  }
+);
+
+export default Details;

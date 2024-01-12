@@ -42,7 +42,7 @@ export type Item = {
 };
 export default function IconDescriptionList({ items }: { items: Item[] }) {
   return (
-    <dl className="flex flex-row flex-wrap justify-start gap-2 md:gap-3">
+    <dl className="flex flex-col flex-wrap justify-start gap-2 md:gap-3">
       {items.map(({ name, icon, description, className }) => (
         <RowDivWrapper key={name} className={className}>
           <IconTerm aria-label={name} icon={icon} />
