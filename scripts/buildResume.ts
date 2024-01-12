@@ -11,6 +11,6 @@ const domain = "" as const;
     !domain.startsWith("http://localhost"),
     "Use a domain that is not localhost"
   );
-  const response = await convertUrlToPdf(new URL(`${domain}/resume`));
+  const response = await convertUrlToPdf(new URL(`${domain}/about`));
   fs.writeFileSync("./public/resume.pdf", Buffer.from(response));
 })();

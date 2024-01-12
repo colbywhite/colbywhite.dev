@@ -7,14 +7,16 @@ export default function TimelineDetails<T>({
   items,
   title,
   getDates,
+  open,
 }: {
   items: T[];
   title: string;
   children(item: T): ReactNode;
   getDates: (item: T) => ComponentProps<typeof DateRange>;
+  open?: boolean;
 }) {
   return (
-    <Details title={title}>
+    <Details title={title} open={open}>
       <ol className="relative flex list-none flex-col pl-0 before:absolute before:bottom-0 before:left-2 before:top-1.5 before:block before:w-[1px] before:bg-sharp-fade before:from-base-100 before:to-accent before:content-[''] print:before:content-none">
         {items.map((item, i) => {
           const dateRangeProps = getDates(item);

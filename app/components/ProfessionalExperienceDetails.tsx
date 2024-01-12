@@ -9,8 +9,10 @@ const MONTH_DISPLAY_FORMAT: Intl.DateTimeFormatOptions = {
 
 export default function ProfessionalExperienceDetails({
   resume,
+  open,
 }: {
   resume: ResumeSchema;
+  open?: boolean;
 }) {
   const workEntryToDateRange = (workEntry: ResumeSchema["work"][number]) => ({
     start: workEntry.startDate,
@@ -23,6 +25,7 @@ export default function ProfessionalExperienceDetails({
         title="Professional Experience"
         items={resume.work}
         getDates={workEntryToDateRange}
+        open={open}
       >
         {(workEntry) => <WorkPlaceComponent workEntry={workEntry} />}
       </TimelineDetails>

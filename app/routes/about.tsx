@@ -1,6 +1,6 @@
 import { Link, useLoaderData } from "@remix-run/react";
 import resume from "../resume.json";
-import type { LinksFunction } from "@remix-run/cloudflare";
+import type { LinksFunction, LoaderArgs } from "@remix-run/cloudflare";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
 import ProfessionalExperienceDetails from "~/components/ProfessionalExperienceDetails";
 import type { ResumeSchema as ResumeType } from "~/components/resume.sections/resume.type";
@@ -40,14 +40,15 @@ const socialLinks = [
   },
 ];
 
-export function loader() {
+export function loader({ request }: LoaderArgs) {
   // TODO pull resume from gist
   const typedResume = resume as ResumeType;
-  return json({ resume: typedResume });
+  const isPrint = Boolean(request.headers.get("X-printMode"));
+  return json({ resume: typedResume, isPrint });
 }
 
 export default function Index() {
-  const { resume } = useLoaderData<typeof loader>();
+  const { resume, isPrint } = useLoaderData<typeof loader>();
   return (
     <main className="prose">
       <section>
@@ -159,7 +160,7 @@ export default function Index() {
         </Details>
       </section>
       <section>
-        <Details title="Past/Defunct Projects">
+        <Details title="Past/Defunct Projects" open={isPrint}>
           <ul>
             <li>
               <a href="https://github.com/colbywhite/acoustic-stack">
@@ -204,7 +205,7 @@ export default function Index() {
         </Details>
       </section>
       <section>
-        <ProfessionalExperienceDetails resume={resume} />
+        <ProfessionalExperienceDetails resume={resume} open={isPrint} />
       </section>
     </main>
   );
