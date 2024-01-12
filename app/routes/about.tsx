@@ -62,8 +62,8 @@ export default function Index() {
             <Link to="/writings">blog</Link>.
           </li>
           <li>
-            I own two degrees from the University of Texas at Austin in Computer Science and
-            Journalism and am pursuing a third in Kinesiology.
+            I own two degrees from the University of Texas at Austin in Computer Science (2012) and
+            Journalism (2010) and am pursuing a third in Kinesiology.
           </li>
           <li>
             Formerly worked at Fractal, Blackbaud, Spanning, CA Technologies, and
