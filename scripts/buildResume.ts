@@ -7,7 +7,10 @@ const domain = "" as const;
 
 (async () => {
   invariant(domain.length > 1, "Specify the domain to generate the pdf from.");
-  invariant(!domain.startsWith("http://localhost"), "Use a domain that is not localhost");
+  invariant(
+    !domain.startsWith("http://localhost"),
+    "Use a domain that is not localhost"
+  );
   const response = await convertUrlToPdf(new URL(`${domain}/resume`));
   fs.writeFileSync("./public/resume.pdf", Buffer.from(response));
 })();

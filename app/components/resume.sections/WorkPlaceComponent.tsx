@@ -7,8 +7,8 @@ export default function WorkPlaceComponent({
 }) {
   return (
     <>
-      <h2 className="m-0">{workEntry.position}</h2>
-      <h3 className="font-normal">
+      <h3 className="m-0">{workEntry.position}</h3>
+      <h4 className="font-normal">
         {workEntry.url ? (
           <a
             className="link-primary link"
@@ -29,7 +29,7 @@ export default function WorkPlaceComponent({
             {workEntry.location}
           </>
         )}
-      </h3>
+      </h4>
       <ul className="">
         {workEntry.highlights.map((highlight, i) => (
           <li key={i} className="m-0">

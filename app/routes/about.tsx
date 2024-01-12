@@ -1,6 +1,11 @@
-import { Link } from "@remix-run/react";
+import { Link, useLoaderData } from "@remix-run/react";
+import resume from "../resume.json";
 import type { LinksFunction } from "@remix-run/cloudflare";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
+import ProfessionalExperienceDetails from "~/components/ProfessionalExperienceDetails";
+import type { ResumeSchema as ResumeType } from "~/components/resume.sections/resume.type";
+import { json } from "@remix-run/server-runtime";
+import Details from "~/components/Details";
 
 export const links: LinksFunction = () => {
   return [{ rel: "prefetch", href: "avatar.jpg" }];
@@ -18,7 +23,7 @@ const socialLinks = [
       >
         colbywhite
       </a>
-    )
+    ),
   },
   {
     name: "GitHub Logo",
@@ -31,11 +36,18 @@ const socialLinks = [
       >
         colbywhite
       </a>
-    )
-  }
+    ),
+  },
 ];
 
+export function loader() {
+  // TODO pull resume from gist
+  const typedResume = resume as ResumeType;
+  return json({ resume: typedResume });
+}
+
 export default function Index() {
+  const { resume } = useLoaderData<typeof loader>();
   return (
     <main className="prose">
       <section>
@@ -47,13 +59,18 @@ export default function Index() {
         <h1>About me</h1>
         <p>
           I've been a professional software engineer since 2010, working across
-          the stack and focusing on technical leadership. I'm currently a project-lead working with the <a
-          href="https://redwoodjs.com/">RedwoodJS</a> core team on a <a
-          href="https://github.com/colbywhite/rw-form-generator">AutoForm project</a>.
+          the stack and focusing on technical leadership. I'm currently a
+          project-lead working with the{" "}
+          <a href="https://redwoodjs.com/">RedwoodJS</a> core team on a{" "}
+          <a href="https://github.com/colbywhite/rw-form-generator">
+            AutoForm project
+          </a>
+          .
         </p>
         <p>
-          If you're looking for help completed a web-based project for you business,
-          contact via this <a href="https://forms.gle/enucYH3qFG4dhCqj6">inquiry form</a>.
+          If you're looking for help completed a web-based project for you
+          business, contact via this{" "}
+          <a href="https://forms.gle/enucYH3qFG4dhCqj6">inquiry form</a>.
         </p>
         <h3>Loose notes</h3>
         <ul>
@@ -62,31 +79,32 @@ export default function Index() {
             <Link to="/writings">blog</Link>.
           </li>
           <li>
-            I own two degrees from the University of Texas at Austin in Computer Science (2012) and
-            Journalism (2010) and am pursuing a third in Kinesiology.
+            I own two degrees from the University of Texas at Austin in Computer
+            Science (2012) and Journalism (2010) and am pursuing a third in
+            Kinesiology.
           </li>
           <li>
-            Formerly worked at Fractal, Blackbaud, Spanning, CA Technologies, and
-            other companies through contract work.
+            Formerly worked at Fractal, Blackbaud, Spanning, CA Technologies,
+            and other companies through contract work.
           </li>
         </ul>
       </section>
       <section>
-        <details className="mt-8 mb-4">
-          <summary className="font-bold text-2xl text-[--tw-prose-headings]">
-            Current Projects
-          </summary>
+        <Details title="Current Projects">
           <ul>
             <li>
-              <a href="https://github.com/colbywhite/rw-form-generator">AutoForm</a>, a
-              work-in-progress component designed to automatically generate a form element based on a given schema. The
-              project is designed to work inside the <a
-              href="https://redwoodjs.com/">RedwoodJS</a> ecosystem and is being built in conjunction with the core
-              team.
+              <a href="https://github.com/colbywhite/rw-form-generator">
+                AutoForm
+              </a>
+              , a work-in-progress component designed to automatically generate
+              a form element based on a given schema. The project is designed to
+              work inside the <a href="https://redwoodjs.com/">RedwoodJS</a>{" "}
+              ecosystem and is being built in conjunction with the core team.
             </li>
             <li>
-              <a href="https://github.com/colbywhite/ghin/">Humble Tee Box</a>, a
-              work-in-progress project to help golfers find a nearby tee box that suites their skill-set.
+              <a href="https://github.com/colbywhite/ghin/">Humble Tee Box</a>,
+              a work-in-progress project to help golfers find a nearby tee box
+              that suites their skill-set.
             </li>
             <li>
               <a href="https://powerschedules.net">Power Schedules</a>, a
@@ -94,17 +112,14 @@ export default function Index() {
               worth viewing
             </li>
             <li>
-              this site, which includes a <Link to="/writings">blog</Link> and an
-              archive of my <Link to="/readings">interesting reads</Link>.
+              this site, which includes a <Link to="/writings">blog</Link> and
+              an archive of my <Link to="/readings">interesting reads</Link>.
             </li>
           </ul>
-        </details>
+        </Details>
       </section>
       <section>
-        <details className="mt-8 mb-4">
-          <summary className="font-bold text-2xl text-[--tw-prose-headings]">
-            Past Projects
-          </summary>
+        <Details title="Past Projects">
           <ul>
             <li>
               <a href="https://github.com/colbywhite/acoustic-stack">
@@ -116,24 +131,24 @@ export default function Index() {
               <a href="https://www.npmjs.com/package/@colbyw/tailwind-color-inverter">
                 tailwind-color-inverter{" "}
               </a>
-              , a utility to invert TailwindCSS colors to auto generate colors for
-              a dark theme
+              , a utility to invert TailwindCSS colors to auto generate colors
+              for a dark theme
             </li>
             <li>
               <a href="https://www.npmjs.com/package/aws-cf-monitor">
                 aws-cf-monitor
               </a>
-              , a wrapper around the AWS CloudFormation Node API that monitors the
-              progress of CF commands while providing smart logging.
+              , a wrapper around the AWS CloudFormation Node API that monitors
+              the progress of CF commands while providing smart logging.
             </li>
             <li>
-              <a href="https://github.com/colbywhite/wordgen">wordgen</a>, a Ruby
-              gem command-line tool to generate random words
+              <a href="https://github.com/colbywhite/wordgen">wordgen</a>, a
+              Ruby gem command-line tool to generate random words
             </li>
             <li>
               <a href="https://github.com/colbywhite/timbrel">timbrel</a>, a
-              simple tool to issue vagrant commands based on a configured root dir
-              of vms
+              simple tool to issue vagrant commands based on a configured root
+              dir of vms
             </li>
             <li>
               <a href="https://github.com/open-austin/harris-county-bookings">
@@ -142,11 +157,14 @@ export default function Index() {
               , an Open Austin serverless project that accumulates the booking
               information published in Harris County’s daily JIMS 1058 reports
               into a search-friendly format. The intent is to aide non-profit
-              organizations looking to do data research across time spans greater
-              than a day
+              organizations looking to do data research across time spans
+              greater than a day
             </li>
           </ul>
-        </details>
+        </Details>
+      </section>
+      <section>
+        <ProfessionalExperienceDetails resume={resume} />
       </section>
       <section>
         <h2>R&eacute;sum&eacute;</h2>
