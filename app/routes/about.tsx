@@ -3,7 +3,7 @@ import type { LinksFunction } from "@remix-run/cloudflare";
 import IconDescriptionList from "~/components/resume.sections/IconDescriptionList";
 
 export const links: LinksFunction = () => {
-  return [{ rel: "prefetch", href: "avatar.png" }];
+  return [{ rel: "prefetch", href: "avatar.jpg" }];
 };
 
 const socialLinks = [
@@ -42,7 +42,7 @@ export default function Index() {
         <img
           className="float-right mb-3 ml-3 h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
           alt="Colby M. White's headshot"
-          src="/avatar.png"
+          src="/avatar.jpg"
         />
         <h1>About me</h1>
         <p>

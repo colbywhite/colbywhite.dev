@@ -12,7 +12,7 @@ export function loader() {
 }
 
 export const links: LinksFunction = () => {
-  return [{ rel: "prefetch", href: "avatar.png" }];
+  return [{ rel: "prefetch", href: "avatar.jpg" }];
 };
 
 export default function Index() {
