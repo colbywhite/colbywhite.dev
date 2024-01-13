@@ -6,12 +6,40 @@ import ProfessionalExperienceDetails from "~/components/ProfessionalExperienceDe
 import type { ResumeSchema as ResumeType } from "~/components/resume.sections/resume.type";
 import { json } from "@remix-run/server-runtime";
 import Details from "~/components/Details";
+import { MapIcon, NewsletterIcon, WebsiteIcon } from "~/components/icons";
 
 export const links: LinksFunction = () => {
   return [{ rel: "prefetch", href: "avatar.jpg" }];
 };
 
-const socialLinks = [
+const infoIcons = [
+  {
+    name: "website",
+    icon: WebsiteIcon,
+    className: "hidden print:flex",
+    description: (
+      <Link
+        aria-label="Colby White's website"
+        className="link text-accent-content"
+        to="/"
+      >
+        colbywhite.dev
+      </Link>
+    ),
+  },
+  {
+    name: "newsletter",
+    icon: NewsletterIcon,
+    description: (
+      <Link
+        aria-label="JS Everywhere newsletter"
+        className="link text-accent-content"
+        to="https://jseverywhere.com"
+      >
+        <i>JS Everywhere</i>
+      </Link>
+    ),
+  },
   {
     name: "LinkedIn Logo",
     icon: "linkedin",
@@ -19,7 +47,7 @@ const socialLinks = [
       <Link
         aria-label="linkedin"
         to="https://www.linkedin.com/in/colbywhite"
-        className="link-secondary link"
+        className="link text-accent-content"
       >
         colbywhite
       </Link>
@@ -32,11 +60,16 @@ const socialLinks = [
       <Link
         aria-label="github"
         to="https://github.com/colbywhite"
-        className="link-secondary link"
+        className="link text-accent-content"
       >
         colbywhite
       </Link>
     ),
+  },
+  {
+    name: "location",
+    icon: MapIcon,
+    description: <>Austin, TX</>,
   },
 ];
 
@@ -52,15 +85,23 @@ export default function Index() {
   return (
     <main className="prose">
       <section>
-        <div className="float-right mx-2 mb-2 flex flex-col items-center gap-1 md:mx-3 md:mb-3">
-          <img
-            className="h-[124px] w-[100px] rounded-full border-4 border-primary md:h-[186px] md:w-[150px]"
-            alt="Colby M. White's headshot"
-            src="/avatar.jpg"
-          />
-          <IconDescriptionList items={socialLinks} />
+        <div className="card-compact card float-none mb-4 bg-accent p-4 text-accent-content shadow-xl print:float-left print:mr-8 md:float-left md:mr-8">
+          <figure className="m-0">
+            <img
+              className="h-[186px] w-[150px] rounded-full border-4 border-accent-content"
+              alt="Colby M. White's headshot"
+              src="/avatar.jpg"
+            />
+          </figure>
+          <div className="card-body items-center p-0">
+            <h2 className="card-title mt-4 text-accent-content">
+              Colby M. White
+            </h2>
+            <IconDescriptionList items={infoIcons} />
+          </div>
         </div>
-        <h1>About me</h1>
+        <h1 className="hidden md:block">About Colby M. White</h1>
+        <h1 className="hidden print:block">Colby M. White's Resume</h1>
         <ul>
           <li>
             Professional software engineer since 2010 as a true full-stack
@@ -87,7 +128,7 @@ export default function Index() {
               to="https://redwood-autoform.netlify.app"
               className="text-accent-content"
             >
-              <code className="mx-1 rounded bg-accent p-2 font-mono">
+              <code className="mx-1 rounded bg-secondary p-2 font-mono text-secondary-content">
                 AutoForm
               </code>
             </Link>
@@ -114,7 +155,7 @@ export default function Index() {
                 to="https://redwood-autoform.netlify.app"
                 className="text-accent-content"
               >
-                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                <code className="mr-1 rounded bg-secondary p-2 font-mono text-secondary-content">
                   AutoForm
                 </code>
               </Link>
@@ -126,9 +167,9 @@ export default function Index() {
             <li>
               <Link
                 to="https://humbleteebox.com"
-                className="text-accent-content"
+                className="text-secondary-content"
               >
-                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                <code className="mr-1 rounded bg-secondary p-2 font-mono">
                   humbleteebox.com
                 </code>
               </Link>
@@ -138,9 +179,9 @@ export default function Index() {
             <li>
               <Link
                 to="https://powerschedules.net"
-                className="text-accent-content"
+                className="text-secondary-content"
               >
-                <code className="mr-1 rounded bg-accent p-2 font-mono">
+                <code className="mr-1 rounded bg-secondary p-2 font-mono">
                   powerschedules.net
                 </code>
               </Link>
@@ -148,8 +189,8 @@ export default function Index() {
               worth viewing
             </li>
             <li>
-              <Link to="/" className="text-accent-content">
-                <code className="mr-1 rounded bg-accent p-2 font-mono">
+              <Link to="/" className="text-secondary-content">
+                <code className="mr-1 rounded bg-secondary p-2 font-mono">
                   colbywhite.dev
                 </code>
               </Link>

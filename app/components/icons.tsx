@@ -14,8 +14,6 @@ export const GitHubLogoIcon = forwardRef<SVGSVGElement, IconProps>(
   function GitHubLogoIcon({ color = "currentColor", ...props }, forwardedRef) {
     return (
       <svg
-        width="15"
-        height="15"
         viewBox="0 0 15 15"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +38,6 @@ export const LinkedInLogoIcon = forwardRef<SVGSVGElement, IconProps>(
   ) {
     return (
       <svg
-        width="15"
-        height="15"
         viewBox="0 0 15 15"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -67,8 +63,6 @@ export const MapIcon = forwardRef<SVGSVGElement, IconProps>(function MapIcon(
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      width="16"
-      height="16"
       {...props}
       ref={forwardedRef}
     >
@@ -81,42 +75,51 @@ export const MapIcon = forwardRef<SVGSVGElement, IconProps>(function MapIcon(
   );
 });
 
-export const WebsiteIcon = forwardRef<SVGSVGElement, IconProps>(
-  function WebsiteIcon({ color = "currentColor", ...props }, forwardRef) {
+export const NewsletterIcon = forwardRef<SVGSVGElement, IconProps>(
+  function NewsletterIcon({ color = "currentColor", ...props }, forwardedRef) {
     return (
       <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
+        fill={color}
+        viewBox="0 0 576 512"
         xmlns="http://www.w3.org/2000/svg"
         {...props}
-        ref={forwardRef}
+        ref={forwardedRef}
+      >
+        <path d="M552 64H112c-20.858 0-38.643 13.377-45.248 32H24c-13.255 0-24 10.745-24 24v272c0 30.928 25.072 56 56 56h496c13.255 0 24-10.745 24-24V88c0-13.255-10.745-24-24-24zM48 392V144h16v248c0 4.411-3.589 8-8 8s-8-3.589-8-8zm480 8H111.422c.374-2.614.578-5.283.578-8V112h416v288zM172 280h136c6.627 0 12-5.373 12-12v-96c0-6.627-5.373-12-12-12H172c-6.627 0-12 5.373-12 12v96c0 6.627 5.373 12 12 12zm28-80h80v40h-80v-40zm-40 140v-24c0-6.627 5.373-12 12-12h136c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H172c-6.627 0-12-5.373-12-12zm192 0v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0-144v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12zm0 72v-24c0-6.627 5.373-12 12-12h104c6.627 0 12 5.373 12 12v24c0 6.627-5.373 12-12 12H364c-6.627 0-12-5.373-12-12z"></path>
+      </svg>
+    );
+  }
+);
+
+export const WebsiteIcon = forwardRef<SVGSVGElement, IconProps>(
+  function WebsiteIcon({ color = "currentColor", ...props }, forwardedRef) {
+    return (
+      <svg
+        stroke="currentColor"
+        fill="none"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+        {...props}
+        ref={forwardedRef}
       >
         <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M14 7C13.4477 7 13 7.44772 13 8V16C13 16.5523 13.4477 17 14 17H18C18.5523 17 19 16.5523 19 16V8C19 7.44772 18.5523 7 18 7H14ZM17 9H15V15H17V9Z"
-          fill={color}
-        />
+          d="M4 8C4.55228 8 5 7.55228 5 7C5 6.44772 4.55228 6 4 6C3.44772 6 3 6.44772 3 7C3 7.55228 3.44772 8 4 8Z"
+          fill="currentColor"
+        ></path>
         <path
-          d="M6 7C5.44772 7 5 7.44772 5 8C5 8.55228 5.44772 9 6 9H10C10.5523 9 11 8.55228 11 8C11 7.44772 10.5523 7 10 7H6Z"
-          fill={color}
-        />
+          d="M8 7C8 7.55228 7.55228 8 7 8C6.44772 8 6 7.55228 6 7C6 6.44772 6.44772 6 7 6C7.55228 6 8 6.44772 8 7Z"
+          fill="currentColor"
+        ></path>
         <path
-          d="M6 11C5.44772 11 5 11.4477 5 12C5 12.5523 5.44772 13 6 13H10C10.5523 13 11 12.5523 11 12C11 11.4477 10.5523 11 10 11H6Z"
-          fill={color}
-        />
+          d="M10 8C10.5523 8 11 7.55228 11 7C11 6.44772 10.5523 6 10 6C9.44771 6 9 6.44772 9 7C9 7.55228 9.44771 8 10 8Z"
+          fill="currentColor"
+        ></path>
         <path
-          d="M5 16C5 15.4477 5.44772 15 6 15H10C10.5523 15 11 15.4477 11 16C11 16.5523 10.5523 17 10 17H6C5.44772 17 5 16.5523 5 16Z"
-          fill={color}
-        />
-        <path
-          fillRule="evenodd"
-          clipRule="evenodd"
-          d="M4 3C2.34315 3 1 4.34315 1 6V18C1 19.6569 2.34315 21 4 21H20C21.6569 21 23 19.6569 23 18V6C23 4.34315 21.6569 3 20 3H4ZM20 5H4C3.44772 5 3 5.44772 3 6V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V6C21 5.44772 20.5523 5 20 5Z"
-          fill={color}
-        />
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M3 3C1.34315 3 0 4.34315 0 6V18C0 19.6569 1.34315 21 3 21H21C22.6569 21 24 19.6569 24 18V6C24 4.34315 22.6569 3 21 3H3ZM21 5H3C2.44772 5 2 5.44772 2 6V9H22V6C22 5.44772 21.5523 5 21 5ZM2 18V11H22V18C22 18.5523 21.5523 19 21 19H3C2.44772 19 2 18.5523 2 18Z"
+          fill="currentColor"
+        ></path>
       </svg>
     );
   }
