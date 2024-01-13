@@ -40,6 +40,7 @@ export type Item = {
   description: JSX.Element;
   className?: string;
 };
+
 export default function IconDescriptionList({ items }: { items: Item[] }) {
   return (
     <dl className="flex flex-col flex-wrap  justify-start gap-2 md:gap-3">

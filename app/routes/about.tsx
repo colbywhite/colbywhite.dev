@@ -85,7 +85,7 @@ export default function Index() {
   return (
     <main className="prose">
       <section>
-        <div className="card-compact card float-none mb-4 bg-accent p-4 text-accent-content shadow-xl print:float-left print:mr-8 md:float-left md:mr-8">
+        <div className="card card-compact float-none mb-4 bg-accent p-4 text-accent-content shadow-xl print:float-left print:mr-8 md:float-left md:mr-8">
           <figure className="m-0">
             <img
               className="h-[186px] w-[150px] rounded-full border-4 border-accent-content"

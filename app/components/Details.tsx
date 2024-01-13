@@ -10,7 +10,7 @@ type DetailsProps = PropsWithChildren<
 >;
 
 export const Details = forwardRef<HTMLDetailsElement, DetailsProps>(
-  ({ title, children, className, ...restProps }, ref) => {
+  function Details({ title, children, className, ...restProps }, ref) {
     return (
       <details
         ref={ref}

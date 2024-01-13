@@ -25,6 +25,7 @@ function DateComponent({
     </time>
   );
 }
+
 export default function DateRange({
   start,
   end,
