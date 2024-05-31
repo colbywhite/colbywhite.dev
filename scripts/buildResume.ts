@@ -1,4 +1,4 @@
-import { convertUrlToPdf } from "~/services/pdf";
+import { convertUrlToPdf } from "../app/services/pdf";
 import fs from "fs";
 import invariant from "tiny-invariant";
 

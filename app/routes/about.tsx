@@ -85,7 +85,7 @@ export default function Index() {
   return (
     <main className="prose">
       <section>
-        <div className="card card-compact float-none mb-4 bg-accent p-4 text-accent-content shadow-xl print:float-left print:mr-8 md:float-left md:mr-8">
+        <div className="card-compact card float-none mb-4 bg-accent p-4 text-accent-content shadow-xl print:float-left print:mr-8 md:float-left md:mr-8">
           <figure className="m-0">
             <img
               className="h-[186px] w-[150px] rounded-full border-4 border-accent-content"
@@ -103,6 +103,11 @@ export default function Index() {
         <h1 className="hidden md:block">About Colby M. White</h1>
         <h1 className="hidden print:block">Colby M. White's Resume</h1>
         <ul>
+          <li>
+            <a href="https://www.nsca.com/">NSCA</a> certified personal trainer
+            and current Kinesiology student at UT-Austin (Spring 2025).
+            Certified in Adult First Aid/CPR/AED by the American Red Cross.
+          </li>
           <li>
             Professional software engineer since 2010 as a true full-stack
             engineer (as opposed to a backend dev who tolerates JS) focusing on
@@ -148,7 +153,7 @@ export default function Index() {
         </ul>
       </section>
       <section>
-        <Details title="Current Projects" open>
+        <Details title="Current Software Projects" open>
           <ul>
             <li>
               <Link

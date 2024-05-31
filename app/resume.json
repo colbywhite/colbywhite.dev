@@ -29,6 +29,26 @@
   },
   "work": [
     {
+      "name": "UT-Austin - RecSports",
+      "highlights": [
+        "Assisted patrons create and manage their memberships, ensuring efficient experience in Gregory Gym."
+      ],
+      "position": "Office Assistant Programs/Memberships",
+      "startDate": "2024-01-22",
+      "location": "Austin, TX",
+      "url": "https://www.linkedin.com/school/theuniversityoftexasataustin-/"
+    },
+    {
+      "name": "Movement Labs",
+      "highlights": [
+        "Helped migrate client portal from a no-code solution to a Remix-powered modern application."
+      ],
+      "position": "Software Contractor",
+      "startDate": "2024-05-07",
+      "location": "Austin, TX",
+      "url": "https://www.linkedin.com/company/movement-labs/"
+    },
+    {
       "name": "Reforge",
       "highlights": [],
       "position": "Staff Software Engineer",
