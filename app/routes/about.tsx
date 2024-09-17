@@ -104,11 +104,6 @@ export default function Index() {
         <h1 className="hidden print:block">Colby M. White's Resume</h1>
         <ul>
           <li>
-            <a href="https://www.nsca.com/">NSCA</a> certified personal trainer
-            and current Kinesiology student at UT-Austin (Spring 2025).
-            Certified in Adult First Aid/CPR/AED by the American Red Cross.
-          </li>
-          <li>
             Professional software engineer since 2010 as a true full-stack
             engineer (as opposed to a backend dev who tolerates JS) focusing on
             technical leadership.
@@ -141,15 +136,20 @@ export default function Index() {
             ecosystem.
           </li>
           <li>
+            Formerly worked professionally at Fractal, Blackbaud, Spanning, CA
+            Technologies, and other companies through contract work.
+          </li>
+          <li>Regular at various Austin tech meetups.</li>
+          <li>
             Owner of two degrees from the University of Texas at Austin in
             Computer Science (2012) and Journalism (2010). Currently pursuing a
             third in Kinesiology.
           </li>
           <li>
-            Formerly worked professionally at Fractal, Blackbaud, Spanning, CA
-            Technologies, and other companies through contract work.
+            <a href="https://www.nsca.com/">NSCA</a> certified personal trainer
+            and current Kinesiology student at UT-Austin (Spring 2025).
+            Certified in Adult First Aid/CPR/AED by the American Red Cross.
           </li>
-          <li>Regular at various Austin tech meetups.</li>
         </ul>
       </section>
       <section>

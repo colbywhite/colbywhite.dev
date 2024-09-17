@@ -2,8 +2,8 @@ import { convertUrlToPdf } from "../app/services/pdf";
 import fs from "fs";
 import invariant from "tiny-invariant";
 
+// use "ngrok http 80" to set up a reverse proxy
 const domain = "" as const;
-// const domain = "http://localhost:8788" as const;
 
 (async () => {
   invariant(domain.length > 1, "Specify the domain to generate the pdf from.");

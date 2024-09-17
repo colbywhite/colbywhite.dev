@@ -29,24 +29,14 @@
   },
   "work": [
     {
-      "name": "UT-Austin - RecSports",
+      "name": "Independent Contractor",
+      "position": "Contract Senior Software Engineer",
       "highlights": [
-        "Assisted patrons create and manage their memberships, ensuring efficient experience in Gregory Gym."
+        "Completed work for different companies",
+        "Helped migrate client portal from a no-code solution to a Remix-powered modern application (Movement Labs)"
       ],
-      "position": "Office Assistant Programs/Memberships",
-      "startDate": "2024-01-22",
-      "location": "Austin, TX",
-      "url": "https://www.linkedin.com/school/theuniversityoftexasataustin-/"
-    },
-    {
-      "name": "Movement Labs",
-      "highlights": [
-        "Helped migrate client portal from a no-code solution to a Remix-powered modern application."
-      ],
-      "position": "Software Contractor",
       "startDate": "2024-05-07",
-      "location": "Austin, TX",
-      "url": "https://www.linkedin.com/company/movement-labs/"
+      "location": "Austin, TX"
     },
     {
       "name": "Reforge",
