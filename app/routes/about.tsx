@@ -21,22 +21,9 @@ const infoIcons = [
       <Link
         aria-label="Colby White's website"
         className="link text-accent-content"
-        to="/"
+        to="https://colbywhite.dev"
       >
         colbywhite.dev
-      </Link>
-    ),
-  },
-  {
-    name: "newsletter",
-    icon: NewsletterIcon,
-    description: (
-      <Link
-        aria-label="JS Everywhere newsletter"
-        className="link text-accent-content"
-        to="https://jseverywhere.com"
-      >
-        <i>JS Everywhere</i>
       </Link>
     ),
   },
@@ -115,15 +102,7 @@ export default function Index() {
             strategy and engineering culture.
           </li>
           <li>
-            Creator of the{" "}
-            <i>
-              <Link to="https://www.jseverywhere.dev/">JS Everywhere</Link>
-            </i>{" "}
-            newsletter, chronicling the increasing dominance of full-stack JS
-            frameworks and all of its side effects.
-          </li>
-          <li>
-            Working with the RedwoodJS core team as a project lead of the
+            Worked with the RedwoodJS core team as a project lead of the
             <Link
               to="https://redwood-autoform.netlify.app"
               className="text-accent-content"
@@ -147,67 +126,36 @@ export default function Index() {
           </li>
           <li>
             <a href="https://www.nsca.com/">NSCA</a> certified personal trainer
-            and current Kinesiology student at UT-Austin (Spring 2025).
-            Certified in Adult First Aid/CPR/AED by the American Red Cross.
+            and current Kinesiology student at UT-Austin. Certified in Adult
+            First Aid/CPR/AED by the American Red Cross.
           </li>
         </ul>
       </section>
       <section>
-        <Details title="Current Software Projects" open>
+        <Details title="Past/Defunct Projects" open={isPrint}>
           <ul>
             <li>
-              <Link
-                to="https://redwood-autoform.netlify.app"
-                className="text-accent-content"
-              >
-                <code className="mr-1 rounded bg-secondary p-2 font-mono text-secondary-content">
-                  AutoForm
-                </code>
-              </Link>
-              , a component designed to automatically generate a form element
-              based on a given schema. The project is designed to work inside
-              the <a href="https://redwoodjs.com">RedwoodJS</a> ecosystem and is
+              <Link to="https://redwood-autoform.netlify.app">AutoForm</Link>, a
+              component designed to automatically generate a form element based
+              on a given schema. The project is designed to work inside the{" "}
+              <a href="https://redwoodjs.com">RedwoodJS</a> ecosystem and is
               being built in conjunction with the core team.
             </li>
             <li>
-              <Link
-                to="https://humbleteebox.com"
-                className="text-secondary-content"
-              >
-                <code className="mr-1 rounded bg-secondary p-2 font-mono">
-                  humbleteebox.com
-                </code>
-              </Link>
-              , a project to help golfers find a nearby tee box that suites
-              their skill-set.
+              <Link to="https://humbleteebox.com">humbleteebox.com</Link>, a
+              project to help golfers find a nearby tee box that suites their
+              skill-set.
             </li>
             <li>
-              <Link
-                to="https://powerschedules.net"
-                className="text-secondary-content"
-              >
-                <code className="mr-1 rounded bg-secondary p-2 font-mono">
-                  powerschedules.net
-                </code>
-              </Link>
-              , a project that aims to filter sporting events that are actually
+              <Link to="https://powerschedules.net">powerschedules.net</Link>, a
+              project that aims to filter sporting events that are actually
               worth viewing
             </li>
             <li>
-              <Link to="/" className="text-secondary-content">
-                <code className="mr-1 rounded bg-secondary p-2 font-mono">
-                  colbywhite.dev
-                </code>
-              </Link>
-              , which includes a personal <Link to="/writings">blog</Link> and
-              an archive of my <Link to="/readings">interesting reads</Link>.
+              <Link to="/">colbywhite.dev</Link>, which includes a personal{" "}
+              <Link to="/writings">blog</Link> and an archive of my{" "}
+              <Link to="/readings">interesting reads</Link>.
             </li>
-          </ul>
-        </Details>
-      </section>
-      <section>
-        <Details title="Past/Defunct Projects" open={isPrint}>
-          <ul>
             <li>
               <a href="https://github.com/colbywhite/acoustic-stack">
                 Acoustic stack

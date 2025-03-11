@@ -29,6 +29,17 @@
   },
   "work": [
     {
+      "name": "Chorus",
+      "position": "Staff Full-stack Development Engineer",
+      "highlights": [
+        "Developed on low-code platform meant for internal stakeholders to build web applications"
+      ],
+      "startDate": "2024-12-02",
+      "endDate": "2025-02-27",
+      "url": "https://www.linkedin.com/company/joinchorus",
+      "location": "Austin, TX"
+    },
+    {
       "name": "Independent Contractor",
       "position": "Contract Senior Software Engineer",
       "highlights": [
@@ -37,15 +48,6 @@
       ],
       "startDate": "2024-05-07",
       "location": "Austin, TX"
-    },
-    {
-      "name": "Reforge",
-      "highlights": [],
-      "position": "Staff Software Engineer",
-      "startDate": "2023-07-24",
-      "endDate": "2023-10-27",
-      "location": "Remote",
-      "url": "https://www.linkedin.com/company/reforge/"
     },
     {
       "name": "Fractal Software",
