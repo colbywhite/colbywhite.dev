@@ -1,9 +1,0 @@
-compatibility_date = "2022-11-30"
-compatibility_flags = ["streams_enable_constructors"]
-send_metrics = false
-name = "broad-lab-2f5d"
-
-[[ kv_namespaces ]]
-binding = "BOOKMARKS"
-id = "a8ba72e7c4b442138c94f9f7661231c3"
-preview_id = "a4a845ddd34d4c5ca122dc345ca7b948"

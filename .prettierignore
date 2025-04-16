@@ -1,11 +1,14 @@
-node_modules
+# Ignore everything
+/*
 
-/build
-/public/build
-.dev.vars
-.dev.vars.example
-functions/
-.cache/
-.yarn/
-
-/app/styles/tailwind.css
+# Except these files & folders
+!/src
+!/public
+!/.github
+!tsconfig.json
+!astro.config.ts
+!.prettierrc.mjs
+!package.json
+!.prettierrc
+!eslint.config.js
+!README.md

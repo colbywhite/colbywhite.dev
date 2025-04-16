@@ -1,8 +1,0 @@
-[build]
-    publish = "public"
-    command = "yarn build"
-
-[[redirects]]
-    from = "/*"
-    to = "/.netlify/functions/server"
-    status = 200
