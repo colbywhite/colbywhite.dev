@@ -3,34 +3,16 @@ layout: ../layouts/AboutLayout.astro
 title: "About"
 ---
 
-AstroPaper is a minimal, responsive and SEO-friendly Astro blog theme. I designed and crafted this based on [my personal blog](https://satnaing.dev/blog).
+I've been building full-stack web apps for more than 15 years across just about every kind of stack and team setup.
+These days, I gravitate toward work that pushes on developer experience and architectural clarity — things that make
+shipping easier without piling on complexity.
 
-This theme is aimed to be accessible out of the box. Light and dark mode are supported by
-default and additional color schemes can also be configured.
+I've spent plenty of time in traditional product organizations - owning features, scaling systems, improving dev
+workflows - but some of my most meaningful work happened outside that lane. At Fractal Software, I partnered with more
+than 50 startup CTOs to help them build from scratch: setting early engineering culture, designing clean architecture,
+and building hiring pipelines that actually worked.
 
-This theme is self-documented \_ which means articles/posts in this theme can also be considered as documentations. So, see the documentation for more info.
-
-<div>
-  <img src="/dev.svg" class="sm:w-1/2 mx-auto" alt="coding dev illustration">
-</div>
-
-## Tech Stack
-
-This theme is written in vanilla JavaScript (+ TypeScript for type checking) and a little bit of ReactJS for some interactions. TailwindCSS is used for styling; and Markdown is used for blog contents.
-
-## Features
-
-Here are certain features of this site.
-
-- fully responsive and accessible
-- SEO-friendly
-- light & dark mode
-- fuzzy search
-- super fast performance
-- draft posts
-- pagination
-- sitemap & rss feed
-- highly customizable
-
-If you like this theme, you can star/contribute to the [repo](https://github.com/satnaing/astro-paper).  
-Or you can even give any feedback via my [email](mailto:contact@satnaing.dev).
+On the open source side, I've worked with the RedwoodJS core team, leading the development
+of [AutoForm](https://autoform.netlify.app), a tool for schema-based form generation. I'm always looking for
+opportunities to get involved with open source projects or collaborative builds with teams who care about the craft. If
+that's you, I'd love to connect.
