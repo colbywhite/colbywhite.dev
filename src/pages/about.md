@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "About"
+title: "The site of Colby M. White"
 ---
 
 I've been building full-stack web apps for more than 15 years across just about every kind of stack and team setup.
@@ -16,3 +16,5 @@ On the open source side, I've worked with the RedwoodJS core team, leading the d
 of [AutoForm](https://autoform.netlify.app), a tool for schema-based form generation. I'm always looking for
 opportunities to get involved with open source projects or collaborative builds with teams who care about the craft. If
 that's you, I'd love to connect.
+
+-- Colby M. White
