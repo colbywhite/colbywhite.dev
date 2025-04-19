@@ -2,9 +2,8 @@ export const SITE = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
   author: "Colby M. White",
   profile: "https://colbywhite.dev/",
-  desc: "Colby M. White's personal site.",
+  desc: "Colby M. White's personal site",
   title: "~/me",
-  ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 4,
