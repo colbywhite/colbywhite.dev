@@ -8,7 +8,7 @@ These days, I gravitate toward work that pushes on developer experience and arch
 shipping easier without piling on complexity.
 
 I've spent plenty of time in traditional product organizations - owning features, scaling systems, improving dev
-workflows - but some of my most meaningful work happened outside that lane. At Fractal Software, I partnered with more
+workflows - but some of my most meaningful work happened in different lanes. At Fractal Software, I partnered with more
 than 50 startup CTOs to help them build from scratch: setting early engineering culture, designing clean architecture,
 and building hiring pipelines that actually worked.
 
