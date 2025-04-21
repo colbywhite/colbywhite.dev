@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import sitemap from "@astrojs/sitemap";
 import remarkToc from "remark-toc";
@@ -31,5 +31,13 @@ export default defineConfig({
   experimental: {
     responsiveImages: true,
     preserveScriptOrder: true,
+  },
+  env: {
+    schema: {
+      RAINDROP_API_TOKEN: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+    },
   },
 });

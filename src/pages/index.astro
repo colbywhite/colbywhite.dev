@@ -10,8 +10,12 @@ import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
+import { getRecentBookmarks } from "@/bookmarks/queries";
 
-const posts = await getCollection("blog");
+const [posts, bookmarks] = await Promise.all([
+  getCollection("blog"),
+  getRecentBookmarks(),
+]);
 
 const sortedPosts = getSortedPosts(posts);
 const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
@@ -58,15 +62,35 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
 
     {
       recentPosts.length > 0 && (
-        <section id="recent-posts" class="pt-12 pb-6">
-          <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
-          <ul>
-            {recentPosts.map(
-              (data, index) =>
-                index < SITE.postPerIndex && <Card variant="h3" {...data} />
-            )}
-          </ul>
-        </section>
+        <>
+          <section id="recent-posts" class="pt-12 pb-6">
+            <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
+            <ul>
+              {recentPosts.map(
+                (data, index) =>
+                  index < SITE.postPerIndex && <Card variant="h3" {...data} />
+              )}
+            </ul>
+          </section>
+          {bookmarks.length > 0 && <Hr />}
+        </>
+      )
+    }
+    {
+      bookmarks.length > 0 && (
+        <>
+          <section id="featured" class="pt-12 pb-6">
+            <h2 class="text-2xl font-semibold tracking-wide">
+              Recent Bookmarks
+            </h2>
+            <ul>
+              {bookmarks.map(({ data }) => (
+                <li>{data.title}</li>
+              ))}
+            </ul>
+          </section>
+          {featuredPosts.length > 0 && <Hr />}
+        </>
       )
     }
 
