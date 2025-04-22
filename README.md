@@ -7,8 +7,10 @@ Started from the [satnaing/astro-paper](https://github.com/satnaing/astro-paper)
 ## TODO
 
 - Fix back button on posts.
-  - Likely requires a different breadcrumb strategy for posts. 
+  - Likely requires a different breadcrumb strategy for posts.
 - Add resume.
 - Add transition name to timestamps.
   - Consolidate FormattedTime and Datetime in the process.
-- Reframe blog as dev journal
+- Reframe blog as dev journal.
+  - Potentially remove the tags since that isn't as useful in the reframing.
+- Replace uses of `@/utils/getSortedPosts` to `@content/blog/queries` version.

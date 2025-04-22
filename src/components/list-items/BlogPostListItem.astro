@@ -2,15 +2,15 @@
 import BaseListItem from "./BaseListItem.astro";
 import FormattedTime from "../FormattedTime.astro";
 import type { CollectionEntry } from "astro:content";
+import { getLatestDate, hasBeenUpdated } from "@/content/blog/utils";
 export interface Props extends CollectionEntry<"blog"> {}
 
 const {
   id,
-  data: { title, pubDatetime, modDatetime, timezone, description },
+  data: { title, timezone, description },
 } = Astro.props;
-const hasBeenUpdated = modDatetime && modDatetime > pubDatetime;
-const datetime = hasBeenUpdated ? modDatetime : pubDatetime;
-const prefix = hasBeenUpdated ? "Updated on" : "Published on";
+const datetime = getLatestDate(Astro.props);
+const prefix = hasBeenUpdated(Astro.props) ? "Updated on" : "Published on";
 ---
 
 <BaseListItem variant="h3" {title} href={`/posts/${id}`} {description}>

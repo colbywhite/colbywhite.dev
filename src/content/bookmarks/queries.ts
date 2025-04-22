@@ -9,7 +9,7 @@ const getSortedBookmarks = async () => {
   );
 };
 
-const getRecentBookmarks = async (count = SITE.paging) => {
+const getRecentBookmarks = async (count = SITE.paging as number) => {
   const bookmarks = await getSortedBookmarks();
   return bookmarks.slice(0, count);
 };

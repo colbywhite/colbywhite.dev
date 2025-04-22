@@ -1,7 +1,7 @@
 import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { SITE } from "@/config";
-import bookmarkLoader from "@/bookmarks/loader";
+import bookmarkLoader from "@/content/bookmarks/loader";
 import { RAINDROP_API_TOKEN } from "astro:env/server";
 
 export const BLOG_PATH = "src/data/blog";

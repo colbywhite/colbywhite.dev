@@ -1,26 +1,27 @@
 ---
-import { getCollection } from "astro:content";
 import Layout from "@/layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
 import Hr from "@/components/Hr.astro";
-import getSortedPosts from "@/utils/getSortedPosts";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
-import { getRecentBookmarks } from "@/bookmarks/queries";
+import { getRecentBookmarks } from "@/content/bookmarks/queries";
+import {
+  getRecentBlogPosts,
+  getFeaturedBlogPosts,
+} from "@/content/blog/queries";
 import BookmarkListItem from "@/components/list-items/BookmarkListItem.astro";
 import BlogPostListItem from "@/components/list-items/BlogPostListItem.astro";
 
-const [posts, bookmarks] = await Promise.all([
-  getCollection("blog"),
-  getRecentBookmarks(),
-]);
+const entityCount = 5;
 
-const sortedPosts = getSortedPosts(posts);
-const featuredPosts = sortedPosts.filter(({ data }) => data.featured);
-const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
+const [recentPosts, featuredPosts, bookmarks] = await Promise.all([
+  getRecentBlogPosts(entityCount),
+  getFeaturedBlogPosts(entityCount),
+  getRecentBookmarks(entityCount),
+]);
 ---
 
 <Layout>
@@ -67,10 +68,9 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           <section id="recent-posts" class="pt-12 pb-6">
             <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
             <ul>
-              {recentPosts.map(
-                (post, index) =>
-                  index < SITE.postPerIndex && <BlogPostListItem {...post} />
-              )}
+              {recentPosts.map(post => (
+                <BlogPostListItem {...post} />
+              ))}
             </ul>
           </section>
           <div class="mb-4 text-center">
