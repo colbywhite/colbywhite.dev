@@ -1,0 +1,24 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getSortedBookmarks } from "@/bookmarks/queries";
+import { SITE } from "@/config";
+import BookmarkListItem from "@/components/list-items/BookmarkListItem.astro";
+import PaginatedListLayout from "@/layouts/PaginatedListLayout.astro";
+
+export const getStaticPaths = (async ({ paginate }) => {
+  const bookmarks = await getSortedBookmarks();
+  return paginate(bookmarks, { pageSize: SITE.paging });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+---
+
+<PaginatedListLayout
+  titlePrefix="Bookmarks"
+  pageDesc="All the articles I've bookmarked."
+  {page}
+>
+  <ul>
+    {page.data.map(post => <BookmarkListItem {...post} />)}
+  </ul>
+</PaginatedListLayout>
