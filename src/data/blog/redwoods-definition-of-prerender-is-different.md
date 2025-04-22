@@ -1,6 +1,5 @@
 ---
 title: Redwood's definition of prerender is ... different
-description: Redwood's definition of prerender is ... different
 pubDatetime: 2022-09-11T01:17:46.438Z
 tags:
   - JAMstack

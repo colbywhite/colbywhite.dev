@@ -1,6 +1,5 @@
 ---
 title: Learning curve for edge platforms (SSG edition)
-description: Learning curve for edge platforms (SSG edition)
 pubDatetime: 2022-07-02T20:48:09.243Z
 tags:
   - JAMstack

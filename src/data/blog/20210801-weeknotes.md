@@ -1,6 +1,5 @@
 ---
 title: Weeknotes - Aug. 1
-description: Weeknotes - Aug. 1
 pubDatetime: 2021-08-01T11:00:00.000-06:00
 tags:
   - weeknotes

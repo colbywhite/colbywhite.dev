@@ -1,0 +1,14 @@
+---
+import BaseListItem from "./BaseListItem.astro";
+import FormattedTime from "../FormattedTime.astro";
+import type { CollectionEntry } from "astro:content";
+export interface Props extends CollectionEntry<"bookmarks"> {}
+
+const {
+  data: { title, link, created },
+} = Astro.props;
+---
+
+<BaseListItem variant="h3" {title} href={link}>
+  <FormattedTime prefix="Bookmarked on" datetime={created} />
+</BaseListItem>

@@ -1,6 +1,5 @@
 ---
 title: A Jamstack definition without the edge?
-description: A Jamstack definition without the edge?
 pubDatetime: 2022-07-16T02:08:15.231Z
 tags:
   - JAMstack

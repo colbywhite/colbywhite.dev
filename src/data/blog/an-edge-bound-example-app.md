@@ -1,6 +1,5 @@
 ---
 title: An edge-bound example app
-description: An edge-bound example app
 pubDatetime: 2022-08-17T02:13:50.892Z
 ---
 

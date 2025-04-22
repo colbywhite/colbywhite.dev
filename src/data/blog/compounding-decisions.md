@@ -1,6 +1,5 @@
 ---
 title: Decision after decision after decision
-description: Decision after decision after decision
 pubDatetime: 2021-09-04T11:00:00.000-06:00
 tags:
   - it's not just about code

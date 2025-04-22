@@ -5,6 +5,7 @@ export const SITE = {
   desc: "Colby M. White's personal site",
   title: "~/me",
   lightAndDarkMode: true,
+  paging: 5,
   postPerIndex: 4,
   postPerPage: 4,
   scheduledPostMargin: 15 * 60 * 1000, // 15 minutes

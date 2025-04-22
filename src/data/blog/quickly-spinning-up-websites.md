@@ -1,6 +1,5 @@
 ---
 title: Quickly spinning up websites
-description: Quickly spinning up websites
 pubDatetime: 2021-07-26T11:00:00.000-06:00
 tags:
   - spa fatigue

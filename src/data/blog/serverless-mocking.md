@@ -1,6 +1,5 @@
 ---
 title: Serverless Mocking
-description: Serverless Mocking
 pubDatetime: 2016-09-11T11:00:00.000-06:00
 tags:
   - serverless

@@ -1,6 +1,5 @@
 ---
 title: The pre-rendering blip
-description: The pre-rendering blip
 pubDatetime: 2022-10-01T23:34:28.894Z
 tags:
   - JAMstack

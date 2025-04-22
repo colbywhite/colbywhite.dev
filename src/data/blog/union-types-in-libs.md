@@ -1,6 +1,5 @@
 ---
 title: Alternate ways to handle deep types in libraries
-description: Alternate ways to handle deep types in libraries
 pubDatetime: 2021-07-30T11:00:00.000-06:00
 tags:
   - typescript

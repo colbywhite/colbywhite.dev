@@ -1,4 +1,5 @@
 import { getCollection } from "astro:content";
+import { SITE } from "@/config";
 
 const getSortedBookmarks = async () => {
   const bookmarks = await getCollection("bookmarks");
@@ -8,7 +9,7 @@ const getSortedBookmarks = async () => {
   );
 };
 
-const getRecentBookmarks = async (count = 10) => {
+const getRecentBookmarks = async (count = SITE.paging) => {
   const bookmarks = await getSortedBookmarks();
   return bookmarks.slice(0, count);
 };

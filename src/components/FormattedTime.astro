@@ -1,0 +1,50 @@
+---
+import dayjs from "@/utils/dayjs";
+import IconCalendar from "@/assets/icons/IconCalendar.svg";
+import { SITE } from "@/config";
+
+export interface Props {
+  class?: string;
+  size?: "sm" | "lg";
+  timezone?: string;
+  datetime: string | Date;
+  prefix?: string;
+  srOnly?: boolean;
+  format?: string;
+}
+
+const {
+  datetime: rawDatetime,
+  size = "sm",
+  class: className = "",
+  timezone,
+  prefix = "Published",
+  srOnly = false,
+  format = "D MMM, YYYY z", // e.g., '22 Mar, 2025 CDT'
+} = Astro.props;
+
+const datetime = dayjs(rawDatetime).tz(timezone || SITE.timezone);
+const formattedDatetime = datetime.format(format);
+---
+
+<div class:list={["flex items-end space-x-2 opacity-80", className]}>
+  <IconCalendar
+    class:list={[
+      "inline-block size-6 min-w-[1.375rem]",
+      { "scale-90": size === "sm" },
+    ]}
+  />
+  {
+    srOnly ? (
+      <span class="sr-only">{prefix}</span>
+    ) : (
+      <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
+        {prefix}
+      </span>
+    )
+  }
+
+  <span class:list={["text-sm italic", { "sm:text-base": size === "lg" }]}>
+    <time datetime={datetime.toISOString()}>{formattedDatetime}</time>
+  </span>
+</div>

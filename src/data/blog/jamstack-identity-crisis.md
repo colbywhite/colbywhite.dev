@@ -1,6 +1,5 @@
 ---
 title: Jamstack identity crisis
-description: Jamstack identity crisis
 pubDatetime: 2021-08-0T11:00:00.000-06:00
 tags:
   - jamstack

@@ -1,6 +1,5 @@
 ---
 title: What Amplify says about AWS
-description: What Amplify says about AWS
 pubDatetime: 2022-08-18T15:00:00.449Z
 tags:
   - AWS

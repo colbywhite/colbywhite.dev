@@ -1,6 +1,5 @@
 ---
 title: Jamstack is dead
-description: Jamstack is dead
 pubDatetime: 2023-02-28T11:00:00.000-06:00
 tags:
   - JAMstack

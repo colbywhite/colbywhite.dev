@@ -5,12 +5,13 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import Socials from "@/components/Socials.astro";
 import LinkButton from "@/components/LinkButton.astro";
-import Card from "@/components/Card.astro";
 import Hr from "@/components/Hr.astro";
 import getSortedPosts from "@/utils/getSortedPosts";
 import IconArrowRight from "@/assets/icons/IconArrowRight.svg";
 import { SITE } from "@/config";
 import { getRecentBookmarks } from "@/bookmarks/queries";
+import BookmarkListItem from "@/components/list-items/BookmarkListItem.astro";
+import BlogPostListItem from "@/components/list-items/BlogPostListItem.astro";
 
 const [posts, bookmarks] = await Promise.all([
   getCollection("blog"),
@@ -50,8 +51,8 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
           <section id="featured" class="pt-12 pb-6">
             <h2 class="text-2xl font-semibold tracking-wide">Featured</h2>
             <ul>
-              {featuredPosts.map(data => (
-                <Card variant="h3" {...data} />
+              {featuredPosts.map(post => (
+                <BlogPostListItem {...post} />
               ))}
             </ul>
           </section>
@@ -67,15 +68,23 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
             <h2 class="text-2xl font-semibold tracking-wide">Recent Posts</h2>
             <ul>
               {recentPosts.map(
-                (data, index) =>
-                  index < SITE.postPerIndex && <Card variant="h3" {...data} />
+                (post, index) =>
+                  index < SITE.postPerIndex && <BlogPostListItem {...post} />
               )}
             </ul>
           </section>
-          {bookmarks.length > 0 && <Hr />}
+          <div class="mb-4 text-center">
+            <LinkButton href="/posts/">
+              All Posts
+              <IconArrowRight class="inline-block" />
+            </LinkButton>
+          </div>
         </>
       )
     }
+
+    {bookmarks.length > 0 && <Hr />}
+
     {
       bookmarks.length > 0 && (
         <>
@@ -84,22 +93,21 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
               Recent Bookmarks
             </h2>
             <ul>
-              {bookmarks.map(({ data }) => (
-                <li>{data.title}</li>
+              {bookmarks.map(bookmark => (
+                <BookmarkListItem {...bookmark} />
               ))}
             </ul>
           </section>
-          {featuredPosts.length > 0 && <Hr />}
+          <!--<div class="mb-4 text-center">-->
+          <!--  <LinkButton href="/bookmarks/">-->
+          <!--    All Bookmarks-->
+          <!--    <IconArrowRight class="inline-block" />-->
+          <!--  </LinkButton>-->
+          <!--</div>-->
         </>
+
       )
     }
-
-    <div class="my-8 text-center">
-      <LinkButton href="/posts/">
-        All Posts
-        <IconArrowRight class="inline-block" />
-      </LinkButton>
-    </div>
   </main>
   <Footer />
 </Layout>
