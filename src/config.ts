@@ -1,7 +1,7 @@
 export const SITE = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: "https://colbywhite.dev/", // replace this with your deployed domain
   author: "Colby M. White",
-  profile: "https://colbywhite.dev/",
+  profile: "https://colbywhite.dev/about",
   desc: "Colby M. White's personal site",
   title: "colbywhite.dev",
   lightAndDarkMode: true,
