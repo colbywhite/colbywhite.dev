@@ -1,6 +1,6 @@
 ---
 layout: ../layouts/AboutLayout.astro
-title: "The site of Colby M. White"
+title: "About the author"
 ---
 
 I've been building full-stack web apps for more than 15 years across just about every kind of stack and team setup.
@@ -17,4 +17,4 @@ of [AutoForm](https://autoform.netlify.app), a tool for schema-based form genera
 opportunities to get involved with open source projects or collaborative builds with teams who care about the craft. If
 that's you, I'd love to connect.
 
--- Colby M. White
+<p class="text-right">-- Colby M. White</p>

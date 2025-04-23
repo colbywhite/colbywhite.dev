@@ -19,7 +19,7 @@ export const SOCIALS = [
   },
   {
     name: "RSS Feed",
-    href: "https://www.linkedin.com/in/colbywhite",
+    href: "/rss.xml",
     linkTitle: `${SITE.author}'s RSS Feed`,
     icon: IconRss,
   },
