@@ -3,7 +3,7 @@ export const SITE = {
   author: "Colby M. White",
   profile: "https://colbywhite.dev/",
   desc: "Colby M. White's personal site",
-  title: "~/me",
+  title: "colbywhite.dev",
   lightAndDarkMode: true,
   paging: 7,
   postPerPage: 4,

@@ -38,9 +38,10 @@ const isActive = (path: string) => {
     >
       <a
         href="/"
-        class="absolute py-1 text-2xl leading-7 font-semibold whitespace-nowrap hover:text-accent sm:static"
+        class:list={{ "active-nav": isActive("/") }}
+        class="absolute py-1 leading-7 font-medium whitespace-nowrap hover:text-accent sm:static"
       >
-        {SITE.title}
+        Home
       </a>
       <nav
         id="nav-menu"
