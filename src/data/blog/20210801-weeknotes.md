@@ -3,12 +3,13 @@ title: Weeknotes - Aug. 1
 pubDatetime: 2021-08-01T11:00:00.000-06:00
 tags:
   - weeknotes
+  - dev notes
   - résumé
   - cross-functional teams
   - event sourcing
 ---
 
-Starting something new: Weeknotes. Swagger jacked it from [Jan Früchtl](https://fruechtl.me/writing/weeknotes-1), who swagger jacked it from others. "No idea's original" - Nas.
+Starting something new: Weeknotes. Swagger jacked it from [Jan Früchtl](https://web.archive.org/web/20210620065427/https://fruechtl.me/writing/weeknotes-1), who swagger jacked it from others. "No idea's original" - Nas.
 
 Will use it to collect dev-related things I've learned/done/read throughout the week. We'll see if it proves to be productive in getting me to keep track of ideas. I have a feeling I'll forget to jot things down as they come. 🤷 If I keep it short and sweet, maybe that'll be conducive to me actually keeping up. Short, sweet, sassy. My new motto.
 
