@@ -38,6 +38,14 @@ export default defineConfig({
         context: "server",
         access: "secret",
       }),
+      STRAPI_API_TOKEN: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      STRAPI_BASE_URL: envField.string({
+        context: "server",
+        access: "secret",
+      }),
     },
   },
 });

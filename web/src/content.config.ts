@@ -2,7 +2,13 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { SITE } from "@/config";
 import bookmarkLoader from "@/content/bookmarks/loader";
-import { RAINDROP_API_TOKEN } from "astro:env/server";
+import {
+  RAINDROP_API_TOKEN,
+  STRAPI_BASE_URL,
+  STRAPI_API_TOKEN,
+} from "astro:env/server";
+import postLoader from "@/content/blog-posts/loader";
+import POST_SCHEMA from "@/content/blog-posts/schema";
 
 export const BLOG_PATH = "src/data/blog";
 
@@ -28,4 +34,15 @@ const bookmarks = defineCollection({
   loader: bookmarkLoader({ token: RAINDROP_API_TOKEN }),
 });
 
-export const collections = { blog, bookmarks };
+const posts = defineCollection({
+  loader: postLoader({
+    contentType: "blog-post",
+    clientConfig: {
+      baseURL: STRAPI_BASE_URL,
+      auth: STRAPI_API_TOKEN,
+    },
+  }),
+  schema: POST_SCHEMA,
+});
+
+export const collections = { blog, bookmarks, posts };
