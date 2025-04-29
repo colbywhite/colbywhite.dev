@@ -13,14 +13,17 @@ export class BookmarkService {
   }
 
   public async traverseAllBookmarks(
-    callback: (page: RainDropItem[]) => Promise<void>
+    callback: (
+      page: RainDropItem[],
+      pagination: { page: number; pageCount: number }
+    ) => Promise<void>
   ) {
     const perPage = 20;
-    const numPages = await this.fetchPageCount(perPage);
+    const pageCount = await this.fetchPageCount(perPage);
     let currentPage = 0;
-    while (currentPage < numPages) {
+    while (currentPage < pageCount) {
       const page = await this.fetchBookmarks({ perPage, page: currentPage });
-      await callback(page);
+      await callback(page, { page: currentPage, pageCount });
       currentPage++;
     }
   }

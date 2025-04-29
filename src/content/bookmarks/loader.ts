@@ -14,15 +14,16 @@ export default function ({ token }: { token: string }): Loader {
     }: LoaderContext): Promise<void> => {
       // TODO only load when there are new bookmarks
       logger.info("Loading bookmarks");
-      store.clear();
-      await bookmarkSvc.traverseAllBookmarks(async page => {
+      await bookmarkSvc.traverseAllBookmarks(async (page, pagination) => {
         for (const bookmark of page) {
           const id = String(bookmark._id);
           const data = await parseData({ id, data: bookmark });
           const digest = generateDigest(data);
           store.set({ data, digest, id });
         }
-        logger.info(`Stored ${page.length} bookmarks`);
+        logger.info(
+          `Stored page ${pagination.page + 1} of ${pagination.pageCount}.`
+        );
       });
     },
     schema: RainDropItemSchema,
