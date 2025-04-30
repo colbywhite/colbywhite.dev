@@ -3,7 +3,7 @@ services:
     name: strapi
     env: node
     plan: starter
-    buildCommand: pnpm install && pnpm build
+    buildCommand: NODE_ENV=development pnpm install && NODE_ENV=production pnpm build
     startCommand: rsync -a public/ /data/public/ && pnpm start
     healthCheckPath: /_health
     autoDeploy: false
@@ -19,9 +19,17 @@ services:
         value: production
       - key: DATABASE_FILENAME
         value: /data/strapi.db
+      - key: HOST
+        generateValue: 0.0.0.0
+      - key: PORT
+        generateValue: 80
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_JWT_SECRET
         generateValue: true
       - key: APP_KEYS
+        generateValue: true
+      - key: API_TOKEN_SALT
+        generateValue: true
+      - key: TRANSFER_TOKEN_SALT
         generateValue: true
