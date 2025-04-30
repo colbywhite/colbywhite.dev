@@ -20,9 +20,9 @@ services:
       - key: DATABASE_FILENAME
         value: /data/strapi.db
       - key: HOST
-        generateValue: 0.0.0.0
+        value: 0.0.0.0
       - key: PORT
-        generateValue: 80
+        value: 80
       - key: JWT_SECRET
         generateValue: true
       - key: ADMIN_JWT_SECRET
