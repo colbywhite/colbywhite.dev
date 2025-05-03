@@ -7,7 +7,6 @@ import { slugifyStr } from "@/utils/slugify";
 export interface Props extends CollectionEntry<"blog"> {}
 
 const {
-  id,
   data: { title, timezone, description },
 } = Astro.props;
 const datetime = getLatestDate(Astro.props);
