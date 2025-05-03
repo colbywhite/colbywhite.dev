@@ -3,6 +3,7 @@ import BaseListItem from "./BaseListItem.astro";
 import FormattedTime from "../FormattedTime.astro";
 import type { CollectionEntry } from "astro:content";
 import { getLatestDate, hasBeenUpdated } from "@/content/blog/utils";
+import { slugifyStr } from "@/utils/slugify";
 export interface Props extends CollectionEntry<"blog"> {}
 
 const {
@@ -11,8 +12,9 @@ const {
 } = Astro.props;
 const datetime = getLatestDate(Astro.props);
 const prefix = hasBeenUpdated(Astro.props) ? "Updated on" : "Published on";
+const slug = slugifyStr(title);
 ---
 
-<BaseListItem variant="h3" {title} href={`/posts/${id}`} {description}>
+<BaseListItem variant="h3" {title} href={`/posts/${slug}`} {description}>
   <FormattedTime {timezone} {prefix} {datetime} />
 </BaseListItem>

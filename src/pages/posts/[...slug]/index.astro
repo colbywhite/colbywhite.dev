@@ -2,6 +2,7 @@
 import { type CollectionEntry } from "astro:content";
 import PostDetails from "@/layouts/PostDetails.astro";
 import { getSortedBlogPosts } from "@/content/blog/queries";
+import { slugifyStr } from "../../../utils/slugify";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
     const prevPost = index !== 0 ? posts[index - 1] : undefined;
     const nextPost = index !== posts.length ? posts[index + 1] : undefined;
     return {
-      params: { slug: post.id },
+      params: { slug: slugifyStr(post.data.title) },
       props: { post, prevPost, nextPost },
     };
   });
