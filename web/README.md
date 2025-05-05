@@ -13,4 +13,4 @@ Started from the [satnaing/astro-paper](https://github.com/satnaing/astro-paper)
 - Replace uses of `@/utils/getSortedPosts` to `@content/blog/queries` version.
 - Don't get all the bookmarks every build.
   - Is netlify actually caching them between builds?
-- Display both published and modified dates. 
+- Display both published and modified dates.

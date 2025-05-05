@@ -73,11 +73,11 @@ This a fairly standard action for a node project that runs the commands we need 
 
 ```yaml
 - name: Deploy
-    uses: peaceiris/actions-gh-pages@v3
-    if: github.ref == 'refs/heads/main'
-    with:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      publish_dir: ./_site
+  uses: peaceiris/actions-gh-pages@v3
+  if: github.ref == 'refs/heads/main'
+  with:
+    github_token: ${{ secrets.GITHUB_TOKEN }}
+    publish_dir: ./_site
 ```
 
 This requires a GitHub Token, so there is some UI clicks needed to obtain that and to set it has a secret for the repo. But that is fairly standard.
