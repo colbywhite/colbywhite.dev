@@ -34,6 +34,8 @@ const bookmarks = defineCollection({
   loader: bookmarkLoader({ token: RAINDROP_API_TOKEN }),
 });
 
+// TODO: re-enable posts when strapi is deployed
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const posts = defineCollection({
   loader: postLoader({
     contentType: "blog-post",
@@ -45,4 +47,4 @@ const posts = defineCollection({
   schema: POST_SCHEMA,
 });
 
-export const collections = { blog, bookmarks, posts };
+export const collections = { blog, bookmarks };

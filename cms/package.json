@@ -2,7 +2,7 @@
   "name": "cms",
   "version": "0.1.0",
   "private": true,
-  "description": "A Strapi application",
+  "description": "The CMS powering colbywhite.dev",
   "scripts": {
     "build": "strapi build",
     "console": "strapi console",

@@ -1,7 +1,9 @@
 {
-  "name": "colbywhite.dev",
+  "name": "web",
   "type": "module",
   "version": "5.2.0",
+  "private": true,
+  "description": "The frontend powering colbywhite.dev",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
