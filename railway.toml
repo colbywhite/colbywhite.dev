@@ -1,6 +1,6 @@
 [build]
 builder = "RAILPACK"
-watchPatterns= ["cms"]
+watchPatterns= ["cms", "railway.toml"]
 buildCommand = "pnpm --filter cms build"
 
 [deploy]
