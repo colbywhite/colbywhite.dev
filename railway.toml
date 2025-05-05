@@ -2,5 +2,7 @@
 builder = "RAILPACK"
 watchPatterns= ["cms"]
 buildCommand = "pnpm --filter cms build"
+
+[deploy]
 startCommand = "pnpm --filter cms start"
 healthcheckPath = "/_health"
