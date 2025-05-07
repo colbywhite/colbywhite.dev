@@ -1,3 +1,4 @@
 /.vscode
 pnpm-lock.yaml
 cms/types/generated
+cms/src/api

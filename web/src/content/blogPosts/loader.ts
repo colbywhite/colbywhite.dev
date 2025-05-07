@@ -59,7 +59,7 @@ export default function ({
         } = await collection.find(paginatedParams);
 
         for (const document of page) {
-          const id = String(document.id); // TODO: should this be documentId?
+          const id = String(document.documentId);
           const data = await parseData({ id, data: document });
           const digest = generateDigest(data);
           store.set({ id, digest, data });

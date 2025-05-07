@@ -7,8 +7,8 @@ import {
   STRAPI_BASE_URL,
   STRAPI_API_TOKEN,
 } from "astro:env/server";
-import postLoader from "@/content/blog-posts/loader";
-import POST_SCHEMA from "@/content/blog-posts/schema";
+import postLoader from "@/content/blogPosts/loader";
+import POST_SCHEMA from "@/content/blogPosts/schema";
 
 export const BLOG_PATH = "src/data/blog";
 
@@ -34,9 +34,7 @@ const bookmarks = defineCollection({
   loader: bookmarkLoader({ token: RAINDROP_API_TOKEN }),
 });
 
-// TODO: re-enable posts when strapi is deployed
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const posts = defineCollection({
+const blogPosts = defineCollection({
   loader: postLoader({
     contentType: "blog-post",
     clientConfig: {
@@ -47,4 +45,4 @@ const posts = defineCollection({
   schema: POST_SCHEMA,
 });
 
-export const collections = { blog, bookmarks };
+export const collections = { blog, bookmarks, blogPosts };
