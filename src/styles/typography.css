@@ -43,6 +43,10 @@
     @apply break-all sm:break-normal;
   }
 
+  .prose .footnotes {
+    @apply my-12 border-dashed border-y-1
+  }
+
   pre > code {
     white-space: pre;
   }
