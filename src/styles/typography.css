@@ -8,7 +8,7 @@
     @apply break-words hover:!text-accent;
   }
   .prose a.prose-invert {
-    @apply hover:!text-background outline-background focus-visible:outline-2;
+    @apply outline-background hover:!text-background focus-visible:outline-2;
   }
   .prose thead th:first-child,
   tbody td:first-child,
@@ -44,7 +44,7 @@
   }
 
   .prose .footnotes {
-    @apply my-12 border-dashed border-y-1
+    @apply my-12 border-y-1 border-dashed;
   }
 
   pre > code {
