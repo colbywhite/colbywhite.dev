@@ -19,7 +19,7 @@ export class BookmarkService {
     ) => Promise<void>
   ) {
     const perPage = 20;
-    const pageCount = await this.fetchPageCount(perPage);
+    const pageCount = await this.getPageCount(perPage);
     let currentPage = 0;
     while (currentPage < pageCount) {
       const page = await this.fetchBookmarks({ perPage, page: currentPage });
@@ -28,22 +28,31 @@ export class BookmarkService {
     }
   }
 
-  private async fetchPageCount(perPage: number) {
-    const {
-      item: { count },
-    } = await fetch(COLLECTION_URL, { headers: this.headers }).then(
-      response => {
-        invariant(
-          response.ok,
-          `Received error fetching paging info. ${response.statusText}`
-        );
-        invariant(
-          response.body !== null,
-          "No body returned while fetching paging info."
-        );
-        return response.json() as Promise<CollectionResponse>;
-      }
-    );
+  public async getLastUpdated() {
+    const { lastUpdate } = await this.fetchCollectionInfo();
+    return lastUpdate ? new Date(lastUpdate) : undefined;
+  }
+
+  // TODO: cache this
+  private async fetchCollectionInfo() {
+    const { item } = await fetch(COLLECTION_URL, {
+      headers: this.headers,
+    }).then(response => {
+      invariant(
+        response.ok,
+        `Received error fetching paging info. ${response.statusText}`
+      );
+      invariant(
+        response.body !== null,
+        "No body returned while fetching paging info."
+      );
+      return response.json() as Promise<CollectionResponse>;
+    });
+    return item;
+  }
+
+  private async getPageCount(perPage: number) {
+    const { count } = await this.fetchCollectionInfo();
     return Math.ceil(count / perPage);
   }
 
