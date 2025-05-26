@@ -34,6 +34,26 @@ export default defineConfig({
   },
   env: {
     schema: {
+      INKDROP_DB_NAME: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      INKDROP_DB_URL: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      INKDROP_DB_USER: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      INKDROP_DB_PASSWORD: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      INKDROP_NOTEBOOK: envField.string({
+        context: "server",
+        access: "secret",
+      }),
       RAINDROP_API_TOKEN: envField.string({
         context: "server",
         access: "secret",
