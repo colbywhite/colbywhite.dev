@@ -25,7 +25,6 @@ export const InkDropBlogPostSchema = z.object({
   numOfTasks: z.number(),
   numOfCheckedTasks: z.number(),
   timestamp: z.number(),
-  pinned: z.boolean(),
   frontmatter: FrontMatterSchema,
 });
 
