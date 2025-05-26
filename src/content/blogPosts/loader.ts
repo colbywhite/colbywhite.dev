@@ -57,7 +57,9 @@ export default function ({
               }
               meta.set(LAST_SYNCED_SEQ_ID, change.seq);
             }
-            logger.info(`Stored ${count} ${NAME}.`);
+            if (count > 0) {
+              logger.info(`Stored ${count} ${NAME}.`);
+            }
           }
         }
       );
