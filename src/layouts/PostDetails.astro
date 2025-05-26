@@ -7,7 +7,6 @@ import Tag from "@/components/Tag.astro";
 import Datetime from "@/components/Datetime.astro";
 import ShareLinks from "@/components/ShareLinks.astro";
 import BackButton from "@/components/BackButton.astro";
-import { getPath } from "@/utils/getPath";
 import { slugifyStr } from "@/utils/slugify";
 import IconChevronLeft from "@/assets/icons/IconChevronLeft.svg";
 import IconChevronRight from "@/assets/icons/IconChevronRight.svg";
@@ -38,7 +37,7 @@ const layoutProps = {
   description,
   pubDatetime: new Date(pubDatetime),
   modDatetime: modDatetime ? new Date(modDatetime) : undefined,
-  ogImage: new URL(`${getPath(post.id, post.filePath)}/index.png`, Astro.url.origin).href,
+  ogImage: new URL(`/posts/${slugifyStr(title)}/index.png`, Astro.url.origin).href,
   scrollSmooth: true,
 };
 ---

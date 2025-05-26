@@ -193,7 +193,7 @@ export default async post => {
                                       overflow: "hidden",
                                       fontWeight: "bold",
                                     },
-                                    children: post.data.author,
+                                    children: post.data.frontmatter.author,
                                   },
                                 },
                               ],
@@ -222,7 +222,11 @@ export default async post => {
       height: 630,
       embedFont: true,
       fonts: await loadGoogleFonts(
-        post.data.title + post.data.author + SITE.title + "by" + SITE.desc
+        post.data.title +
+          post.data.frontmatter.author +
+          SITE.title +
+          "by" +
+          SITE.desc
       ),
     }
   );

@@ -1,4 +1,4 @@
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
 import bookmarkLoader from "@/content/bookmarks/loader";
 import blogPostLoader from "@/content/blogPosts/loader";
 import {

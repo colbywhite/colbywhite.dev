@@ -1,7 +1,9 @@
 import { z } from "astro:content";
 import type { DatabaseChangesResultItem } from "nano";
+import { SITE } from "@/config";
 
 const FrontMatterSchema = z.object({
+  author: z.string().default(SITE.author),
   pubDatetime: z.string().datetime({ offset: true }),
   modDatetime: z.string().datetime({ offset: true }).optional().nullable(),
   featured: z.boolean().optional(),

@@ -49,3 +49,22 @@ export function hasBeenUpdated({
 }: CollectionEntry<"blogPosts">) {
   return modDatetime && new Date(modDatetime) > new Date(pubDatetime);
 }
+
+type GroupKey = string | number | symbol;
+type GroupFunction<T> = (item: T, index?: number) => GroupKey;
+
+export function groupPosts(
+  posts: CollectionEntry<"blogPosts">[],
+  groupFunction: GroupFunction<CollectionEntry<"blogPosts">>
+) {
+  const result: Record<GroupKey, CollectionEntry<"blogPosts">[]> = {};
+  for (let i = 0; i < posts.length; i++) {
+    const item = posts[i];
+    const groupKey = groupFunction(item, i);
+    if (!result[groupKey]) {
+      result[groupKey] = [];
+    }
+    result[groupKey].push(item);
+  }
+  return result;
+}
