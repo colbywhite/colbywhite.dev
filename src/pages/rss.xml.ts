@@ -1,21 +1,25 @@
 import rss from "@astrojs/rss";
-import { getCollection } from "astro:content";
-import { getPath } from "@/utils/getPath";
-import getSortedPosts from "@/utils/getSortedPosts";
 import { SITE } from "@/config";
+import { getSortedBlogPosts } from "@/content/blogPosts/queries";
+import { slugifyStr } from "@/utils/slugify";
+import type { APIRoute } from "astro";
 
-export async function GET() {
-  const posts = await getCollection("blog");
-  const sortedPosts = getSortedPosts(posts);
+export const GET: APIRoute = async ({ request }) => {
+  const sortedPosts = await getSortedBlogPosts();
   return rss({
     title: SITE.title,
     description: SITE.desc,
     site: SITE.website,
-    items: sortedPosts.map(({ data, id, filePath }) => ({
-      link: getPath(id, filePath),
+    items: sortedPosts.map(({ data }) => ({
+      link: new URL(
+        `/posts/${slugifyStr(data.title)}`,
+        new URL(request.url).origin
+      ).href,
       title: data.title,
-      description: data.description,
-      pubDate: new Date(data.modDatetime ?? data.pubDatetime),
+      description: data.frontmatter.description,
+      pubDate: new Date(
+        data.frontmatter.modDatetime ?? data.frontmatter.pubDatetime
+      ),
     })),
   });
-}
+};

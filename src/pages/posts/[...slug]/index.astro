@@ -1,13 +1,13 @@
 ---
 import { type CollectionEntry } from "astro:content";
 import PostDetails from "@/layouts/PostDetails.astro";
-import { getSortedBlogPosts } from "@/content/blog/queries";
+import { getSortedBlogPosts } from "@/content/blogPosts/queries";
 import { slugifyStr } from "../../../utils/slugify";
 
 export interface Props {
-  post: CollectionEntry<"blog">;
-  prevPost: CollectionEntry<"blog">;
-  nextPost: CollectionEntry<"blog">;
+  post: CollectionEntry<"blogPosts">;
+  prevPost: CollectionEntry<"blogPosts">;
+  nextPost: CollectionEntry<"blogPosts">;
 }
 
 export async function getStaticPaths() {

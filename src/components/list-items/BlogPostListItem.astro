@@ -2,12 +2,16 @@
 import BaseListItem from "./BaseListItem.astro";
 import FormattedTime from "../FormattedTime.astro";
 import type { CollectionEntry } from "astro:content";
-import { getLatestDate, hasBeenUpdated } from "@/content/blog/utils";
+import { getLatestDate, hasBeenUpdated } from "@/content/blogPosts/utils";
 import { slugifyStr } from "@/utils/slugify";
-export interface Props extends CollectionEntry<"blog"> {}
+
+export interface Props extends CollectionEntry<"blogPosts"> {}
 
 const {
-  data: { title, timezone, description },
+  data: {
+    title,
+    frontmatter: { timezone, description },
+  },
 } = Astro.props;
 const datetime = getLatestDate(Astro.props);
 const prefix = hasBeenUpdated(Astro.props) ? "Updated on" : "Published on";

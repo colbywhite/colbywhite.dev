@@ -3,7 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { SITE } from "@/config";
 import BlogPostListItem from "@/components/list-items/BlogPostListItem.astro";
 import PaginatedListLayout from "@/layouts/PaginatedListLayout.astro";
-import { getSortedBlogPosts } from "@/content/blog/queries";
+import { getSortedBlogPosts } from "@/content/blogPosts/queries";
 
 export const getStaticPaths = (async ({ paginate }) => {
   const posts = await getSortedBlogPosts();
