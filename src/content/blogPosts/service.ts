@@ -13,17 +13,19 @@ export class InkDropService {
     callback: (page: InkDropBlogPostChangeDocument[]) => Promise<void>
   ) {
     const perPage = 20;
+    let lastSeq = seqId;
     let page: DatabaseChangesResponse = {
-      last_seq: seqId,
+      last_seq: lastSeq,
       pending: Number.MAX_SAFE_INTEGER,
       results: [],
     };
     do {
       page = await this.db.changes({
-        since: seqId,
+        since: lastSeq,
         limit: perPage,
         include_docs: true,
       });
+      lastSeq = page.last_seq;
       const filteredChanges = (
         page.results as InkDropBlogPostChangeDocument[]
       ).filter(
