@@ -2,13 +2,15 @@ name: Deploy netlify site
 
 on:
   schedule:
-    # 5:17 & 17:17 UTC every day
-    - cron:  '17 5,17 * * *'
-    
+    # 05:17 & 23:17 UTC every day
+    # 11:17 & 17:17 CST every day
+    # 00:17 & 18:17 CDT every day
+    - cron:  '17 5,23 * * *'
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: "Deployed site"
+    - name: "Run Netlify build"
       run: curl -X POST -d {} ${{ secrets.NETLIFY_BUILD_HOOK }}
