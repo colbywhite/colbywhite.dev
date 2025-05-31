@@ -7,9 +7,8 @@ import type {
 export class InkDropService {
   constructor(private db: DocumentScope<InkDropBlogPost>) {}
 
-  public async traverseAllChanges(
+  public async traverseAllNoteChanges(
     seqId: string | undefined,
-    notebookId: string,
     callback: (page: InkDropBlogPostChangeDocument[]) => Promise<void>
   ) {
     const perPage = 20;
@@ -28,10 +27,7 @@ export class InkDropService {
       lastSeq = page.last_seq;
       const filteredChanges = (
         page.results as InkDropBlogPostChangeDocument[]
-      ).filter(
-        change =>
-          change.id.startsWith("note:") && change.doc.bookId === notebookId
-      );
+      ).filter(change => change.id.startsWith("note:"));
       await callback(filteredChanges);
     } while (page.pending > 0);
   }

@@ -1,5 +1,8 @@
 import type { Loader, LoaderContext } from "astro/loaders";
-import { InkDropBlogPostSchema } from "@/content/blogPosts/model";
+import {
+  type InkDropBlogPost,
+  InkDropBlogPostSchema,
+} from "@/content/blogPosts/model";
 import { InkDropService } from "@/content/blogPosts/service";
 import { changeToDataEntry } from "@/content/blogPosts/utils";
 
@@ -20,6 +23,9 @@ export default function ({
   notebookId: string;
   force?: boolean;
 }): Loader {
+  const isPublishedNote = (post: InkDropBlogPost) =>
+    post.bookId === notebookId && post.status === "completed";
+
   return {
     name: NAME,
     load: async ({
@@ -35,19 +41,17 @@ export default function ({
       }
       const lastSyncedSeq = meta.get(LAST_SYNCED_SEQ_ID);
       const inkDropSvc = await InkDropService.buildService(dbConfig);
-      await inkDropSvc.traverseAllChanges(
-        lastSyncedSeq,
-        notebookId,
-        async changes => {
-          logger.debug(
-            `Processing ${changes.length} changes since ${lastSyncedSeq}`
-          );
-          if (changes.length <= 0) {
-            logger.info("Store is up to date.");
-          } else {
-            let count = 0;
-            for (const change of changes) {
-              logger.debug(`id: ${change.id} seq: ${change.seq}`);
+      await inkDropSvc.traverseAllNoteChanges(lastSyncedSeq, async changes => {
+        logger.debug(
+          `Processing ${changes.length} changes since ${lastSyncedSeq}`
+        );
+        if (changes.length <= 0) {
+          logger.info("Store is up to date.");
+        } else {
+          let count = 0;
+          for (const change of changes) {
+            logger.debug(`id: ${change.id} seq: ${change.seq}`);
+            if (isPublishedNote(change.doc)) {
               const entry = await changeToDataEntry(change, {
                 parseData,
                 generateDigest,
@@ -55,14 +59,17 @@ export default function ({
               if (store.set(entry)) {
                 count++;
               }
-              meta.set(LAST_SYNCED_SEQ_ID, change.seq);
+            } else if (store.has(change.id)) {
+              store.delete(change.id);
+              count++;
             }
-            if (count > 0) {
-              logger.info(`Stored ${count} ${NAME}.`);
-            }
+            meta.set(LAST_SYNCED_SEQ_ID, change.seq);
+          }
+          if (count > 0) {
+            logger.info(`Updated ${count} ${NAME}.`);
           }
         }
-      );
+      });
     },
     schema: InkDropBlogPostSchema,
   };
