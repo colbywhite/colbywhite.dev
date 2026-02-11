@@ -1,7 +1,7 @@
 {
   "name": "colbywhite.dev",
   "type": "module",
-  "version": "5.2.1",
+  "version": "5.2.2",
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build && pagefind --site dist && cp -r dist/pagefind public/",
