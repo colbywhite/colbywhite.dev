@@ -29,8 +29,8 @@ export class BookmarkService {
   }
 
   public async getLastUpdated() {
-    const { lastUpdate } = await this.fetchCollectionInfo();
-    return lastUpdate ? new Date(lastUpdate) : undefined;
+    const { lastAction } = await this.fetchCollectionInfo();
+    return lastAction ? new Date(lastAction) : undefined;
   }
 
   // TODO: cache this
